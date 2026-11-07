@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>选型与节电计算器｜大连宏实科技有限公司</title>
+<meta name="description" content="免费泵计算器：水力与轴功率、年电费、相对离心泵的节电量、静态回收期，以及含混合密度的浆体工况校核。">
+<link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/calculator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://jeeftang.github.io/hongshi/zh/calculator.html">
+<link rel="alternate" hreflang="en" href="https://jeeftang.github.io/hongshi/calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://jeeftang.github.io/hongshi/calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DALIAN HONGSHI TECHNOLOGY">
+<meta property="og:title" content="选型与节电计算器｜大连宏实科技有限公司">
+<meta property="og:description" content="免费泵计算器：水力与轴功率、年电费、相对离心泵的节电量、静态回收期，以及含混合密度的浆体工况校核。">
+<meta property="og:url" content="https://jeeftang.github.io/hongshi/zh/calculator.html">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c1a26">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='9' fill='%230c1a26'/><path d='M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z' fill='%23e2570f'/></svg>">
+<style>
+.tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.tabs button{border:1px solid #ccd8df;background:#fff;padding:10px 16px;border-radius:9px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;color:#16303f}
+.tabs button.active{background:#0c1a26;color:#fff;border-color:#0c1a26}
+.formula{background:#fff;border:1px solid #dde5ea;border-radius:12px;padding:18px 22px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;color:#16303f;overflow-x:auto}
+</style>
+</head>
+<body><header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+<rect width="34" height="34" rx="9" fill="#0c1a26"/>
+<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#e2570f"/>
+<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+</svg><span>HONGSHI<small>工业泵</small></span></a>
+    <ul><li><a href="plunger-pumps.html">柱塞泵</a></li><li><a href="slurry-pumps.html">浆料泵</a></li><li><a href="applications.html">应用领域</a></li><li><a href="calculator.html" class="on">选型计算</a></li><li><a href="references.html">业绩案例</a></li><li><a href="about.html">关于我们</a></li></ul>
+    <a class="lang-switch" href="../calculator.html" hreflang="en" title="English version">EN</a>
+    <a class="btn cta" href="contact.html">获取报价</a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="面包屑"><div class="wrap"><ol style="list-style:none;display:flex;gap:8px;padding:0;margin:0" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="index.html"><span itemprop="name">首页</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="calculator.html"><span itemprop="name">选型计算</span></a><meta itemprop="position" content="2"></li></ol></div></nav>
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">工程工具</p>
+    <h1>选型与节电计算器</h1>
+    <p class="lead">每个项目我们都会算的两笔账：一个工况点要多少轴功率，以及离心泵换成柱塞泵后差多少。全部在浏览器里算，数据不外传。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="tabs">
+      <button data-tab="energy" class="active">节电与回收期</button>
+      <button data-tab="slurry">浆体工况校核</button>
+    </div>
+
+    <div data-panel="energy">
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="e_q">流量 Q（m³/h）</label><input id="e_q" type="number" value="250" min="1" step="1"><div class="hint">工况点体积流量</div></div>
+          <div class="field"><label for="e_h">总扬程 H（m）</label><input id="e_h" type="number" value="800" min="1" step="10"><div class="hint">排出压头减吸入压头，含管路损失</div></div>
+          <div class="field"><label for="e_rho">介质密度（kg/m³）</label><input id="e_rho" type="number" value="1000" min="500" step="10"></div>
+          <div class="field"><label for="e_eff">新泵效率（%）</label><input id="e_eff" type="number" value="90" min="30" max="98" step="1"><div class="hint">90% 为 UDZ 系列的公开效率值</div></div>
+          <div class="field"><label for="e_eff_old">原泵效率（%）</label><input id="e_eff_old" type="number" value="55" min="10" max="95" step="1"><div class="hint">填实测值或铭牌值；磨损的多级泵常在 45–65%</div></div>
+          <div class="field"><label for="e_hours">年运行小时</label><input id="e_hours" type="number" value="8000" min="100" step="100"></div>
+          <div class="field"><label for="e_price">电价（美元/kWh）</label><input id="e_price" type="number" value="0.08" min="0.01" step="0.01"></div>
+          <div class="field"><label for="e_capex">新泵投资（美元）</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div class="hint">可选——仅用于静态回收期</div></div>
+        </div>
+        <div class="calc-out">
+          <h3>计算结果</h3>
+          <div class="kv"><span>水力功率</span><b id="o_ph">—</b></div>
+          <div class="kv"><span>新泵轴功率</span><b id="o_pnew">—</b></div>
+          <div class="kv"><span>原泵轴功率</span><b id="o_pold">—</b></div>
+          <div class="kv"><span>新泵年耗电</span><b id="o_kwh">—</b></div>
+          <div class="kv"><span>新泵年电费</span><b id="o_cost">—</b></div>
+          <div class="kv hl"><span>年节省</span><b id="o_save">—</b></div>
+          <div class="kv hl"><span>静态回收期</span><b id="o_payback">—</b></div>
+          <div class="kv"><span>年减排 CO₂</span><b id="o_co2">—</b></div>
+          <p class="note" id="e_hint"></p>
+        </div>
+      </div>
+      <div class="formula" style="margin-top:22px">
+        P<sub>hyd</sub> = ρ · g · Q · H / 3.6×10⁶  [kW，Q 单位 m³/h] &nbsp;·&nbsp; P<sub>shaft</sub> = P<sub>hyd</sub> / η &nbsp;·&nbsp; CO₂ 系数 0.581 kg/kWh
+      </div>
+    </div>
+
+    <div data-panel="slurry" style="display:none">
+      <div class="calc">
+        <div class="calc-form">
+          <div class="field"><label for="s_q">浆体流量 Q（m³/h）</label><input id="s_q" type="number" value="250" min="1" step="1"></div>
+          <div class="field"><label for="s_h">扬程 H（m）</label><input id="s_h" type="number" value="120" min="1" step="5"></div>
+          <div class="field"><label for="s_c">固料浓度（重量 %）</label><input id="s_c" type="number" value="35" min="0" max="80" step="1"><div class="hint">按质量分数计的矿浆浓度</div></div>
+          <div class="field"><label for="s_sg">固料真密度（g/cm³）</label><input id="s_sg" type="number" value="2.7" min="1.1" max="8" step="0.1"><div class="hint">常见岩矿 / 煤矸石尾矿取 2.7</div></div>
+          <div class="field"><label for="s_eff">泵效率（%）</label><input id="s_eff" type="number" value="83" min="30" max="98" step="1"></div>
+          <div class="field"><label for="s_hours">年运行小时</label><input id="s_hours" type="number" value="8000" min="100" step="100"></div>
+          <div class="field"><label for="s_price">电价（美元/kWh）</label><input id="s_price" type="number" value="0.08" min="0.01" step="0.01"></div>
+        </div>
+        <div class="calc-out">
+          <h3>计算结果</h3>
+          <div class="kv"><span>混合密度</span><b id="o_mix">—</b></div>
+          <div class="kv"><span>混合比重</span><b id="o_sg_mix">—</b></div>
+          <div class="kv"><span>水力功率</span><b id="o_sph">—</b></div>
+          <div class="kv hl"><span>轴功率</span><b id="o_sshaft">—</b></div>
+          <div class="kv"><span>年耗电</span><b id="o_skwh">—</b></div>
+          <div class="kv"><span>年电费</span><b id="o_scost">—</b></div>
+          <p class="note" id="s_rec"></p>
+        </div>
+      </div>
+      <div class="formula" style="margin-top:22px">
+        ρ<sub>mix</sub> = 1 / (c/ρ<sub>s</sub> + (1−c)/ρ<sub>w</sub>) &nbsp;·&nbsp; c = 固料质量分数 &nbsp;·&nbsp; P<sub>shaft</sub> = ρ<sub>mix</sub>·g·Q·H / (3.6×10⁶ · η)
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap prose">
+    <h2>结果怎么读</h2>
+    <p>这是初筛数据，不是正式选型。计算按清水功率与你输入的效率进行，未计 NPSH、黏度修正与电机裕量。正式选型会再加 10–15% 电机裕量，并校核吸入条件。</p>
+    <h3>最容易让人意外的部分</h3>
+    <p>磨损离心泵的轴功率常是新泵的 1.6–2 倍——不是电机选大了，而是效率已经掉离设计点。你能提供的最有用的一项数据，是实测输入功率。</p>
+    <h3>回收期的口径</h3>
+    <p>这里只算静态回收期，未计维护费节省（磨蚀工况通常为节电额的 30–50%）、停产损失与旧机残值——所以真实回收期一般比显示值更短。</p>
+  </div>
+</section>
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="index.html" style="color:#fff"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+<rect width="34" height="34" rx="9" fill="#0c1a26"/>
+<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#e2570f"/>
+<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+</svg><span style="color:#fff">HONGSHI<small style="color:#8fa6b2">工业泵</small></span></a>
+        <p style="margin-top:16px;max-width:320px">大连宏实科技有限公司<br>面向矿山、电力、油气与流程工业的高压往复泵与浆料泵。</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <ul>
+          <li><a href="plunger-pumps.html">多柱塞高压泵</a></li>
+          <li><a href="slurry-pumps.html">浆料泵</a></li>
+          <li><a href="calculator.html">选型计算器</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>应用</h4>
+        <ul>
+          <li><a href="mine-dewatering.html">矿井排水</a></li>
+          <li><a href="filter-press-feed.html">压滤机入料</a></li>
+          <li><a href="tailings-transport.html">尾矿输送</a></li>
+          <li><a href="water-injection.html">油田注水</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系</h4>
+        <ul>
+          <li><a href="mailto:18041136555@189.cn">18041136555@189.cn</a></li>
+          <li>中国 · 辽宁 · 大连</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 大连宏实科技有限公司 版权所有</span>
+      <span>中国设计制造 · 服务全球</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/calc.js" defer></script>
+</body>
+</html>

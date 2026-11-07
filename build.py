@@ -53,6 +53,9 @@ def head(title, desc, slug, extra_head="", jsonld=None):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{canonical}">
+<link rel="alternate" hreflang="en" href="{canonical}">
+<link rel="alternate" hreflang="zh-CN" href="{CONFIG['domain']}/zh/{slug or 'index.html'}">
+<link rel="alternate" hreflang="x-default" href="{canonical}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{CONFIG['brand']}">
 <meta property="og:title" content="{title}">
@@ -68,7 +71,7 @@ def head(title, desc, slug, extra_head="", jsonld=None):
 <body>"""
 
 
-def header(active=""):
+def header(active="", slug="index.html"):
     items = ""
     for href, label in NAV:
         cls = ' class="on"' if href == active else ""
@@ -77,6 +80,7 @@ def header(active=""):
   <div class="wrap nav">
     <a class="brand" href="index.html">{LOGO}<span>{CONFIG['brand_short']}<small>Industrial Pumps</small></span></a>
     <ul>{items}</ul>
+    <a class="lang-switch" href="zh/{slug}" hreflang="zh-CN" title="中文版">中文</a>
     <a class="btn cta" href="contact.html">Request a Quote</a>
   </div>
 </header>"""
@@ -124,7 +128,7 @@ def footer():
 
 
 def page(slug, title, desc, body, active="", jsonld=None, extra_head=""):
-    doc = head(title, desc, slug, extra_head, jsonld) + header(active) + body + footer() + """
+    doc = head(title, desc, slug, extra_head, jsonld) + header(active, slug) + body + footer() + """
 <script src="assets/js/calc.js" defer></script>
 </body>
 </html>"""
@@ -1368,9 +1372,16 @@ urls = [
     ("contact.html", "0.8", "yearly"),
 ]
 today = date.today().isoformat()
-sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
 for u, pri, freq in urls:
-    sm.append(f"  <url><loc>{CONFIG['domain']}/{u}</loc><lastmod>{today}</lastmod><changefreq>{freq}</changefreq><priority>{pri}</priority></url>")
+    zh_u = "zh/" + (u or "index.html")
+    sm.append(f"  <url><loc>{CONFIG['domain']}/{u}</loc><lastmod>{today}</lastmod><changefreq>{freq}</changefreq><priority>{pri}</priority>"
+              f"<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"{CONFIG['domain']}/{u}\"/>"
+              f"<xhtml:link rel=\"alternate\" hreflang=\"zh-CN\" href=\"{CONFIG['domain']}/{zh_u}\"/></url>")
+    sm.append(f"  <url><loc>{CONFIG['domain']}/{zh_u}</loc><lastmod>{today}</lastmod><changefreq>{freq}</changefreq><priority>{pri}</priority>"
+              f"<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"{CONFIG['domain']}/{u}\"/>"
+              f"<xhtml:link rel=\"alternate\" hreflang=\"zh-CN\" href=\"{CONFIG['domain']}/{zh_u}\"/></url>")
 sm.append("</urlset>")
 with open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8") as f:
     f.write("\n".join(sm))

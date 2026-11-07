@@ -2,6 +2,21 @@
 (function () {
   var G = 9.81;
 
+  /* bilingual labels: page declares its language on <html lang="..."> */
+  var ZH = (document.documentElement.lang || "").toLowerCase().indexOf("zh") === 0;
+  var T = {
+    years: ZH ? " 年" : " years",
+    perYear: ZH ? "/年" : "/yr",
+    co2: ZH ? " 吨 CO₂e/年" : " t CO₂e/yr",
+    enterFlowHead: ZH ? "输入流量和扬程后显示结果。" : "Enter flow and head to see results.",
+    effWarn: ZH ? "新泵效率必须高于原泵才会有节电。" : "New-pump efficiency must exceed the existing pump for a saving.",
+    savingVs: function (e) { return ZH ? "节电基准：原泵效率 " + e + "%。" : "Saving is vs. an existing pump at " + e + "% efficiency."; },
+    enterFlow: ZH ? "输入流量后显示推荐机型。" : "Enter flow to see the model recommendation.",
+    recV5: ZH ? "落在 V5 立式五柱塞浆料泵范围内（100–400 m³/h，扬程 ≤150 m）。" : "Fits the V5 vertical five-plunger slurry pump range (100–400 m³/h, ≤150 m head).",
+    recHP: ZH ? "超出 V5 浆料泵范围 —— 请核对多柱塞高压系列（40–800 m³/h，4–50 MPa）。" : "Outside the V5 slurry envelope — check the multi-plunger high-pressure range (40–800 m³/h, 4–50 MPa).",
+    recCustom: ZH ? "超出标准范围 —— 把工况点发给我们，我们做定制机型。" : "Outside standard ranges — send us the duty point and we will engineer a custom unit."
+  };
+
   function num(id) {
     var v = parseFloat((document.getElementById(id) || {}).value);
     return isFinite(v) && v > 0 ? v : 0;
@@ -46,14 +61,14 @@
     set("o_kwh", fmt(kwhNew, 0) + " kWh");
     set("o_cost", "$" + fmt(costNew, 0));
     set("o_save", "$" + fmt(save, 0));
-    set("o_payback", isFinite(payback) ? fmt(payback, 1) + " years" : "—");
-    set("o_co2", fmt(co2, 0) + " t CO₂e/yr");
+    set("o_payback", isFinite(payback) ? fmt(payback, 1) + T.years : "—");
+    set("o_co2", fmt(co2, 0) + T.co2);
 
     var hint = document.getElementById("e_hint");
     if (hint) {
-      if (!Q || !H) hint.textContent = "Enter flow and head to see results.";
-      else if (save <= 0) hint.textContent = "New-pump efficiency must exceed the existing pump for a saving.";
-      else hint.textContent = "Saving is vs. an existing pump at " + fmt(effOld * 100, 0) + "% efficiency.";
+      if (!Q || !H) hint.textContent = T.enterFlowHead;
+      else if (save <= 0) hint.textContent = T.effWarn;
+      else hint.textContent = T.savingVs(fmt(effOld * 100, 0));
     }
   }
 
@@ -79,18 +94,18 @@
     set("o_sg_mix", fmt(rhoMix / 1000, 2));
     set("o_sph", fmt(ph, 1) + " kW");
     set("o_sshaft", fmt(shaft, 1) + " kW");
-    set("o_skwh", fmt(kwh, 0) + " kWh/yr");
-    set("o_scost", "$" + fmt(cost, 0) + "/yr");
+    set("o_skwh", fmt(kwh, 0) + " kWh" + T.perYear);
+    set("o_scost", "$" + fmt(cost, 0) + T.perYear);
 
     var rec = document.getElementById("s_rec");
     if (rec) {
-      if (!Q) { rec.textContent = "Enter flow to see the model recommendation."; }
+      if (!Q) { rec.textContent = T.enterFlow; }
       else if (Q >= 100 && Q <= 400 && H <= 150) {
-        rec.textContent = "Fits the V5 vertical five-plunger slurry pump range (100–400 m³/h, ≤150 m head).";
+        rec.textContent = T.recV5;
       } else if (Q >= 40 && Q <= 800) {
-        rec.textContent = "Outside the V5 slurry envelope — check the multi-plunger high-pressure range (40–800 m³/h, 4–50 MPa).";
+        rec.textContent = T.recHP;
       } else {
-        rec.textContent = "Outside standard ranges — send us the duty point and we will engineer a custom unit.";
+        rec.textContent = T.recCustom;
       }
     }
   }
