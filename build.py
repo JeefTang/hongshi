@@ -7,6 +7,7 @@ Output: ./ (index.html, *.html, sitemap.xml, robots.txt)
 """
 import os, json, html
 from datetime import date
+from apps_extra import APPS, render_body as render_app_body
 
 CONFIG = {
     "brand": "DALIAN HONGSHI TECHNOLOGY",
@@ -110,6 +111,10 @@ def footer():
           <li><a href="filter-press-feed.html">Filter press feed</a></li>
           <li><a href="tailings-transport.html">Tailings transport</a></li>
           <li><a href="water-injection.html">Water injection</a></li>
+          <li><a href="boiler-feed.html">Boiler feed water</a></li>
+          <li><a href="high-head-drainage.html">High-head drainage</a></li>
+          <li><a href="seawater-desalination.html">Seawater desalination</a></li>
+          <li><a href="high-pressure-descaling.html">Descaling &amp; cleaning</a></li>
         </ul>
       </div>
       <div>
@@ -700,8 +705,8 @@ apps_body = f"""
 <section class="page-head">
   <div class="wrap">
     <p class="eyebrow">Applications</p>
-    <h1>Four duties where pump choice decides the operating cost</h1>
-    <p class="lead">Dewatering, filter press feed, tailings transport and water injection share one trait: the duty punishes centrifugal pumps. Here is what we specify, and why.</p>
+    <h1>Eight duties where pump choice decides the operating cost</h1>
+    <p class="lead">Dewatering, feed water, slurry and high-pressure cleaning share one trait: the duty punishes centrifugal pumps. Here is what we specify, and why.</p>
   </div>
 </section>
 
@@ -727,6 +732,26 @@ apps_body = f"""
       <p>120–500 m³/h at 16–25 MPa. Specific power is the number that matters, and multistage centrifugal units lose it.</p></div>
       <a class="more" href="water-injection.html">Water injection →</a>
     </article>
+    <article class="card prod-card">
+      <div><p class="tag">UDZ 100/16 · UDZ 160/16</p><h3>Boiler feed water</h3>
+      <p>Steady high-pressure feed for industrial and waste-heat boilers, 4–16 MPa, running most of the year.</p></div>
+      <a class="more" href="boiler-feed.html">Boiler feed water →</a>
+    </article>
+    <article class="card prod-card">
+      <div><p class="tag">UDQ 60 – UDZ 600</p><h3>High-head drainage &amp; mountain irrigation</h3>
+      <p>300–2,500 m of lift over long pipelines, as a single unit or series staged.</p></div>
+      <a class="more" href="high-head-drainage.html">High-head drainage →</a>
+    </article>
+    <article class="card prod-card">
+      <div><p class="tag">UDZ 160/16 – UDZ 320/16</p><h3>Seawater desalination booster</h3>
+      <p>RO feed and interstage duty at 5–7 MPa, with duplex wetted parts.</p></div>
+      <a class="more" href="seawater-desalination.html">Seawater desalination →</a>
+    </article>
+    <article class="card prod-card">
+      <div><p class="tag">UDZ 100/16 – UDZ 320/16</p><h3>High-pressure descaling &amp; cleaning</h3>
+      <p>10–40 MPa at the header or nozzle, held flat through the pass.</p></div>
+      <a class="more" href="high-pressure-descaling.html">Descaling &amp; cleaning →</a>
+    </article>
   </div>
 </section>
 
@@ -741,6 +766,10 @@ apps_body = f"""
           <tr><td>Filter press feed</td><td class="num">100–400</td><td class="num">≤150 m</td><td>30%+</td><td>V5</td></tr>
           <tr><td>Tailings transport</td><td class="num">100–400</td><td class="num">≤150 m</td><td>30–60%</td><td>V5</td></tr>
           <tr><td>Water injection</td><td class="num">7–320</td><td class="num">16–70 MPa</td><td>clean water</td><td>UDZ …/16 family</td></tr>
+          <tr><td>Boiler feed water</td><td class="num">100–400</td><td class="num">4–16 MPa</td><td>clean, hot</td><td>UDZ 100/16 – 160/16</td></tr>
+          <tr><td>High-head drainage / irrigation</td><td class="num">50–500</td><td class="num">300–2,500 m</td><td>low, some silt</td><td>UDQ 60 – UDZ 600</td></tr>
+          <tr><td>Seawater desalination</td><td class="num">50–500</td><td class="num">5–7 MPa</td><td>clean, saline</td><td>UDZ 160/16 – 320/16</td></tr>
+          <tr><td>Descaling &amp; cleaning</td><td class="num">20–200</td><td class="num">10–40 MPa</td><td>scale / fines</td><td>UDZ 100/16 – 320/16</td></tr>
         </tbody>
       </table>
     </div>
@@ -1360,6 +1389,18 @@ page(
 notfound = f"""<section class="page-head"><div class="wrap"><h1>Page not found</h1><p class="lead">That page does not exist. Try the product pages or send us your duty point.</p><p style="margin-top:24px"><a class="btn" href="index.html">Back to home</a></p></div></section>"""
 page("404.html", "Page not found | DALIAN HONGSHI TECHNOLOGY", "Page not found.", notfound)
 
+
+# ---------------------------------------------------------------- NEW APPLICATION PAGES
+for _app in APPS:
+    _d = _app["en"]
+    page(
+        _app["slug"],
+        _d["title"],
+        _d["desc"],
+        render_app_body(_app, "en", crumbs([("index.html", "Home"), ("applications.html", "Applications"), (_app["slug"], _d["crumb"])])),
+        active="applications.html",
+    )
+
 # ---------------------------------------------------------------- sitemap + robots
 urls = [
     ("", "1.0", "weekly"),
@@ -1370,6 +1411,10 @@ urls = [
     ("filter-press-feed.html", "0.7", "monthly"),
     ("tailings-transport.html", "0.7", "monthly"),
     ("water-injection.html", "0.7", "monthly"),
+    ("boiler-feed.html", "0.7", "monthly"),
+    ("high-head-drainage.html", "0.7", "monthly"),
+    ("seawater-desalination.html", "0.7", "monthly"),
+    ("high-pressure-descaling.html", "0.7", "monthly"),
     ("calculator.html", "0.8", "monthly"),
     ("references.html", "0.8", "monthly"),
     ("about.html", "0.6", "yearly"),

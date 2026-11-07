@@ -7,6 +7,7 @@ Run: python3 zh_pages.py   (zh_pages.py = a+b+c concatenated)
 """
 import os, json
 from datetime import date
+from apps_extra import APPS, render_body as render_app_body
 
 CONFIG = {
     "brand": "DALIAN HONGSHI TECHNOLOGY",
@@ -108,6 +109,10 @@ def footer():
           <li><a href="filter-press-feed.html">压滤机入料</a></li>
           <li><a href="tailings-transport.html">尾矿输送</a></li>
           <li><a href="water-injection.html">油田注水</a></li>
+          <li><a href="boiler-feed.html">锅炉给水</a></li>
+          <li><a href="high-head-drainage.html">高扬程排水</a></li>
+          <li><a href="seawater-desalination.html">海水淡化增压</a></li>
+          <li><a href="high-pressure-descaling.html">高压水除磷清洗</a></li>
         </ul>
       </div>
       <div>
@@ -556,8 +561,8 @@ APPS_BODY = f"""
 <section class="page-head">
   <div class="wrap">
     <p class="eyebrow">应用领域</p>
-    <h1>四类工况，泵选错，运行成本就注定偏高</h1>
-    <p class="lead">矿井排水、压滤机入料、尾矿输送与油田注水有一个共同点：这些工况都在"惩罚"离心泵。下面是我们配什么、为什么这么配。</p>
+    <h1>八类工况，泵选错，运行成本就注定偏高</h1>
+    <p class="lead">矿井排水、锅炉给水、浆料输送与高压清洗有一个共同点：这些工况都在"惩罚"离心泵。下面是我们配什么、为什么这么配。</p>
   </div>
 </section>
 
@@ -583,6 +588,26 @@ APPS_BODY = f"""
       <p>120–500 m³/h、16–25 MPa。真正决定成本的是比功率，而这正是多级离心泵丢掉的东西。</p></div>
       <a class="more" href="water-injection.html">油田注水 →</a>
     </article>
+    <article class="card prod-card">
+      <div><p class="tag">UDZ 100/16 · UDZ 160/16</p><h3>锅炉给水</h3>
+      <p>工业锅炉与余热锅炉的稳定高压给水，4–16 MPa，全年大部分时间连续运行。</p></div>
+      <a class="more" href="boiler-feed.html">锅炉给水 →</a>
+    </article>
+    <article class="card prod-card">
+      <div><p class="tag">UDQ 60 – UDZ 600</p><h3>高扬程排水（高山提灌）</h3>
+      <p>长管线提升 300–2500 m，可单机运行，也可串联分级。</p></div>
+      <a class="more" href="high-head-drainage.html">高扬程排水 →</a>
+    </article>
+    <article class="card prod-card">
+      <div><p class="tag">UDZ 160/16 – UDZ 320/16</p><h3>海水淡化增压</h3>
+      <p>反渗透给水与级间增压 5–7 MPa，双相钢过流部件。</p></div>
+      <a class="more" href="seawater-desalination.html">海水淡化增压 →</a>
+    </article>
+    <article class="card prod-card">
+      <div><p class="tag">UDZ 100/16 – UDZ 320/16</p><h3>高压水除磷、清洗</h3>
+      <p>集管或喷嘴前 10–40 MPa，过钢全程压力平稳。</p></div>
+      <a class="more" href="high-pressure-descaling.html">高压水除磷清洗 →</a>
+    </article>
   </div>
 </section>
 
@@ -597,6 +622,10 @@ APPS_BODY = f"""
           <tr><td>压滤机入料</td><td class="num">100–400</td><td class="num">≤150 m</td><td>30%+</td><td>V5</td></tr>
           <tr><td>尾矿输送</td><td class="num">100–400</td><td class="num">≤150 m</td><td>30–60%</td><td>V5</td></tr>
           <tr><td>油田注水</td><td class="num">7–320</td><td class="num">16–70 MPa</td><td>清水</td><td>UDZ …/16 系列</td></tr>
+          <tr><td>锅炉给水</td><td class="num">100–400</td><td class="num">4–16 MPa</td><td>清水、高温</td><td>UDZ 100/16 – 160/16</td></tr>
+          <tr><td>高扬程排水／高山提灌</td><td class="num">50–500</td><td class="num">300–2,500 m</td><td>低，少量泥沙</td><td>UDQ 60 – UDZ 600</td></tr>
+          <tr><td>海水淡化增压</td><td class="num">50–500</td><td class="num">5–7 MPa</td><td>清水、含盐</td><td>UDZ 160/16 – 320/16</td></tr>
+          <tr><td>高压水除磷、清洗</td><td class="num">20–200</td><td class="num">10–40 MPa</td><td>氧化铁皮／细颗粒</td><td>UDZ 100/16 – 320/16</td></tr>
         </tbody>
       </table>
     </div>
@@ -610,8 +639,8 @@ APPS_BODY = f"""
 def zh_apps():
     return page(
         "applications.html",
-        "泵应用：矿井排水 · 压滤机入料 · 尾矿输送 · 注水｜大连宏实科技有限公司",
-        "高压柱塞泵与浆料泵在矿井排水、压滤机入料、尾矿输送与油田注水中的应用选型指南。",
+        "泵应用：矿井排水 · 锅炉给水 · 高扬程提灌 · 海水淡化 · 除磷清洗｜大连宏实科技有限公司",
+        "高压柱塞泵与浆料泵在矿井排水、锅炉给水、高扬程排水（高山提灌）、海水淡化增压与高压水除磷清洗中的应用选型指南。",
         APPS_BODY,
         active="applications.html",
     )
@@ -1238,6 +1267,21 @@ def zh_references():
     )
 
 
+
+# ================================================================ 新增应用领域页
+def zh_extra_apps():
+    out = []
+    for app in APPS:
+        d = app["zh"]
+        body = render_app_body(
+            app,
+            "zh",
+            crumbs([("index.html", "首页"), ("applications.html", "应用领域"), (app["slug"], d["crumb"])]),
+        )
+        out.append(page(app["slug"], d["title"], d["desc"], body, active="applications.html"))
+    return out
+
+
 # ================================================================ 404
 NOTFOUND_BODY = """<section class="page-head"><div class="wrap"><h1>页面不存在</h1><p class="lead">这个页面找不到了。可以回到产品页，或者直接把工况点发给我们。</p><p style="margin-top:24px"><a class="btn" href="index.html">返回首页</a></p></div></section>"""
 
@@ -1256,7 +1300,7 @@ def main():
     os.makedirs(OUT_ZH, exist_ok=True)
     pages = [
         zh_index(), zh_plunger(), zh_slurry(), zh_apps(), zh_mine(),
-        zh_filterpress(), zh_tailings(), zh_water(), zh_calc(),
+        zh_filterpress(), zh_tailings(), zh_water(), *zh_extra_apps(), zh_calc(),
         zh_about(), zh_contact(), zh_references(), zh_404(),
     ]
     for p in pages:
