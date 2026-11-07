@@ -63,6 +63,7 @@ def head(title, desc, slug, extra_head=""):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0c1a26">
 <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/chat.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='9' fill='%230c1a26'/><path d='M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z' fill='%23e2570f'/></svg>">
 {extra_head}
 </head>
@@ -1262,7 +1263,7 @@ def main():
             + header(p["active"], en_href="../" + p["slug"])
             + p["body"]
             + footer()
-            + '\n<script src="../assets/js/calc.js" defer></script>\n</body>\n</html>'
+            + '\n<script src="../assets/js/calc.js" defer></script>\n<script src="../assets/js/chat.js" defer></script>\n</body>\n</html>'
         )
         with open(os.path.join(OUT_ZH, p["slug"]), "w", encoding="utf-8") as f:
             f.write(doc)

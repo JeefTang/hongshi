@@ -64,6 +64,7 @@ def head(title, desc, slug, extra_head="", jsonld=None):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0c1a26">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/chat.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='9' fill='%230c1a26'/><path d='M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z' fill='%23e2570f'/></svg>">
 {ld}
 {extra_head}
@@ -130,6 +131,7 @@ def footer():
 def page(slug, title, desc, body, active="", jsonld=None, extra_head=""):
     doc = head(title, desc, slug, extra_head, jsonld) + header(active, slug) + body + footer() + """
 <script src="assets/js/calc.js" defer></script>
+<script src="assets/js/chat.js" defer></script>
 </body>
 </html>"""
     with open(os.path.join(OUT, slug), "w", encoding="utf-8") as f:
