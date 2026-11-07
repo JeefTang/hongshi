@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Additional application pages (boiler feed, high-head drainage / mountain
-irrigation, seawater desalination booster, high-pressure descaling & cleaning).
+irrigation, high-pressure descaling & cleaning).
 
 Shared by build.py (English) and zh_pages.py (Chinese) so both editions stay
 structurally identical. Content is written as small block lists and rendered by
@@ -178,91 +178,6 @@ APPS = [
                 "供电电压与频率",
             ],
             "cta": ("正在规划高扬程输水？", "把扬程、管线与流量发过来，我们给出级数配置与功率需求。", "发送工况"),
-        },
-    },
-    {
-        "slug": "seawater-desalination.html",
-        "en": {
-            "title": "Seawater desalination booster pumps — RO feed duty | DALIAN HONGSHI TECHNOLOGY",
-            "desc": "High-pressure multi-plunger pumps for seawater RO feed and interstage boosting: 50–500 m3/h at 5–7 MPa, duplex and super duplex wetted parts, efficiency above 90%.",
-            "crumb": "Seawater Desalination",
-            "eyebrow": "Application · desalination",
-            "h1": "Seawater desalination booster pumps",
-            "lead": "RO feed and interstage booster duty at 5–7 MPa. Here the design driver is not efficiency alone — it is corrosion.",
-            "blocks": [
-                ("h2", "The duty"),
-                ("p", "A seawater RO train needs a high-pressure feed pump at 5.0–7.0 MPa, held steady as membrane resistance rises with fouling and temperature moves through the year. Interstage boosters add 2–4 MPa between arrays."),
-                ("p", "Seawater is the hard part. Chlorides attack anything that is not duplex, super duplex or a suitable high alloy — a pump that is efficient but corrodes is a maintenance contract, not an asset."),
-                ("h2", "How we specify it"),
-                ("ul", [
-                    "Duplex / super duplex wetted parts (UNS S31803 / S32750) for seawater service.",
-                    "Ceramic or coated plungers with flushed packing or mechanical seals.",
-                    "Flow held constant as membrane resistance rises, trimmed by VFD.",
-                    "Sized for net feed flow, so the energy recovery device works with the pump rather than against it.",
-                ]),
-                ("h2", "Selection range"),
-                ("p", "UDZ 160/16 and UDZ 320/16 at reduced stroke cover 50–500 m³/h per train at 5–7 MPa. Brackish-water duties sit lower, at 2–4 MPa, and use the same family."),
-            ],
-            "table": (
-                ["Duty", "Typical value"],
-                [
-                    ["Flow per train", "50–500 m³/h"],
-                    ["Discharge pressure", "5.0–7.0 MPa (SWRO)"],
-                    ["Interstage boost", "2–4 MPa"],
-                    ["Wetted material", "duplex / super duplex"],
-                    ["Efficiency", "&gt;90%"],
-                    ["Range", "UDZ 160/16 – UDZ 320/16"],
-                ],
-            ),
-            "needs": [
-                "Permeate capacity and recovery ratio",
-                "Feed salinity and temperature range",
-                "Train arrangement (single pass / two pass)",
-                "Energy recovery device type",
-                "Materials specification and applicable standard",
-            ],
-            "cta": ("Sizing a desalination train?", "Send permeate capacity, recovery and feed salinity — we will size the feed and booster duties.", "Send details"),
-        },
-        "zh": {
-            "title": "海水淡化增压泵 — 反渗透给水工况｜大连宏实科技有限公司",
-            "desc": "海水反渗透给水与级间增压用高压多柱塞泵：50–500 m³/h、5–7 MPa，双相钢／超级双相钢过流部件，效率 90% 以上。",
-            "crumb": "海水淡化增压",
-            "eyebrow": "应用领域 · 海水淡化",
-            "h1": "海水淡化增压泵",
-            "lead": "反渗透给水与级间增压，压力 5–7 MPa。这里决定成败的不只是效率，还有腐蚀。",
-            "blocks": [
-                ("h2", "工况特点"),
-                ("p", "海水反渗透装置需要 5.0–7.0 MPa 的高压给水泵，并且要在膜阻力随污堵上升、水温随季节变化时保持压力稳定；级间增压段再补 2–4 MPa。"),
-                ("p", "难点在海水本身：氯离子会攻击除双相钢、超级双相钢或相应高合金之外的一切材料。效率高但会腐蚀的泵，不是资产，是一张长期维修单。"),
-                ("h2", "我们怎么选型"),
-                ("ul", [
-                    "海水工况过流部件采用双相钢／超级双相钢（UNS S31803 / S32750）。",
-                    "陶瓷或涂层柱塞，配冲洗填料或机械密封。",
-                    "膜阻力上升时靠变频微调保持流量恒定。",
-                    "按净给水量选型，使能量回收装置与泵协同而不是相互抵消。",
-                ]),
-                ("h2", "选型范围"),
-                ("p", "UDZ 160/16 与 UDZ 320/16 降行程运行，覆盖单套装置 50–500 m³/h、5–7 MPa；苦咸水工况压力更低（2–4 MPa），仍用同一系列。"),
-            ],
-            "table": (
-                ["工况参数", "典型值"],
-                [
-                    ["单套流量", "50–500 m³/h"],
-                    ["排出压力", "5.0–7.0 MPa（海水 RO）"],
-                    ["级间增压", "2–4 MPa"],
-                    ["过流材质", "双相钢／超级双相钢"],
-                    ["效率", "&gt;90%"],
-                    ["适用系列", "UDZ 160/16 – UDZ 320/16"],
-                ],
-            ),
-            "needs": [
-                "产水量与回收率",
-                "进水含盐量与温度范围",
-                "装置流程（一段／两段）",
-                "能量回收装置形式",
-                "材质要求与执行标准",
-            ],
-            "cta": ("正在做海水淡化装置选型？", "把产水量、回收率与进水含盐量发过来，我们给出给水与增压段的配置。", "发送工况"),
         },
     },
     {

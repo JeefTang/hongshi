@@ -111,7 +111,6 @@ def footer():
           <li><a href="water-injection.html">油田注水</a></li>
           <li><a href="boiler-feed.html">锅炉给水</a></li>
           <li><a href="high-head-drainage.html">高扬程排水</a></li>
-          <li><a href="seawater-desalination.html">海水淡化增压</a></li>
           <li><a href="high-pressure-descaling.html">高压水除磷清洗</a></li>
         </ul>
       </div>
@@ -621,7 +620,7 @@ APPS_BODY = f"""
 <section class="page-head">
   <div class="wrap">
     <p class="eyebrow">应用领域</p>
-    <h1>八类工况，泵选错，运行成本就注定偏高</h1>
+    <h1>七类工况，泵选错，运行成本就注定偏高</h1>
     <p class="lead">矿井排水、锅炉给水、浆料输送与高压清洗有一个共同点：这些工况都在"惩罚"离心泵。下面是我们配什么、为什么这么配。</p>
   </div>
 </section>
@@ -659,11 +658,6 @@ APPS_BODY = f"""
       <a class="more" href="high-head-drainage.html">高扬程排水 →</a>
     </article>
     <article class="card prod-card">
-      <div><p class="tag">UDZ 160/16 – UDZ 320/16</p><h3>海水淡化增压</h3>
-      <p>反渗透给水与级间增压 5–7 MPa，双相钢过流部件。</p></div>
-      <a class="more" href="seawater-desalination.html">海水淡化增压 →</a>
-    </article>
-    <article class="card prod-card">
       <div><p class="tag">UDZ 100/16 – UDZ 320/16</p><h3>高压水除磷、清洗</h3>
       <p>集管或喷嘴前 10–40 MPa，过钢全程压力平稳。</p></div>
       <a class="more" href="high-pressure-descaling.html">高压水除磷清洗 →</a>
@@ -684,7 +678,6 @@ APPS_BODY = f"""
           <tr><td>油田注水</td><td class="num">7–320</td><td class="num">16–70 MPa</td><td>清水</td><td>UDZ …/16 系列</td></tr>
           <tr><td>锅炉给水</td><td class="num">100–400</td><td class="num">4–16 MPa</td><td>清水、高温</td><td>UDZ 100/16 – 160/16</td></tr>
           <tr><td>高扬程排水／高山提灌</td><td class="num">50–500</td><td class="num">300–2,500 m</td><td>低，少量泥沙</td><td>UDQ 60 – UDZ 600</td></tr>
-          <tr><td>海水淡化增压</td><td class="num">50–500</td><td class="num">5–7 MPa</td><td>清水、含盐</td><td>UDZ 160/16 – 320/16</td></tr>
           <tr><td>高压水除磷、清洗</td><td class="num">20–200</td><td class="num">10–40 MPa</td><td>氧化铁皮／细颗粒</td><td>UDZ 100/16 – 320/16</td></tr>
         </tbody>
       </table>
@@ -699,8 +692,8 @@ APPS_BODY = f"""
 def zh_apps():
     return page(
         "applications.html",
-        "泵应用：矿井排水 · 锅炉给水 · 高扬程提灌 · 海水淡化 · 除磷清洗｜大连宏实科技有限公司",
-        "高压柱塞泵与浆料泵在矿井排水、锅炉给水、高扬程排水（高山提灌）、海水淡化增压与高压水除磷清洗中的应用选型指南。",
+        "泵应用：矿井排水 · 锅炉给水 · 高扬程提灌 · 除磷清洗｜大连宏实科技有限公司",
+        "高压柱塞泵与浆料泵在矿井排水、锅炉给水、高扬程排水（高山提灌）与高压水除磷清洗中的应用选型指南。",
         APPS_BODY,
         active="applications.html",
     )

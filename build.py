@@ -113,7 +113,6 @@ def footer():
           <li><a href="water-injection.html">Water injection</a></li>
           <li><a href="boiler-feed.html">Boiler feed water</a></li>
           <li><a href="high-head-drainage.html">High-head drainage</a></li>
-          <li><a href="seawater-desalination.html">Seawater desalination</a></li>
           <li><a href="high-pressure-descaling.html">Descaling &amp; cleaning</a></li>
         </ul>
       </div>
@@ -765,7 +764,7 @@ apps_body = f"""
 <section class="page-head">
   <div class="wrap">
     <p class="eyebrow">Applications</p>
-    <h1>Eight duties where pump choice decides the operating cost</h1>
+    <h1>Seven duties where pump choice decides the operating cost</h1>
     <p class="lead">Dewatering, feed water, slurry and high-pressure cleaning share one trait: the duty punishes centrifugal pumps. Here is what we specify, and why.</p>
   </div>
 </section>
@@ -803,11 +802,6 @@ apps_body = f"""
       <a class="more" href="high-head-drainage.html">High-head drainage →</a>
     </article>
     <article class="card prod-card">
-      <div><p class="tag">UDZ 160/16 – UDZ 320/16</p><h3>Seawater desalination booster</h3>
-      <p>RO feed and interstage duty at 5–7 MPa, with duplex wetted parts.</p></div>
-      <a class="more" href="seawater-desalination.html">Seawater desalination →</a>
-    </article>
-    <article class="card prod-card">
       <div><p class="tag">UDZ 100/16 – UDZ 320/16</p><h3>High-pressure descaling &amp; cleaning</h3>
       <p>10–40 MPa at the header or nozzle, held flat through the pass.</p></div>
       <a class="more" href="high-pressure-descaling.html">Descaling &amp; cleaning →</a>
@@ -828,7 +822,6 @@ apps_body = f"""
           <tr><td>Water injection</td><td class="num">7–320</td><td class="num">16–70 MPa</td><td>clean water</td><td>UDZ …/16 family</td></tr>
           <tr><td>Boiler feed water</td><td class="num">100–400</td><td class="num">4–16 MPa</td><td>clean, hot</td><td>UDZ 100/16 – 160/16</td></tr>
           <tr><td>High-head drainage / irrigation</td><td class="num">50–500</td><td class="num">300–2,500 m</td><td>low, some silt</td><td>UDQ 60 – UDZ 600</td></tr>
-          <tr><td>Seawater desalination</td><td class="num">50–500</td><td class="num">5–7 MPa</td><td>clean, saline</td><td>UDZ 160/16 – 320/16</td></tr>
           <tr><td>Descaling &amp; cleaning</td><td class="num">20–200</td><td class="num">10–40 MPa</td><td>scale / fines</td><td>UDZ 100/16 – 320/16</td></tr>
         </tbody>
       </table>
@@ -1473,7 +1466,6 @@ urls = [
     ("water-injection.html", "0.7", "monthly"),
     ("boiler-feed.html", "0.7", "monthly"),
     ("high-head-drainage.html", "0.7", "monthly"),
-    ("seawater-desalination.html", "0.7", "monthly"),
     ("high-pressure-descaling.html", "0.7", "monthly"),
     ("calculator.html", "0.8", "monthly"),
     ("references.html", "0.8", "monthly"),
