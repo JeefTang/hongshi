@@ -206,12 +206,15 @@
 
   function scroll() { body.scrollTop = body.scrollHeight; }
 
+  function plain(s) {
+    return String(s).replace(/\*\*(.+?)\*\*/g, "$1").replace(/^#{1,6}\s*/gm, "").replace(/`/g, "");
+  }
   function add(who, text) {
     var row = document.createElement("div");
     row.className = "hs-msg " + who;
     var b = document.createElement("div");
     b.className = "hs-bubble";
-    b.textContent = text;
+    b.textContent = who === "bot" ? plain(text) : text;
     row.appendChild(b);
     body.appendChild(row);
     if (who !== "sys") history.push({ role: who === "me" ? "user" : "assistant", content: text });
