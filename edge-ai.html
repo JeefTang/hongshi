@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Industrial AI Agent Appliance — Edge Inference Box | DALIAN HONGSHI TECHNOLOGY</title>
+<meta name="description" content="Edge appliance running a 27B language model and the OpenClaw agent runtime locally: four concurrent sessions, 40+ tokens/s aggregate, about 58 W. No cloud, no data leaving the plant.">
+<link rel="canonical" href="https://jeeftang.github.io/hongshi/edge-ai.html">
+<link rel="alternate" hreflang="en" href="https://jeeftang.github.io/hongshi/edge-ai.html">
+<link rel="alternate" hreflang="zh-CN" href="https://jeeftang.github.io/hongshi/zh/edge-ai.html">
+<link rel="alternate" hreflang="x-default" href="https://jeeftang.github.io/hongshi/edge-ai.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DALIAN HONGSHI TECHNOLOGY">
+<meta property="og:title" content="Industrial AI Agent Appliance — Edge Inference Box | DALIAN HONGSHI TECHNOLOGY">
+<meta property="og:description" content="Edge appliance running a 27B language model and the OpenClaw agent runtime locally: four concurrent sessions, 40+ tokens/s aggregate, about 58 W. No cloud, no data leaving the plant.">
+<meta property="og:url" content="https://jeeftang.github.io/hongshi/edge-ai.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c1a26">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/chat.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='9' fill='%230c1a26'/><path d='M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z' fill='%23e2570f'/></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Industrial AI Box", "description": "Edge appliance running a 27B language model and the OpenClaw agent runtime locally: four concurrent sessions, 40+ tokens/s aggregate, about 58 W. No cloud, no data leaving the plant.", "brand": {"@type": "Brand", "name": "DALIAN HONGSHI TECHNOLOGY"}, "manufacturer": {"@type": "Organization", "name": "大连宏实科技有限公司"}, "url": "https://jeeftang.github.io/hongshi/edge-ai.html", "category": "Industrial pump"}</script>
+
+</head>
+<body><header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+<rect width="34" height="34" rx="9" fill="#0c1a26"/>
+<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#e2570f"/>
+<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+</svg><span>HONGSHI<small>Industrial Pumps</small></span></a>
+    <ul><li class="has-sub on"><a href="plunger-pumps.html">Products</a><ul class="sub"><li><a href="plunger-pumps.html">Multi-plunger pumps</a></li><li><a href="slurry-pumps.html">Slurry pumps</a></li><li><a href="maglev-blowers.html">Maglev blowers &amp; vacuum</a></li><li><a href="mobile-pumps.html">Mobile pump units</a></li><li><a href="edge-ai.html">Industrial AI edge box</a></li></ul></li><li><a href="applications.html">Applications</a></li><li><a href="calculator.html">Calculator</a></li><li><a href="references.html">References</a></li><li><a href="about.html">About</a></li></ul>
+    <a class="lang-switch" href="zh/edge-ai.html" hreflang="zh-CN" title="中文版">中文</a>
+    <a class="btn cta" href="contact.html">Request a Quote</a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><ol style="list-style:none;display:flex;gap:8px;padding:0;margin:0" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="index.html"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="edge-ai.html"><span itemprop="name">Industrial AI Box</span></a><meta itemprop="position" content="2"></li></ol></div></nav>
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Edge intelligence · nothing leaves the plant</p>
+    <h1>An industrial AI agent that runs on site</h1>
+    <p class="lead">A self-contained appliance running a 27-billion-parameter language model and the OpenClaw agent runtime locally. Four concurrent sessions, 40+ tokens per second in total, about 58 W average — no cloud account, no data leaving the network.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kpi-row" style="margin-top:0">
+      <div class="kpi"><b>27B</b><span>Language model resident on the appliance</span></div>
+      <div class="kpi"><b>4</b><span>Concurrent agent sessions</span></div>
+      <div class="kpi"><b>40+</b><span>Tokens per second, aggregate</span></div>
+      <div class="kpi"><b>58 W</b><span>Average system power, measured</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap grid-2" style="gap:56px;align-items:start">
+    <div class="prose">
+      <h2>Why on site instead of in a cloud</h2>
+      <p>Plant data — P&amp;ID sets, maintenance logs, meter readings, operator notes, photographs of a failed bearing — is exactly the data that a security review will not let out of the building. An agent that needs the internet to answer a question about a pump is an agent that will not be deployed.</p>
+      <p>This appliance answers locally. The model, the documents, the conversation history and the tool results all stay inside the plant network. There is no per-token bill and no dependency on a vendor staying in business or keeping an API online.</p>
+      <div class="callout"><p><strong>Measured, not estimated.</strong> The performance figures on this page were recorded on our reference unit: 4-way concurrent generation at 8K context per session, 10.4–10.9 tokens/s per stream, NPU utilisation reaching 99%, hottest point 52 °C, about 1.5 GB of the 15.6 GB memory in use.</p></div>
+      <h2>What the agent actually does</h2>
+      <ul>
+        <li><strong>Answers from your documents.</strong> Manuals, commissioning reports, contracts, test sheets — indexed locally, answered with the source cited.</li>
+        <li><strong>Reads what is on site.</strong> Photographs and scanned nameplates are read by on-board NPU OCR, so a picture of a pump nameplate becomes structured data.</li>
+        <li><strong>Runs scheduled work.</strong> Daily energy summaries, shift handover notes, meter comparisons, overdue-maintenance lists — generated and pushed to the people who need them.</li>
+        <li><strong>Talks to the systems you already have.</strong> Modbus, MQTT and HTTP interfaces for meters, PLCs and monitoring platforms.</li>
+        <li><strong>Connects to your messaging.</strong> WeChat, Feishu, Telegram or email — the same agent, reachable from a phone on the plant network.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card" style="background:#0c1a26;border-color:#0c1a26;color:#fff">
+        <p class="tag" style="color:#ffb08a">Configuration</p>
+        <h3 style="color:#fff">Reference hardware</h3>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Host</span><b>RK3588, 8-core</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Accelerators</span><b>4 × RK1828</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>AI throughput</span><b>20 TOPS INT8 / 40 TOPS INT4 per card</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Memory</span><b>15.6 GB visible, 4 × 5 GB stacked</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Network</span><b>2 × GbE, optional 4G/5G</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Power</span><b>12–36 V DC, ~58 W average</b></div>
+        <div class="kv" style="border:0"><span>Enclosure</span><b>Desktop or DIN-rail, fanless option</b></div>
+      </div>
+      <div class="card" style="margin-top:20px">
+        <h3>Software layer</h3>
+        <ul class="checks">
+          <li>OpenClaw agent runtime, running offline</li>
+          <li>Local model serving, 27B quantised to W4A16</li>
+          <li>Local document index with citations</li>
+          <li>NPU OCR for photographs and scans</li>
+          <li>Scheduled tasks, audit log, role-based access</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Measured performance</p>
+      <h2>Reference unit, four sessions at once</h2>
+      <p class="lead">27B model, W4A16 quantisation, 8K context per session, four sessions generating simultaneously.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Metric</th><th>Measured</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Time to first token</td><td>0.9–2.6 s</td><td>Per session, four running in parallel</td></tr>
+          <tr><td>Decode speed per session</td><td>10.4–10.9 tokens/s</td><td>Stable across the run</td></tr>
+          <tr><td>Aggregate throughput</td><td>40+ tokens/s</td><td>Four sessions combined</td></tr>
+          <tr><td>NPU utilisation</td><td>83 → 99%</td><td>Saturates as all four streams fill</td></tr>
+          <tr><td>Memory in use</td><td>1.2–1.6 GB of 15.6 GB</td><td>Leaves headroom for a larger context</td></tr>
+          <tr><td>Temperature</td><td>32–52 °C</td><td>Host 32–41 °C, accelerators 38–52 °C</td></tr>
+          <tr><td>Long-context mode</td><td>32K per session, 2 sessions</td><td>About 6.5 GB per card at 32K</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:16px">A single session runs faster than 10 tokens/s; the figure above is the per-stream rate with four sessions sharing the hardware. Context length trades against concurrency — the appliance is configured for whichever your workload needs.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Industrial use</p>
+      <h2>Where an on-site agent earns its place</h2>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="icon">◍</div>
+        <h3>Equipment condition</h3>
+        <p>Vibration and acoustic data ingested locally, trend summaries and anomaly notes written in plain language for the maintenance team.</p>
+      </article>
+      <article class="card">
+        <div class="icon">▤</div>
+        <h3>Energy accounting</h3>
+        <p>Meter data collected, specific energy calculated per unit of output, and the weekly saving report drafted before the meeting.</p>
+      </article>
+      <article class="card">
+        <div class="icon">≋</div>
+        <h3>Gas and ventilation</h3>
+        <p>Drainage and ventilation readings summarised against limits, with exceptions flagged instead of buried in a spreadsheet.</p>
+      </article>
+      <article class="card">
+        <div class="icon">⌁</div>
+        <h3>Maintenance knowledge</h3>
+        <p>Manuals, drawings and past work orders searchable in natural language — including photographs of nameplates and damage.</p>
+      </article>
+      <article class="card">
+        <div class="icon">◷</div>
+        <h3>Shift reporting</h3>
+        <p>Handover notes, production summaries and incident drafts generated from the data the plant already records.</p>
+      </article>
+      <article class="card">
+        <div class="icon">✦</div>
+        <h3>Field engineering</h3>
+        <p>Selection checks, pump sizing and quotation drafts produced on site, without a connection back to head office.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid-2" style="gap:56px;align-items:start">
+    <div class="prose">
+      <h2>Deployment</h2>
+      <p>The appliance is delivered configured, with the model loaded and the agent runtime installed. Commissioning is a network drop and an account setup, not a software project.</p>
+      <ul>
+        <li>Runs fully offline; internet is optional, for updates and remote support only</li>
+        <li>Local accounts and role-based access, with an audit log of every agent action</li>
+        <li>Document ingestion done on site — files are not uploaded anywhere</li>
+        <li>Optional site-to-site VPN for vendor support, enabled by the plant when needed</li>
+        <li>Model and knowledge base can be updated from a USB device, no network required</li>
+      </ul>
+    </div>
+    <div class="prose">
+      <h2>What it is not</h2>
+      <p>It is not a replacement for a plant historian, a DCS or a safety system. It reads, summarises and drafts; it does not close a control loop, and it is not connected to protection logic.</p>
+      <p>It is also not an unlimited model. A 27B model on edge silicon is a capable assistant for engineering and reporting work — it is not a frontier model, and we do not present it as one. The value is that it runs here, on your data, at a fixed cost, with no network dependency.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <h2>Bring a laptop to the plant, leave with a working agent.</h2>
+        <p>Tell us the documents you want it to read and the questions you want answered. We will demonstrate it on your own files, offline.</p>
+      </div>
+      <a class="btn light" href="contact.html">Arrange a demonstration</a>
+    </div>
+  </div>
+</section>
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="index.html" style="color:#fff"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+<rect width="34" height="34" rx="9" fill="#0c1a26"/>
+<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#e2570f"/>
+<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+</svg><span style="color:#fff">HONGSHI<small style="color:#8fa6b2">Industrial Pumps</small></span></a>
+        <p style="margin-top:16px;max-width:320px">大连宏实科技有限公司<br>High-pressure reciprocating pumps and slurry pumps for mining, power, oil &amp; gas and process industries.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="plunger-pumps.html">Multi-plunger pumps</a></li>
+          <li><a href="slurry-pumps.html">Slurry pumps</a></li>
+          <li><a href="maglev-blowers.html">Maglev blowers &amp; vacuum pumps</a></li>
+          <li><a href="mobile-pumps.html">Mobile pump units</a></li>
+          <li><a href="edge-ai.html">Industrial AI edge box</a></li>
+          <li><a href="calculator.html">Sizing calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Applications</h4>
+        <ul>
+          <li><a href="mine-dewatering.html">Mine dewatering</a></li>
+          <li><a href="filter-press-feed.html">Filter press feed</a></li>
+          <li><a href="tailings-transport.html">Tailings transport</a></li>
+          <li><a href="water-injection.html">Water injection</a></li>
+          <li><a href="boiler-feed.html">Boiler feed water</a></li>
+          <li><a href="high-head-drainage.html">High-head drainage</a></li>
+          <li><a href="high-pressure-descaling.html">Descaling &amp; cleaning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:18041136555@189.cn">18041136555@189.cn</a></li>
+          <li>Dalian, Liaoning, China</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 大连宏实科技有限公司. All rights reserved.</span>
+      <span>Engineered in Dalian · Serviced worldwide</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/calc.js" defer></script>
+<script src="assets/js/chat.js" defer></script>
+</body>
+</html>

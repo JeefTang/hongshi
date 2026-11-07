@@ -8,6 +8,7 @@ Run: python3 zh_pages.py   (zh_pages.py = a+b+c concatenated)
 import os, json
 from datetime import date
 from apps_extra import APPS, render_body as render_app_body
+from products_extra import PRODUCTS as NEW_PRODUCTS
 
 CONFIG = {
     "brand": "DALIAN HONGSHI TECHNOLOGY",
@@ -25,9 +26,16 @@ CONFIG = {
 OUT = os.path.dirname(os.path.abspath(__file__))
 OUT_ZH = os.path.join(OUT, "zh")
 
-NAV = [
-    ("plunger-pumps.html", "柱塞泵"),
+PRODUCT_NAV = [
+    ("plunger-pumps.html", "多柱塞高压泵"),
     ("slurry-pumps.html", "浆料泵"),
+    ("maglev-blowers.html", "磁悬浮鼓风机与真空泵"),
+    ("mobile-pumps.html", "移动式便携水泵"),
+    ("edge-ai.html", "工业智能体盒子"),
+]
+
+NAV = [
+    ("plunger-pumps.html", "产品", PRODUCT_NAV),
     ("applications.html", "应用领域"),
     ("calculator.html", "选型计算"),
     ("references.html", "业绩案例"),
@@ -73,9 +81,16 @@ def head(title, desc, slug, extra_head=""):
 
 def header(active="", en_href="index.html"):
     items = ""
-    for href, label in NAV:
-        cls = ' class="on"' if href == active else ""
-        items += f'<li><a href="{href}"{cls}>{label}</a></li>'
+    for entry in NAV:
+        href, label = entry[0], entry[1]
+        sub = entry[2] if len(entry) > 2 else None
+        if sub:
+            on = " on" if any(s[0] == active for s in sub) else ""
+            subitems = "".join(f'<li><a href="{h}">{l}</a></li>' for h, l in sub)
+            items += f'<li class="has-sub{on}"><a href="{sub[0][0]}">{label}</a><ul class="sub">{subitems}</ul></li>'
+        else:
+            cls = ' class="on"' if href == active else ""
+            items += f'<li><a href="{href}"{cls}>{label}</a></li>'
     return f"""<header class="site">
   <div class="wrap nav">
     <a class="brand" href="index.html">{LOGO}<span>{CONFIG['brand_short']}<small>工业泵</small></span></a>
@@ -99,6 +114,9 @@ def footer():
         <ul>
           <li><a href="plunger-pumps.html">多柱塞高压泵</a></li>
           <li><a href="slurry-pumps.html">浆料泵</a></li>
+          <li><a href="maglev-blowers.html">磁悬浮鼓风机与真空泵</a></li>
+          <li><a href="mobile-pumps.html">移动式便携水泵</a></li>
+          <li><a href="edge-ai.html">工业智能体盒子</a></li>
           <li><a href="calculator.html">选型计算器</a></li>
         </ul>
       </div>
@@ -199,6 +217,39 @@ INDEX_BODY = f"""
           </ul>
         </div>
         <a class="more" href="slurry-pumps.html">了解 V5 浆料泵 →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">新增产品线</p>
+      <h2>无油风、移动水、厂内智能</h2>
+      <p class="lead">在泵业务之外新增三条线：悬浮转子鼓风机与真空泵、成套移动泵组，以及跑在厂区网络里的工业智能体。</p>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="icon">◍</div>
+        <p class="tag">磁悬浮 / 空浮</p>
+        <h3>高速鼓风机与真空泵</h3>
+        <p>风量 20–400 m³/min、压升 40–100 kPa，真空度可达 −75 kPa。无油、无齿轮箱，效率 70–80%，比被替换的水环泵或罗茨风机节电 20–35%。</p>
+        <a class="more" href="maglev-blowers.html">查看型谱 →</a>
+      </article>
+      <article class="card">
+        <div class="icon">◫</div>
+        <p class="tag">移动机组</p>
+        <h3>便携式与拖车式泵组</h3>
+        <p>应急排水、防汛抢险与临时输送。柴油或电机驱动，快接管路，到现场当天就能开。</p>
+        <a class="more" href="mobile-pumps.html">查看形式 →</a>
+      </article>
+      <article class="card">
+        <div class="icon">⌁</div>
+        <p class="tag">边缘智能</p>
+        <h3>工业智能体盒子</h3>
+        <p>27B 语言模型与 OpenClaw 智能体运行时跑在现场，四路并发、合计 40+ token/s，功耗约 58 W——不上云，数据不出厂。</p>
+        <a class="more" href="edge-ai.html">查看配置 →</a>
       </article>
     </div>
   </div>
@@ -381,7 +432,7 @@ PLUNGER_BODY = f"""
     </div>
     <div>
       <figure class="lead-photo">
-        <img src="assets/img/product-plunger.jpg" alt="机械曲轴驱动的多柱塞往复泵" loading="eager">
+        <img src="../assets/img/product-plunger.jpg" alt="机械曲轴驱动的多柱塞往复泵" loading="eager">
         <figcaption>UDZ / UDQ 多柱塞泵——曲轴驱动，不带液压动力站。</figcaption>
       </figure>
       <div class="card" style="margin-top:20px">
@@ -1335,6 +1386,18 @@ def zh_extra_apps():
     return out
 
 
+def zh_new_products():
+    out = []
+    for p in NEW_PRODUCTS:
+        d = p["zh"]
+        body = d["body"].replace(
+            "{crumbs}",
+            crumbs([("index.html", "首页"), (p["slug"], d["crumb"])]),
+        ).replace('src="assets/', 'src="../assets/').replace('href="assets/', 'href="../assets/')
+        out.append(page(p["slug"], d["title"], d["desc"], body, active=p["slug"]))
+    return out
+
+
 # ================================================================ 404
 NOTFOUND_BODY = """<section class="page-head"><div class="wrap"><h1>页面不存在</h1><p class="lead">这个页面找不到了。可以回到产品页，或者直接把工况点发给我们。</p><p style="margin-top:24px"><a class="btn" href="index.html">返回首页</a></p></div></section>"""
 
@@ -1354,7 +1417,7 @@ def main():
     pages = [
         zh_index(), zh_plunger(), zh_slurry(), zh_apps(), zh_mine(),
         zh_filterpress(), zh_tailings(), zh_water(), *zh_extra_apps(), zh_calc(),
-        zh_about(), zh_contact(), zh_references(), zh_404(),
+        zh_about(), zh_contact(), zh_references(), *zh_new_products(), zh_404(),
     ]
     for p in pages:
         doc = (

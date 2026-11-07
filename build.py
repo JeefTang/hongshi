@@ -8,6 +8,7 @@ Output: ./ (index.html, *.html, sitemap.xml, robots.txt)
 import os, json, html
 from datetime import date
 from apps_extra import APPS, render_body as render_app_body
+from products_extra import PRODUCTS as NEW_PRODUCTS
 
 CONFIG = {
     "brand": "DALIAN HONGSHI TECHNOLOGY",
@@ -25,9 +26,16 @@ CONFIG = {
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 # ---------------------------------------------------------------- layout
+PRODUCT_NAV = [
+    ("plunger-pumps.html", "Multi-plunger pumps"),
+    ("slurry-pumps.html", "Slurry pumps"),
+    ("maglev-blowers.html", "Maglev blowers &amp; vacuum"),
+    ("mobile-pumps.html", "Mobile pump units"),
+    ("edge-ai.html", "Industrial AI edge box"),
+]
+
 NAV = [
-    ("plunger-pumps.html", "Plunger Pumps"),
-    ("slurry-pumps.html", "Slurry Pumps"),
+    ("plunger-pumps.html", "Products", PRODUCT_NAV),
     ("applications.html", "Applications"),
     ("calculator.html", "Calculator"),
     ("references.html", "References"),
@@ -75,9 +83,16 @@ def head(title, desc, slug, extra_head="", jsonld=None):
 
 def header(active="", slug="index.html"):
     items = ""
-    for href, label in NAV:
-        cls = ' class="on"' if href == active else ""
-        items += f'<li><a href="{href}"{cls}>{label}</a></li>'
+    for entry in NAV:
+        href, label = entry[0], entry[1]
+        sub = entry[2] if len(entry) > 2 else None
+        if sub:
+            on = " on" if any(s[0] == active for s in sub) else ""
+            subitems = "".join(f'<li><a href="{h}">{l}</a></li>' for h, l in sub)
+            items += f'<li class="has-sub{on}"><a href="{sub[0][0]}">{label}</a><ul class="sub">{subitems}</ul></li>'
+        else:
+            cls = ' class="on"' if href == active else ""
+            items += f'<li><a href="{href}"{cls}>{label}</a></li>'
     return f"""<header class="site">
   <div class="wrap nav">
     <a class="brand" href="index.html">{LOGO}<span>{CONFIG['brand_short']}<small>Industrial Pumps</small></span></a>
@@ -101,6 +116,9 @@ def footer():
         <ul>
           <li><a href="plunger-pumps.html">Multi-plunger pumps</a></li>
           <li><a href="slurry-pumps.html">Slurry pumps</a></li>
+          <li><a href="maglev-blowers.html">Maglev blowers &amp; vacuum pumps</a></li>
+          <li><a href="mobile-pumps.html">Mobile pump units</a></li>
+          <li><a href="edge-ai.html">Industrial AI edge box</a></li>
           <li><a href="calculator.html">Sizing calculator</a></li>
         </ul>
       </div>
@@ -253,6 +271,39 @@ home_body = f"""
           </ul>
         </div>
         <a class="more" href="slurry-pumps.html">Explore the V5 slurry pump →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">New product lines</p>
+      <h2>Oil-free air, mobile water, on-site intelligence</h2>
+      <p class="lead">Three additions to the pump business: levitated-rotor blowers and vacuum pumps, self-contained mobile pump units, and an industrial AI appliance that runs on the plant network.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="icon">◍</div>
+        <p class="tag">Maglev / air-foil</p>
+        <h3>High-speed blowers &amp; vacuum pumps</h3>
+        <p>20–400 m³/min at 40–100 kPa, vacuum to −75 kPa. No oil, no gearbox, 70–80% efficiency — 20–35% less power than the water-ring or Roots machine it replaces.</p>
+        <a class="more" href="maglev-blowers.html">See the ranges →</a>
+      </article>
+      <article class="card">
+        <div class="icon">◫</div>
+        <p class="tag">Mobile units</p>
+        <h3>Portable and trailer-mounted pump sets</h3>
+        <p>Emergency dewatering, flood response and temporary transfer. Diesel or electric, quick-connect pipework, running the same day it arrives.</p>
+        <a class="more" href="mobile-pumps.html">See the formats →</a>
+      </article>
+      <article class="card">
+        <div class="icon">⌁</div>
+        <p class="tag">Edge AI</p>
+        <h3>Industrial AI agent appliance</h3>
+        <p>A 27B language model and the OpenClaw agent runtime running on site. Four concurrent sessions, 40+ tok/s in total, about 58 W — no cloud, no data leaving the plant.</p>
+        <a class="more" href="edge-ai.html">See the specification →</a>
       </article>
     </div>
   </div>
@@ -1454,11 +1505,26 @@ for _app in APPS:
         active="applications.html",
     )
 
+# ---------------------------------------------------------------- NEW PRODUCT PAGES
+for _p in NEW_PRODUCTS:
+    _d = _p["en"]
+    page(
+        _p["slug"],
+        _d["title"],
+        _d["desc"],
+        _d["body"].replace("{crumbs}", crumbs([("index.html", "Home"), (_p["slug"], _d["crumb"])])),
+        active=_p["slug"],
+        jsonld=product_ld(_d["crumb"], _d["desc"], _p["slug"]),
+    )
+
 # ---------------------------------------------------------------- sitemap + robots
 urls = [
     ("", "1.0", "weekly"),
     ("plunger-pumps.html", "0.9", "monthly"),
     ("slurry-pumps.html", "0.9", "monthly"),
+    ("maglev-blowers.html", "0.9", "monthly"),
+    ("mobile-pumps.html", "0.8", "monthly"),
+    ("edge-ai.html", "0.9", "monthly"),
     ("applications.html", "0.8", "monthly"),
     ("mine-dewatering.html", "0.7", "monthly"),
     ("filter-press-feed.html", "0.7", "monthly"),
