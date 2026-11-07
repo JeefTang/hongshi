@@ -241,3 +241,9 @@ form.enquiry input,form.enquiry textarea,form.enquiry select{
 .spec dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:13.5px;color:var(--steel)}
 .spec dt{font-weight:600}
 .spec dd{margin:0;color:var(--ink)}
+
+/* lead product photo (2026-11-07) */
+.lead-photo{margin:0;border-radius:var(--radius);overflow:hidden;background:#f2f5f7;box-shadow:var(--shadow);border:1px solid var(--line)}
+.lead-photo img{width:100%;max-height:520px;object-fit:contain;display:block;background:#f5f7f9;padding:16px}
+.lead-photo figcaption{padding:12px 18px;font-size:14px;color:var(--steel);background:#fff;border-top:1px solid var(--line)}
+@media(max-width:720px){.lead-photo img{max-height:none;padding:8px}}
