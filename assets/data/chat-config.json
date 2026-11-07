@@ -1,5 +1,5 @@
 {
-  "endpoint": "",
-  "updated": "2026-11-07T14:40+08:00",
+  "endpoint": "https://stands-tours-click-drums.trycloudflare.com",
+  "updated": "2026-11-07T14:47+0800",
   "note": "Layer-2 LLM endpoint. Empty = knowledge base only. Filled by scripts/chat_tunnel_sync.sh when the box relay is up."
 }
