@@ -49,6 +49,8 @@
 .hs-msg.bot .hs-bubble { background: #fff; border: 1px solid rgba(12,26,38,.08); border-bottom-left-radius: 5px; }
 .hs-msg.me { justify-content: flex-end; }
 .hs-msg.me .hs-bubble { background: #0c1a26; color: #fff; border-bottom-right-radius: 5px; }
+.hs-msg.human .hs-bubble { background: #eef7f1; border: 1px solid rgba(12,80,40,.14); border-bottom-left-radius: 5px; }
+.hs-msg.human .hs-bubble::before { content: "\5DE5\7A0B\5E08"; display: block; font-size: 10px; letter-spacing: .04em; color: #3a7a52; margin-bottom: 3px; }
 .hs-msg.sys { justify-content: center; }
 .hs-msg.sys .hs-bubble { background: transparent; color: #7b8a96; font-size: 12px; padding: 2px; }
 .hs-chips { display: flex; flex-wrap: wrap; gap: 7px; padding: 2px 2px 12px; }

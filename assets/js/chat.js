@@ -23,7 +23,12 @@
     escAlt: "或直接发邮件：",
     typing: "正在输入",
     errNet: "网络不可用，已切换为本地知识库回答。",
-    copied: "对话已复制"
+    copied: "对话已复制",
+    waitHuman: "已转给工程师。你继续在这里留言即可，工程师的回复会直接显示在这个窗口。",
+    handoff: "已通知工程师，请稍等。",
+    humanTag: "工程师",
+    aiPaused: "工程师已收到你的留言，稍后在这里回复。",
+    humanBtn: "转人工"
   } : {
     btn: "Ask an engineer",
     title: "HONGSHI technical chat",
@@ -42,7 +47,12 @@
     escAlt: "Or email directly: ",
     typing: "typing",
     errNet: "Network unavailable — answered from the local knowledge base.",
-    copied: "Transcript copied"
+    copied: "Transcript copied",
+    waitHuman: "Passed to our engineer. Keep writing here — the reply appears in this window.",
+    handoff: "Engineer notified, one moment.",
+    humanTag: "Engineer",
+    aiPaused: "Our engineer has your message and will reply here shortly.",
+    humanBtn: "Talk to a human"
   };
 
   var EMAIL = "18041136555@189.cn";
@@ -295,9 +305,13 @@
   }
 
   function answerFor(text) {
-    if (HUMAN_RE.test(text)) { add("bot", ZH ? "好的，请留下邮箱，工程师直接回复你。" : "Sure — leave an email and an engineer will reply directly."); escalate(text); return true; }
     var hit = match(text);
-    if (hit) { add("bot", ZH ? hit.zh : hit.en); return true; }
+    if (hit) {
+      var a = ZH ? hit.zh : hit.en;
+      add("bot", a);
+      logKB(text, a);
+      return true;
+    }
     return false;
   }
 
@@ -306,28 +320,83 @@
   function loadConfig() {
     fetch(BASE + "assets/data/chat-config.json", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (c) { if (c && c.endpoint) endpoint = c.endpoint; })
+      .then(function (c) { if (c && c.endpoint) { endpoint = c.endpoint; startPoll(); } })
       .catch(function () {});
+  }
+
+  /* ---- conversation id (kept in this browser only, random) ---- */
+  var convId = null;
+  try { convId = localStorage.getItem("hs_conv"); } catch (e) {}
+  if (!convId) {
+    convId = "c" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+    try { localStorage.setItem("hs_conv", convId); } catch (e) {}
+  }
+  var lastId = 0, mode = "ai", polling = false;
+
+  function api(path, body) {
+    return fetch(endpoint.replace(/\/$/, "") + path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body || {})
+    });
+  }
+
+  function logKB(q, a) {
+    api("/log", { conv: convId, message: q, answer: a, lang: ZH ? "zh" : "en" }).catch(function () {});
+  }
+
+  /* ---- human replies come back through long polling ---- */
+  function startPoll() {
+    if (polling || !endpoint) return;
+    polling = true;
+    function loop() {
+      if (!panel.classList.contains("open")) { polling = false; return; }
+      fetch(endpoint.replace(/\/$/, "") + "/poll?conv=" + encodeURIComponent(convId) + "&after=" + lastId + "&wait=20", { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) {
+          if (j) {
+            if (j.mode) mode = j.mode;
+            (j.messages || []).forEach(function (m) {
+              if (m.id > lastId) lastId = m.id;
+              if (m.role === "human") add("human", m.text);
+              else add("bot", m.text);
+            });
+          }
+          setTimeout(loop, 700);
+        })
+        .catch(function () { setTimeout(loop, 5000); });
+    }
+    loop();
+  }
+
+  function handoff(text) {
+    api("/handoff", { conv: convId, message: text, lang: ZH ? "zh" : "en" })
+      .then(function () { mode = "human"; add("bot", T.waitHuman); startPoll(); })
+      .catch(function () { add("bot", T.waitHuman); });
   }
 
   function ask(text) {
     text = (text || "").trim();
     if (!text) return;
     add("me", text);
+    if (HUMAN_RE.test(text) && endpoint) { handoff(text); return; }
+    if (mode === "human" && endpoint) { api("/chat", { conv: convId, message: text, lang: ZH ? "zh" : "en" }).catch(function () {}); startPoll(); return; }
     if (answerFor(text)) return;
     if (endpoint) {
       typing(true);
-      fetch(endpoint.replace(/\/$/, "") + "/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text, lang: ZH ? "zh" : "en", history: history.slice(-8) })
-      }).then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      api("/chat", { conv: convId, message: text, lang: ZH ? "zh" : "en" })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
         .then(function (j) {
           typing(false);
-          if (j && j.reply) {
+          if (j.mode) mode = j.mode;
+          if (j.id && j.id > lastId) lastId = j.id;
+          if (j.reply) {
             add("bot", j.reply);
             if (j.escalate) escalate(text);
+          } else if (j.mode === "human") {
+            add("bot", T.aiPaused);
           } else { throw new Error("empty"); }
+          if (mode === "human") startPoll();
         })
         .catch(function () {
           typing(false);
@@ -352,6 +421,7 @@
       chips(T.chips);
       loadConfig();
     }
+    startPoll();
     ta.focus();
   }
   function closePanel() {
