@@ -122,7 +122,7 @@ def footer():
     </div>
     <div class="copy">
       <span>© {CONFIG['year']} {CONFIG['brand_cn']}. All rights reserved.</span>
-      <span>Engineered in Shanghai · Serviced worldwide</span>
+      <span>Engineered in Dalian · Serviced worldwide</span>
     </div>
   </div>
 </footer>"""
@@ -147,7 +147,7 @@ def org_ld():
         "alternateName": CONFIG["brand"],
         "url": CONFIG["domain"] + "/",
         "description": "Manufacturer of multi-plunger reciprocating pumps and slurry pumps for mining, power, oil and gas, and process industries.",
-        "address": {"@type": "PostalAddress", "addressLocality": "Shanghai", "addressCountry": "CN"},
+        "address": {"@type": "PostalAddress", "addressLocality": "Dalian", "addressRegion": "Liaoning", "addressCountry": "CN"},
         "contactPoint": {
             "@type": "ContactPoint",
             "email": CONFIG["email"],
@@ -1117,8 +1117,8 @@ about_body = f"""
 <section class="page-head">
   <div class="wrap">
     <p class="eyebrow">About us</p>
-    <h1>An engineering team that started with the pump, not the catalogue</h1>
-    <p class="lead">{CONFIG['brand']} supplies high-pressure reciprocating plunger pumps and slurry pumps worldwide, with export operations handled from Dalian, Liaoning, China.</p>
+    <h1>More than twenty years of industrial engineering, now focused on fluid machinery</h1>
+    <p class="lead">{CONFIG['brand']} was founded in Dalian in 1999. Since 2020 our Fluid Machinery Division has built packaged plunger pumps and slurry pumps for industrial projects and for export.</p>
   </div>
 </section>
 
@@ -1126,8 +1126,9 @@ about_body = f"""
   <div class="wrap grid-2" style="gap:56px;align-items:start">
     <div class="prose">
       <h2>Background</h2>
-      <p>The company was founded in 2018 in Pudong, Shanghai, as part of the Tongji Nanhui Science Park group. Product development draws on the Sichuan Machinery Research &amp; Design Institute (established 1957), a state-owned engineering institute with design and EPC qualifications across mechanical, municipal, petrochemical and power sectors.</p>
-      <p>Our engineering center works on high-speed direct drive and low-speed high-torque drive machines — the two architectures behind every pump and fan we supply.</p>
+      <p>The company was founded on 26 November 1999 in Dalian, Liaoning Province, and began in industrial automation products and system integration. Over more than two decades we have accumulated practical engineering experience across industrial plants, serving machinery manufacturing, shipbuilding, automotive, electronics, mining, petrochemical and tobacco industries.</p>
+      <p>In 2020, as the business grew, we established the Fluid Machinery Division, which handles the packaged manufacturing and international trade of fluid machinery equipment. Our fluid machinery factories are located in Lüshun (Dalian) and Xuancheng (Anhui).</p>
+      <p>The division works on high-speed direct drive and low-speed high-torque drive machines — the two architectures behind every pump we supply.</p>
       <h2>What we have delivered</h2>
       <ul>
         <li><strong>Boiler feed</strong> — 120 t/h and 130/160 t/h units replacing multistage centrifugal feed pumps in industrial boilers, 21% and 19% energy saving.</li>
@@ -1141,11 +1142,12 @@ about_body = f"""
     <div>
       <div class="card">
         <h3>At a glance</h3>
-        <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">Founded</span><b>2018, Shanghai</b></div>
+        <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">Founded</span><b>1999, Dalian, Liaoning</b></div>
+        <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">Factories</span><b>Lüshun (Dalian) · Xuancheng (Anhui)</b></div>
         <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">Product range</span><b>12–600 m³/h · 200–3,150 m head · to 70 MPa</b></div>
         <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">Pump efficiency</span><b>&gt;90%</b></div>
         <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">Overhaul interval</span><b>30,000 h+</b></div>
-        <div class="kv" style="color:var(--ink);border:0"><span class="muted">Markets</span><b>Mining · power · oil &amp; gas</b></div>
+        <div class="kv" style="color:var(--ink);border:0"><span class="muted">Markets</span><b>Mining · power · oil &amp; gas · process industry</b></div>
       </div>
       <div class="card" style="margin-top:20px">
         <h3>Engineering support</h3>
@@ -1179,8 +1181,8 @@ about_body = f"""
 
 page(
     "about.html",
-    "About DALIAN HONGSHI TECHNOLOGY — Reciprocating Pump Engineering, Shanghai",
-    "Shanghai-based manufacturer of multi-plunger reciprocating pumps and slurry pumps, backed by the Sichuan Machinery Research & Design Institute. Delivered projects in boiler feed, mine dewatering and oilfield injection.",
+    "About DALIAN HONGSHI TECHNOLOGY — Industrial Engineering & Fluid Machinery, Dalian",
+    "Founded in Dalian in 1999 as an industrial automation and system integration company. Since 2020 the Fluid Machinery Division manufactures packaged plunger pumps and slurry pumps, with factories in Lüshun (Dalian) and Xuancheng (Anhui).",
     about_body,
     active="about.html",
 )

@@ -990,8 +990,8 @@ ABOUT_BODY = f"""
 <section class="page-head">
   <div class="wrap">
     <p class="eyebrow">关于我们</p>
-    <h1>先把泵做好，再谈目录的工程团队</h1>
-    <p class="lead">{CONFIG['brand_cn']}面向全球供应高压往复柱塞泵与浆料泵，出口业务由中国辽宁大连运营。</p>
+    <h1>二十余年工业工程积累，专注流体机械</h1>
+    <p class="lead">{CONFIG['brand_cn']}成立于 1999 年，位于辽宁省大连市。2020 年起设立流体机械事业部，从事流体机械设备的成套制造与国际贸易。</p>
   </div>
 </section>
 
@@ -999,8 +999,9 @@ ABOUT_BODY = f"""
   <div class="wrap grid-2" style="gap:56px;align-items:start">
     <div class="prose">
       <h2>公司背景</h2>
-      <p>公司 2018 年成立于上海浦东，属同济南汇科技园体系。产品研发依托四川省机械研究设计院（始建于 1957 年）——一家在机械、市政、石化与电力领域具备设计与 EPC 资质的国有科研院所。</p>
-      <p>我们的工程中心专注两条技术路线：高速直驱与低速大扭矩驱动，这也是我们所有泵与风机产品背后的两种架构。</p>
+      <p>大连宏实科技有限公司成立于 1999 年 11 月 26 日，位于辽宁省大连市。公司起家从事工业自动化产品与系统集成，二十几年以来积累了丰富的工业企业工程经验，广泛服务于机械制造、造船、汽车、电子、矿业、石油化工、烟草等领域。</p>
+      <p>2020 年，随着业务发展，公司成立流体机械事业部，主要从事流体机械设备的成套制造与国际贸易。我们流体机械设备的工厂位于大连旅顺与安徽宣城。</p>
+      <p>事业部专注两条技术路线：高速直驱与低速大扭矩驱动，这也是我们所有泵产品背后的两种架构。</p>
       <h2>已交付的项目</h2>
       <ul>
         <li><strong>锅炉给水</strong>——120 t/h 与 130/160 t/h 机组替换工业锅炉多级离心给水泵，节电 21% 与 19%。</li>
@@ -1014,11 +1015,12 @@ ABOUT_BODY = f"""
     <div>
       <div class="card">
         <h3>一览</h3>
-        <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">成立</span><b>2018 年 · 上海</b></div>
+        <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">成立</span><b>1999 年 11 月 · 辽宁大连</b></div>
+        <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">工厂</span><b>大连旅顺 · 安徽宣城</b></div>
         <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">产品范围</span><b>12–600 m³/h · 扬程 200–3,150 m · 至 70 MPa</b></div>
         <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">泵效率</span><b>&gt;90%</b></div>
         <div class="kv" style="color:var(--ink);border-color:var(--line)"><span class="muted">大修周期</span><b>30,000 h+</b></div>
-        <div class="kv" style="color:var(--ink);border:0"><span class="muted">市场</span><b>矿山 · 电力 · 油气</b></div>
+        <div class="kv" style="color:var(--ink);border:0"><span class="muted">市场</span><b>矿山 · 电力 · 油气 · 流程工业</b></div>
       </div>
       <div class="card" style="margin-top:20px">
         <h3>工程支持</h3>
@@ -1054,7 +1056,7 @@ ABOUT_BODY = f"""
 def zh_about():
     return page(
         "about.html",
-        "关于大连宏实科技有限公司 — 往复泵工程 · 大连",
+        "关于大连宏实科技有限公司 — 工业工程与流体机械 · 大连",
         "多柱塞往复泵与浆料泵制造企业，研发依托四川省机械研究设计院；已交付锅炉给水、矿井排水与油田注水项目。",
         ABOUT_BODY,
         active="about.html",
