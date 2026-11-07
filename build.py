@@ -29,6 +29,7 @@ NAV = [
     ("slurry-pumps.html", "Slurry Pumps"),
     ("applications.html", "Applications"),
     ("calculator.html", "Calculator"),
+    ("references.html", "References"),
     ("about.html", "About"),
 ]
 
@@ -216,7 +217,8 @@ home_body = f"""
     </div>
     <div class="grid-2">
       <article class="card prod-card">
-        <div>
+        <img class="prod-img" src="assets/img/product-plunger.jpg" alt="Multi-plunger high-pressure reciprocating pump installed in a pump house" loading="lazy">
+        <div class="card-body">
           <p class="tag">UDZ series · 3 / 5 / 7 plungers</p>
           <h3>Multi-plunger high-pressure pumps</h3>
           <p>12–600 m³/h and 200–3,150 m of head (2.0–31.5 MPa), plus an injection series to 70 MPa, all with efficiency above 90%. Used for boiler feed, oilfield water injection, high-pressure descaling and mine dewatering. Same suction and discharge orientation as the multistage centrifugal pump it replaces — a 500 m³/h centrifugal pump is replaced by one UDZ 600 unit, not a parallel pair.</p>
@@ -229,7 +231,8 @@ home_body = f"""
         <a class="more" href="plunger-pumps.html">Explore the UDZ series →</a>
       </article>
       <article class="card prod-card">
-        <div>
+        <img class="prod-img" src="assets/img/product-slurry-1.jpg" alt="V5 vertical five-plunger slurry pump" loading="lazy">
+        <div class="card-body">
           <p class="tag">V5 · vertical five-plunger</p>
           <h3>Slurry pumps for abrasive duty</h3>
           <p>100–400 m³/h up to 150 m head, handling solids above 30% by weight. Ceramic plungers and alloy valve seats take the wear that destroys centrifugal slurry pumps, at more than 83% efficiency.</p>
@@ -302,6 +305,44 @@ home_body = f"""
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Duty</span><b>120–500 m³/h · 16–25 MPa</b></div>
         <div class="kv" style="border:0"><span>Status</span><b style="color:#7ee2c4">In continuous service</b></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Track record</p>
+      <h2>Machines in service, not renders</h2>
+      <p class="lead">Reciprocating pump installations in gold mines, coal mines, oilfield injection stations and waste-heat boiler houses. Measured duty points, measured power, written reports.</p>
+    </div>
+    <div class="gallery">
+      <figure><img src="assets/img/site-junde-1.jpg" alt="Underground mine pump house with reciprocating pumps" loading="lazy"><figcaption>Coal mine dewatering — three pump houses at −50 / −250 / −500 m, six machines replacing 24 multistage centrifugal units</figcaption></figure>
+      <figure><img src="assets/img/site-junde-3.jpg" alt="High-pressure pump station piping" loading="lazy"><figcaption>High-pressure discharge pipework, 6.5 MPa lift to the 170 m level</figcaption></figure>
+      <figure><img src="assets/img/case-shengli.jpg" alt="Shengli Oilfield water injection station" loading="lazy"><figcaption>Shengli Oilfield — Guanqi and Wanggang water-injection stations, seven-plunger units</figcaption></figure>
+      <figure><img src="assets/img/product-slurry-2.jpg" alt="Slurry pump close-up" loading="lazy"><figcaption>V5 slurry pump — ceramic plungers and alloy valve seats for abrasive duty</figcaption></figure>
+    </div>
+    <div class="kpi-row">
+      <div class="kpi"><b>26.7%</b><span>Energy saving, coke dry quenching waste-heat boiler feed</span></div>
+      <div class="kpi"><b>22–37%</b><span>Energy saving, mine dewatering retrofits</span></div>
+      <div class="kpi"><b>0.3</b><span>kWh/m³·MPa specific power, oilfield injection</span></div>
+      <div class="kpi"><b>30,000 h</b><span>Overhaul interval on the crank and frame</span></div>
+    </div>
+    <p style="margin-top:26px"><a class="btn ghost" href="references.html">See references and test reports →</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Documentation</p>
+      <h2>Test reports you can read before you buy</h2>
+      <p class="lead">Site test reports from operating installations, with flow, pressure, power and specific energy recorded on site. Full PDFs are available below.</p>
+    </div>
+    <div class="report-grid">
+      <div class="report-card"><div class="thumb"><img src="assets/img/report-summary.png" alt="Reference data summary sheet" loading="lazy"></div><div class="meta"><b>Reference data summary</b><span class="muted">Two mine levels, measured before and after</span><a href="assets/docs/shandong-gold-reference-data.pdf">Download PDF →</a></div></div>
+      <div class="report-card"><div class="thumb"><img src="assets/img/report-dongshan.png" alt="Site test report, 270 m level" loading="lazy"></div><div class="meta"><b>Site test report — 270 m level</b><span class="muted">Mine dewatering, reciprocating pump</span><a href="assets/docs/test-report-dongshan.pdf">Download PDF →</a></div></div>
+      <div class="report-card"><div class="thumb"><img src="assets/img/report-lingshan.png" alt="Site test report, 51 m level" loading="lazy"></div><div class="meta"><b>Site test report — 51 m level</b><span class="muted">Mine dewatering, reciprocating pump</span><a href="assets/docs/test-report-lingshan.pdf">Download PDF →</a></div></div>
     </div>
   </div>
 </section>
@@ -1027,6 +1068,20 @@ about_body = f"""
   </div>
 </section>
 
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">In the field</p>
+      <h2>Where our machines run</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="assets/img/site-junde-2.jpg" alt="Pump station installation" loading="lazy"><figcaption>Mine dewatering station — reciprocating pump house</figcaption></figure>
+      <figure><img src="assets/img/site-junde-4.jpg" alt="High pressure pump skid" loading="lazy"><figcaption>High-pressure lift station, 6.5 MPa discharge</figcaption></figure>
+      <figure><img src="assets/img/site-junde-3.jpg" alt="High-pressure pump station piping" loading="lazy"><figcaption>High-pressure discharge pipework and instrumentation</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section class="tight"><div class="wrap"><div class="band"><div><h2>Working on an export project?</h2><p>We can quote FOB Dalian / FOB Shanghai or CIF, with English datasheets, curves and packing lists.</p></div><a class="btn light" href="contact.html">Contact sales</a></div></div></section>
 """
 
@@ -1099,6 +1154,114 @@ page(
     active="contact.html",
 )
 
+# ---------------------------------------------------------------- REFERENCES
+references_body = f"""
+{crumbs([("index.html", "Home"), ("references.html", "References")])}
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">References &amp; test reports</p>
+    <h1>Measured results from installations in service</h1>
+    <p class="lead">Every figure below comes from a site test: flow, pressure, power draw and specific energy measured on the machine, not taken from a catalogue curve.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Installations</p>
+      <h2>Selected projects</h2>
+    </div>
+    <div class="case-row">
+      <article class="case">
+        <img src="assets/img/site-junde-1.jpg" alt="Underground pump house" loading="lazy">
+        <div class="body">
+          <div class="tags"><span>Coal mine</span><span>Dewatering</span></div>
+          <h3>Three pump houses, −50 / −250 / −500 m</h3>
+          <p class="small">Six reciprocating machines replacing 24 multistage centrifugal pumps: fewer units, lower specific energy, and maintenance carried out on site instead of a factory return.</p>
+        </div>
+      </article>
+      <article class="case">
+        <img src="assets/img/case-shengli.jpg" alt="Shengli oilfield injection station" loading="lazy">
+        <div class="body">
+          <div class="tags"><span>Oilfield</span><span>Water injection</span></div>
+          <h3>Shengli Oilfield — Guanqi &amp; Wanggang stations</h3>
+          <p class="small">Seven-plunger injection pumps running continuously since 2023. Measured specific power down to 0.3 kWh/m³·MPa where the centrifugal units drew 0.5–0.8.</p>
+        </div>
+      </article>
+      <article class="case">
+        <img src="assets/img/report-summary.png" alt="Reference data sheet" loading="lazy" style="object-position:top">
+        <div class="body">
+          <div class="tags"><span>Gold mine</span><span>Two levels</span></div>
+          <h3>Gold mine dewatering — 270 m and 51 m levels</h3>
+          <p class="small">Site test reports dated April 2024 for reciprocating pumps on two levels, with the measured duty point and power recorded by the customer's own engineers.</p>
+          <p><a class="more" href="assets/docs/shandong-gold-reference-data.pdf">Reference data (PDF) →</a></p>
+        </div>
+      </article>
+      <article class="case">
+        <img src="assets/img/product-plunger.jpg" alt="Boiler feed pump installation" loading="lazy">
+        <div class="body">
+          <div class="tags"><span>Power</span><span>Boiler feed</span></div>
+          <h3>Coke dry quenching waste-heat boiler</h3>
+          <p class="small">Feed pump replacement on a CDQ waste-heat boiler: 26.7% energy saving, 128.5 MWh-equivalent saved per year at 8,000 operating hours, 3.2-year payback.</p>
+        </div>
+      </article>
+      <article class="case">
+        <img src="assets/img/product-slurry-2.jpg" alt="Slurry pump" loading="lazy">
+        <div class="body">
+          <div class="tags"><span>Non-ferrous</span><span>Slurry</span></div>
+          <h3>Non-ferrous mine — slurry transfer</h3>
+          <p class="small">Abrasive slurry above 30% solids by weight, where centrifugal slurry pumps lost efficiency within months of a rebuild.</p>
+        </div>
+      </article>
+      <article class="case">
+        <img src="assets/img/site-junde-3.jpg" alt="High pressure piping" loading="lazy">
+        <div class="body">
+          <div class="tags"><span>Industrial</span><span>High pressure</span></div>
+          <h3>Industrial boiler feed — 120 / 130 / 160 t/h</h3>
+          <p class="small">Multistage centrifugal feed pumps replaced by three- and five-plunger units, 19–21% saving at identical steam output.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Documentation</p>
+      <h2>Site test reports</h2>
+      <p class="lead">Scanned reports from operating installations. Each shows the pump model, the measured flow and pressure, the electrical input and the resulting specific energy consumption.</p>
+    </div>
+    <div class="report-grid">
+      <div class="report-card"><div class="thumb"><img src="assets/img/report-dongshan.png" alt="Test report 270 m level" loading="lazy"></div><div class="meta"><b>Site test report — 270 m level</b><span class="muted">Mine dewatering · April 2024</span><a href="assets/docs/test-report-dongshan.pdf">Download PDF →</a></div></div>
+      <div class="report-card"><div class="thumb"><img src="assets/img/report-lingshan.png" alt="Test report 51 m level" loading="lazy"></div><div class="meta"><b>Site test report — 51 m level</b><span class="muted">Mine dewatering · April 2024</span><a href="assets/docs/test-report-lingshan.pdf">Download PDF →</a></div></div>
+      <div class="report-card"><div class="thumb"><img src="assets/img/report-summary.png" alt="Reference data summary" loading="lazy"></div><div class="meta"><b>Reference data summary</b><span class="muted">Two levels, before and after</span><a href="assets/docs/shandong-gold-reference-data.pdf">Download PDF →</a></div></div>
+    </div>
+    <p class="small" style="margin-top:22px">Certificates, material reports and factory acceptance test records for a specific order are supplied with the quotation package. Units are built to Chinese reciprocating-pump standards; certification for a target market is quoted item by item.</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <h2>Want the full reference list?</h2>
+        <p>Tell us the application and we will send the closest comparable installation, with the measured data.</p>
+      </div>
+      <a class="btn light" href="contact.html">Ask for references</a>
+    </div>
+  </div>
+</section>
+"""
+
+page(
+    "references.html",
+    "References & Site Test Reports | DALIAN HONGSHI TECHNOLOGY",
+    "Installed references in mine dewatering, oilfield water injection, boiler feed and slurry transfer, with downloadable site test reports showing measured flow, pressure and power.",
+    references_body,
+    active="references.html",
+)
+
 # ---------------------------------------------------------------- 404
 notfound = f"""<section class="page-head"><div class="wrap"><h1>Page not found</h1><p class="lead">That page does not exist. Try the product pages or send us your duty point.</p><p style="margin-top:24px"><a class="btn" href="index.html">Back to home</a></p></div></section>"""
 page("404.html", "Page not found | DALIAN HONGSHI TECHNOLOGY", "Page not found.", notfound)
@@ -1114,6 +1277,7 @@ urls = [
     ("tailings-transport.html", "0.7", "monthly"),
     ("water-injection.html", "0.7", "monthly"),
     ("calculator.html", "0.8", "monthly"),
+    ("references.html", "0.8", "monthly"),
     ("about.html", "0.6", "yearly"),
     ("contact.html", "0.8", "yearly"),
 ]
