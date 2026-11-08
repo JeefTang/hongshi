@@ -202,6 +202,16 @@ MAGLEV_EN = """
 
 <section class="tight">
   <div class="wrap">
+    <div class="card">
+      <p class="tag">OEM &amp; private label</p>
+      <h3>Supplied under your brand, if that is what you need</h3>
+      <p style="max-width:860px">Every machine on this page can be built to order under the nameplate of a distributor, integrator or project contractor: documentation, packing, paint scheme and label set to your specification. Certification, where a market requires it, is applied for against the brand and the market it will be sold in — we do not pass off one market's approval as another's.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
     <div class="band">
       <div>
         <h2>Replace the water ring, keep the pipework.</h2>
@@ -333,6 +343,16 @@ MOBILE_EN = """
 
 <section class="tight">
   <div class="wrap">
+    <div class="card">
+      <p class="tag">OEM &amp; private label</p>
+      <h3>Supplied under your brand, if that is what you need</h3>
+      <p style="max-width:860px">Every machine on this page can be built to order under the nameplate of a distributor, integrator or project contractor: documentation, packing, paint scheme and label set to your specification. Certification, where a market requires it, is applied for against the brand and the market it will be sold in — we do not pass off one market's approval as another's.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
     <div class="band">
       <div>
         <h2>Tell us the lift and the volume.</h2>
@@ -387,7 +407,7 @@ EDGE_EN = """
     <div>
       <div class="card" style="background:#0c1a26;border-color:#0c1a26;color:#fff">
         <p class="tag" style="color:#ffb08a">Configuration</p>
-        <h3 style="color:#fff">Reference hardware</h3>
+        <h3 style="color:#fff">Reference hardware — Rockchip standard family</h3>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Host</span><b>RK3588, 8-core</b></div>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Accelerators</span><b>4 × RK1828</b></div>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>AI throughput</span><b>20 TOPS INT8 / 40 TOPS INT4 per card</b></div>
@@ -493,6 +513,27 @@ EDGE_EN = """
       <h2>What it is not</h2>
       <p>It is not a replacement for a plant historian, a DCS or a safety system. It reads, summarises and drafts; it does not close a control loop, and it is not connected to protection logic.</p>
       <p>It is also not an unlimited model. A 27B model on edge silicon is a capable assistant for engineering and reporting work — it is not a frontier model, and we do not present it as one. The value is that it runs here, on your data, at a fixed cost, with no network dependency.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid-2" style="gap:56px;align-items:start">
+    <div class="prose">
+      <h2>Standard hardware, engineered deployment</h2>
+      <p>The appliance is built on Rockchip's standard edge product family — an RK3588 host with RK1828 accelerator modules, the same silicon any integrator can buy. The hardware is not the product.</p>
+      <p>What we deliver is everything above it: the model chosen and quantised for the duty, the OpenClaw agent runtime, the document index, the tool connections, the prompts and the guardrails that make it answer like a plant engineer instead of a chatbot — plus the people who pick up the phone when it does not.</p>
+      <div class="callout"><p><strong>Same box, your brand.</strong> For distributors and system integrators we ship the appliance configured and tested, with your nameplate, your start screen and your support contact. You sell it into your market; we keep the runtime and the knowledge base current.</p></div>
+    </div>
+    <div class="prose">
+      <h2>Where we are taking it</h2>
+      <p>Our first export markets are the ASEAN countries and Southeast Asia, where a plant often has the machines and the meters but not the bandwidth, the budget or the data-protection clearance for a cloud AI service. An appliance that runs on 58 W, needs no internet and answers in the local language fits those sites.</p>
+      <ul>
+        <li>English and Chinese interfaces today; further languages on request</li>
+        <li>Operates on a plant LAN with no external connection</li>
+        <li>Supplied configured — commissioning is a network drop, not an integration project</li>
+        <li>Distributor and OEM terms available for the region</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -673,6 +714,16 @@ MAGLEV_ZH = """
 
 <section class="tight">
   <div class="wrap">
+    <div class="card">
+      <p class="tag">OEM / 贴牌</p>
+      <h3>可以按你的品牌交付</h3>
+      <p style="max-width:860px">本页机型均可按经销商、集成商或工程承包商的要求贴牌生产：随机文件、包装、涂装与铭牌按你的规格制作。目标市场要求认证的，认证按实际销售品牌与销售国别申请——不会把某一市场的证当成另一市场的证。</p>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
     <div class="band">
       <div>
         <h2>换掉水环泵，管路不用动。</h2>
@@ -806,6 +857,16 @@ MOBILE_ZH = """
 
 <section class="tight">
   <div class="wrap">
+    <div class="card">
+      <p class="tag">OEM / 贴牌</p>
+      <h3>可以按你的品牌交付</h3>
+      <p style="max-width:860px">本页机型均可按经销商、集成商或工程承包商的要求贴牌生产：随机文件、包装、涂装与铭牌按你的规格制作。目标市场要求认证的，认证按实际销售品牌与销售国别申请——不会把某一市场的证当成另一市场的证。</p>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
     <div class="band">
       <div>
         <h2>告诉我扬程和水量。</h2>
@@ -860,7 +921,7 @@ EDGE_ZH = """
     <div>
       <div class="card" style="background:#0c1a26;border-color:#0c1a26;color:#fff">
         <p class="tag" style="color:#ffb08a">配置</p>
-        <h3 style="color:#fff">参考硬件</h3>
+        <h3 style="color:#fff">参考硬件 · 瑞芯微标准系列</h3>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>主机</span><b>RK3588 八核</b></div>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>加速卡</span><b>4 × RK1828</b></div>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>算力</span><b>单卡 20 TOPS INT8 / 40 TOPS INT4</b></div>
@@ -942,6 +1003,27 @@ EDGE_ZH = """
       <h2>它不是什么</h2>
       <p>它不替代厂级历史站、DCS 或安全系统。它读、总结、起草；不闭合控制回路，也不接保护逻辑。</p>
       <p>它也不是无限能力的模型。边缘芯片上的 27B 是工程与报告场景里称职的助手，不是顶尖模型，我们不会把它说成顶尖模型。它的价值在于：跑在这里、用你的数据、成本固定、不依赖网络。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid-2" style="gap:56px;align-items:start">
+    <div class="prose">
+      <h2>标准硬件，工程化交付</h2>
+      <p>整机基于瑞芯微标准边缘产品系列——RK3588 主机加 RK1828 加速模块，这些芯片任何集成商都买得到。硬件本身不是产品。</p>
+      <p>我们交付的是硬件之上的全部：按工况选型并量化的模型、OpenClaw 智能体运行时、文档索引、工具对接、提示词与护栏——让它像一个现场工程师那样回答，而不是一个聊天机器人；外加出问题时接电话的人。</p>
+      <div class="callout"><p><strong>同一个盒子，你的品牌。</strong>面向经销商与系统集成商，我们按配置完成并测试后出货，铭牌、开机画面与售后联系方式用你的。你在你的市场卖，我们保持运行时与知识库更新。</p></div>
+    </div>
+    <div class="prose">
+      <h2>我们先去哪里</h2>
+      <p>首批出口市场是东盟及东南亚国家——那里的工厂往往设备齐全、电表也齐，但缺带宽、缺预算，也过不了云端 AI 服务的数据合规。一台 58 W、不联网、能说当地语言的机器，正好落在这种现场。</p>
+      <ul>
+        <li>目前提供中英文界面，其他语种按需定制</li>
+        <li>在厂区局域网内运行，不需外网连接</li>
+        <li>交付即配置完成——上线是接网线，不是做集成项目</li>
+        <li>区域内可谈经销与贴牌条件</li>
+      </ul>
     </div>
   </div>
 </section>
