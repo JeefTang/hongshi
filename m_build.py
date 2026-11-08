@@ -256,6 +256,14 @@ def render_block(el, seen=None):
     if tag == "table":
         return render_table(el)
 
+    if tag == "article":
+        # product cards use <article class="card">; the spec-grid has its own renderer
+        if "spec" in cls:
+            return ""
+        if "card" in cls:
+            return render_card(el)
+        return "".join(render_block(c, seen) for c in el)
+
     if tag == "blockquote":
         t = txt(el)
         return f'<div class="callout"><p>{esc(t)}</p></div>' if t else ""
