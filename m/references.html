@@ -28,12 +28,36 @@
   <p style="margin:0"><a href="mailto:18041136555@189.cn">18041136555@189.cn</a></p>
   <p style="margin:8px 0 0;color:#6f8794">© 2026 · Mobile edition · 手机版</p>
 </div>
+<div class="m-sheet" id="mSheet" hidden>
+  <button type="button" class="m-sheet-bd" data-close aria-label="Close"></button>
+  <div class="m-sheet-panel" role="dialog" aria-modal="true" aria-label="Products">
+    <div class="m-sheet-hd"><strong>Products</strong>
+      <button type="button" class="m-sheet-x" data-close aria-label="Close">✕</button>
+    </div>
+    <div class="m-sheet-list">
+<a class="m-sheet-item" href="plunger-pumps.html"><span class="t"><strong>Multi-plunger pumps</strong><small>12–600 m³/h · head to 3,150 m</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="slurry-pumps.html"><span class="t"><strong>Slurry pumps</strong><small>Heavy duty · abrasive solids</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="maglev-blowers.html"><span class="t"><strong>Maglev blowers</strong><small>30–400 kW · oil-free air</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="mobile-pumps.html"><span class="t"><strong>Mobile pump units</strong><small>Trailer or skid · diesel / electric</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="edge-ai.html"><span class="t"><strong>Industrial AI box</strong><small>On-machine edge agent</small></span><span class="chev">›</span></a>
+    </div>
+    <a class="m-sheet-all" href="plunger-pumps.html">All products ›</a>
+  </div>
+</div>
 <div class="mbar">
   <a href="index.html"><span class="ic">⌂</span>Home</a>
-  <a href="plunger-pumps.html"><span class="ic">▤</span>Products</a>
+  <button type="button" class="mbar-prod" id="mProdBtn" aria-expanded="false" aria-controls="mSheet"><span class="ic">▤</span>Products</button>
   <a class="cta" href="contact.html"><span class="ic">✉</span>Get a quote</a>
 </div>
 <script src="../assets/js/version.js" defer></script>
 <script src="../assets/js/chat.js" defer></script>
+<script>
+(function(){
+  var b=document.getElementById('mProdBtn'),s=document.getElementById('mSheet');
+  if(!b||!s)return;
+  function open(){s.hidden=false;document.body.classList.add('m-lock');b.setAttribute('aria-expanded','true');}
+  function close(){s.hidden=true;document.body.classList.remove('m-lock');b.setAttribute('aria-expanded','false');}
+  b.addEventListener('click',function(){s.hidden?open():close();});
+  s.addEventListener('click',function(e){if(e.target.closest('[data-close]'))close();});
+  s.addEventListener('click',function(e){var a=e.target.closest('a');if(a)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+}());
+</script>
 </body>
 </html>

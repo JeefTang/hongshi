@@ -134,3 +134,55 @@ details.m-fold>.fold-body{padding:0 0 14px}
   padding:9px 4px 10px;font-size:12px;color:#33454f;font-weight:600}
 .mbar a .ic{font-size:17px;line-height:1}
 .mbar a.cta{background:#e2570f;color:#fff}
+
+/* ---------- product menu (bottom bar → sheet) ---------- */
+.mbar .mbar-prod{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  padding:9px 4px 10px;font-size:12px;color:#33454f;font-weight:600;
+  background:none;border:0;font-family:inherit;cursor:pointer;-webkit-appearance:none
+}
+.mbar .mbar-prod .ic{font-size:17px;line-height:1}
+.mbar .mbar-prod[aria-expanded="true"]{color:#e2570f}
+body.m-lock{overflow:hidden}
+.m-sheet{position:fixed;inset:0;z-index:120}
+.m-sheet-bd{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;
+  background:rgba(12,26,38,.45);-webkit-appearance:none}
+.m-sheet-panel{position:absolute;left:0;right:0;bottom:0;background:#fff;
+  border-radius:18px 18px 0 0;padding:6px 0 calc(14px + env(safe-area-inset-bottom));
+  box-shadow:0 -8px 30px rgba(12,26,38,.18);animation:m-sheet-up .22s ease-out;
+  max-height:80vh;overflow:auto}
+@keyframes m-sheet-up{from{transform:translateY(24px);opacity:.6}to{transform:none;opacity:1}}
+.m-sheet-hd{display:flex;align-items:center;justify-content:space-between;
+  padding:10px 18px 8px;font-size:15px;color:#0c1a26}
+.m-sheet-hd strong{font-size:15px}
+.m-sheet-x{border:0;background:#eef2f6;border-radius:50%;width:30px;height:30px;
+  font-size:14px;line-height:1;color:#33454f;cursor:pointer}
+.m-sheet-list{padding:0 12px}
+.m-sheet-item{display:flex;align-items:center;gap:12px;padding:13px 8px;
+  border-bottom:1px solid #eef2f6;color:#0c1a26}
+.m-sheet-item:last-child{border-bottom:0}
+.m-sheet-item .t{flex:1;min-width:0}
+.m-sheet-item .t strong{display:block;font-size:15px;font-weight:700}
+.m-sheet-item .t small{display:block;margin-top:2px;font-size:12px;color:#6f8794}
+.m-sheet-item .chev{color:#c3d0d8;font-size:20px;line-height:1}
+.m-sheet-item.is-cur .t strong{color:#e2570f}
+.m-sheet-all{margin:6px 18px 0;padding:13px 0 4px;border-top:1px solid #eef2f6;
+  display:block;font-size:14px;font-weight:600;color:#e2570f}
+
+/* ---------- grouped spec table (plunger model range) ---------- */
+.m-spec{margin:16px 0 4px}
+.m-spec-grp{margin:18px 0 8px;font-size:13px;font-weight:700;color:#e2570f;
+  letter-spacing:.02em;padding-left:2px}
+.m-spec-grp:first-child{margin-top:4px}
+.m-spec-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border:1px solid #e3e8ee;border-radius:12px;background:#fff}
+.m-spec-t{border-collapse:collapse;width:100%;font-size:12.5px;min-width:340px}
+.m-spec-t th,.m-spec-t td{padding:9px 8px;border-bottom:1px solid #eef2f6;
+  text-align:left;vertical-align:top;white-space:nowrap}
+.m-spec-t th{background:#f5f8fa;color:#5a6b78;font-size:11.5px;font-weight:700;
+  letter-spacing:.02em}
+.m-spec-t tr:last-child td{border-bottom:0}
+.m-spec-t td.mdl{white-space:normal;min-width:132px}
+.m-spec-t td.mdl b{display:block;font-size:13.5px;color:#0c1a26}
+.m-spec-t td.mdl span{display:block;margin-top:2px;font-size:11.5px;
+  line-height:1.45;color:#7d8f9b}

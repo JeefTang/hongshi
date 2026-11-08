@@ -28,6 +28,9 @@ SKIP = {"404.html", "index.bak.html"}
 SKIP_TAGS = {"script", "style", "noscript", "header", "footer", "nav", "iframe"}
 SKIP_CLASS_HINTS = ("chat", "hs-")
 
+# current page language, set by build_page(); used by the spec-table renderer
+CUR_LANG = "en"
+
 LOGO = (
     '<svg viewBox="0 0 34 34" fill="none" aria-hidden="true">'
     '<rect width="34" height="34" rx="9" fill="#e2570f"/>'
@@ -74,6 +77,92 @@ def render_table(el):
         '<div class="m-table-hint">← 左右滑动查看完整表格 / swipe to see all columns</div>'
         f'<div class="m-table">{inner}</div>'
     )
+
+
+SPEC_LABELS = {
+    "en": {
+        "model": "Model",
+        "flow": "Flow",
+        "head": "Head",
+        "pressure": "Pressure",
+        "groups": [
+            ("UDQ 12–200", "UDQ series · 12–200 m³/h · high head"),
+            ("UDZ 280–600", "UDZ series · 280–600 m³/h · high flow"),
+            ("UDQ 600H", "UDQ 600 · high flow at high head"),
+        ],
+    },
+    "zh": {
+        "model": "型号",
+        "flow": "流量",
+        "head": "扬程",
+        "pressure": "压力",
+        "groups": [
+            ("UDQ 12–200", "UDQ 系列 · 12–200 m³/h · 高扬程"),
+            ("UDZ 280–600", "UDZ 系列 · 280–600 m³/h · 大流量"),
+            ("UDQ 600H", "UDQ 600 · 大流量 + 高扬程"),
+        ],
+    },
+}
+
+
+def render_specgrid(el):
+    """Turn div.spec-grid (13 product cards) into a grouped, readable table."""
+    lab = SPEC_LABELS["zh" if CUR_LANG == "zh" else "en"]
+    rows = []
+    for art in el.findall(".//article"):
+        h = art.find(".//h3")
+        if h is None:
+            continue
+        model = txt(h)
+        vals = {}
+        dl = art.find(".//dl")
+        if dl is not None:
+            key = None
+            for ch in dl:
+                if ch.tag == "dt":
+                    key = txt(ch).lower()
+                elif ch.tag == "dd" and key:
+                    vals[key] = txt(ch)
+                    key = None
+        duty = ""
+        for p in art.findall(".//p"):
+            if p.get("class") and "small" in p.get("class"):
+                duty = txt(p)
+                break
+        rows.append((model, vals.get("flow", ""), vals.get("head", ""),
+                     vals.get("pressure", ""), duty))
+
+    if not rows:
+        return ""
+
+    def group_of(model):
+        m = model.upper()
+        if m.startswith("UDZ"):
+            return 1
+        if m.replace(" ", "") == "UDQ600":
+            return 2
+        return 0
+
+    out = ['<div class="m-spec">']
+    for gi, (_, glabel) in enumerate(lab["groups"]):
+        sel = [r for r in rows if group_of(r[0]) == gi]
+        if not sel:
+            continue
+        out.append(f'<p class="m-spec-grp">{esc(glabel)}</p>')
+        out.append(
+            '<div class="m-spec-scroll"><table class="m-spec-t">'
+            f'<thead><tr><th>{lab["model"]}</th><th>{lab["flow"]}</th>'
+            f'<th>{lab["head"]}</th><th>{lab["pressure"]}</th></tr></thead><tbody>'
+        )
+        for model, flow, head, press, duty in sel:
+            out.append(
+                f'<tr><td class="mdl"><b>{esc(model)}</b>'
+                f'{f"<span>{esc(duty)}</span>" if duty else ""}</td>'
+                f'<td>{esc(flow)}</td><td>{esc(head)}</td><td>{esc(press)}</td></tr>'
+            )
+        out.append("</tbody></table></div>")
+    out.append("</div>")
+    return "".join(out)
 
 
 def render_figure(el):
@@ -199,6 +288,8 @@ def render_block(el, seen=None):
             return f'<div class="m-form">{inner}</div>'
         if "card" in cls:
             return render_card(el)
+        if "spec-grid" in cls or "spec-grid" in (el.get("class") or ""):
+            return render_specgrid(el)
         if "callout" in cls:
             out = "".join(render_block(c, seen) for c in el)
             return f'<div class="callout">{out}</div>'
@@ -223,6 +314,8 @@ def section_heading(sec):
 
 def build_page(path, depth, lang):
     """depth: path of source dir relative to site root ('' or 'zh')."""
+    global CUR_LANG
+    CUR_LANG = lang
     doc = LH.parse(path).getroot()
     body = doc.find("body")
     title_el = doc.find(".//title")
@@ -320,6 +413,27 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
         # product pages live in the same folder as this page
         prod_links += f'<a class="m-prod" href="{href}"><strong>{esc(label)}</strong></a>'
 
+    PROD_TAG = {
+        "plunger-pumps.html": ("12–600 m³/h · head to 3,150 m", "12–600 m³/h · 扬程至 3,150 m"),
+        "slurry-pumps.html": ("Heavy duty · abrasive solids", "重载 · 高浓度磨蚀介质"),
+        "maglev-blowers.html": ("30–400 kW · oil-free air", "30–400 kW · 无油气路"),
+        "mobile-pumps.html": ("Trailer or skid · diesel / electric", "拖车或撬装 · 柴油/电动"),
+        "edge-ai.html": ("On-machine edge agent", "装在现场设备上的边缘智能体"),
+    }
+    sheet_items = ""
+    for href, en_label, zh_label in NAV_PRODUCTS:
+        label = en_label if lang == "en" else zh_label
+        tag = PROD_TAG[href][0 if lang == "en" else 1]
+        cur = ' aria-current="page"' if href == slug else ""
+        sheet_items += (
+            f'<a class="m-sheet-item{ " is-cur" if href == slug else ""}" href="{href}"{cur}>'
+            f'<span class="t"><strong>{esc(label)}</strong><small>{esc(tag)}</small></span>'
+            '<span class="chev">›</span></a>'
+        )
+    sheet_title = "Products" if lang == "en" else "产品"
+    sheet_all = "All products" if lang == "en" else "全部产品"
+    sheet_close = "Close" if lang == "en" else "关闭"
+
     css = posixpath.relpath("assets/css/m.css", out_dir)
     vjs = posixpath.relpath("assets/js/version.js", out_dir)
     cjs = posixpath.relpath("assets/js/chat.js", out_dir)
@@ -355,13 +469,37 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
   <p style="margin:0"><a href="mailto:18041136555@189.cn">18041136555@189.cn</a></p>
   <p style="margin:8px 0 0;color:#6f8794">© 2026 · {ui['foot_note']}</p>
 </div>
+<div class="m-sheet" id="mSheet" hidden>
+  <button type="button" class="m-sheet-bd" data-close aria-label="{sheet_close}"></button>
+  <div class="m-sheet-panel" role="dialog" aria-modal="true" aria-label="{sheet_title}">
+    <div class="m-sheet-hd"><strong>{sheet_title}</strong>
+      <button type="button" class="m-sheet-x" data-close aria-label="{sheet_close}">✕</button>
+    </div>
+    <div class="m-sheet-list">
+{sheet_items}
+    </div>
+    <a class="m-sheet-all" href="{ui['plunger']}">{sheet_all} ›</a>
+  </div>
+</div>
 <div class="mbar">
   <a href="{ui['index']}"><span class="ic">⌂</span>{ui['home']}</a>
-  <a href="{ui['plunger']}"><span class="ic">▤</span>{ui['products']}</a>
+  <button type="button" class="mbar-prod" id="mProdBtn" aria-expanded="false" aria-controls="mSheet"><span class="ic">▤</span>{ui['products']}</button>
   <a class="cta" href="{ui['contact']}"><span class="ic">✉</span>{ui['quote']}</a>
 </div>
 <script src="{vjs}" defer></script>
 <script src="{cjs}" defer></script>
+<script>
+(function(){{
+  var b=document.getElementById('mProdBtn'),s=document.getElementById('mSheet');
+  if(!b||!s)return;
+  function open(){{s.hidden=false;document.body.classList.add('m-lock');b.setAttribute('aria-expanded','true');}}
+  function close(){{s.hidden=true;document.body.classList.remove('m-lock');b.setAttribute('aria-expanded','false');}}
+  b.addEventListener('click',function(){{s.hidden?open():close();}});
+  s.addEventListener('click',function(e){{if(e.target.closest('[data-close]'))close();}});
+  s.addEventListener('click',function(e){{var a=e.target.closest('a');if(a)close();}});
+  document.addEventListener('keydown',function(e){{if(e.key==='Escape')close();}});
+}}());
+</script>
 </body>
 </html>"""
 

@@ -38,12 +38,36 @@
   <p style="margin:0"><a href="mailto:18041136555@189.cn">18041136555@189.cn</a></p>
   <p style="margin:8px 0 0;color:#6f8794">© 2026 · 手机版 · Mobile edition</p>
 </div>
+<div class="m-sheet" id="mSheet" hidden>
+  <button type="button" class="m-sheet-bd" data-close aria-label="关闭"></button>
+  <div class="m-sheet-panel" role="dialog" aria-modal="true" aria-label="产品">
+    <div class="m-sheet-hd"><strong>产品</strong>
+      <button type="button" class="m-sheet-x" data-close aria-label="关闭">✕</button>
+    </div>
+    <div class="m-sheet-list">
+<a class="m-sheet-item" href="plunger-pumps.html"><span class="t"><strong>多柱塞泵</strong><small>12–600 m³/h · 扬程至 3,150 m</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="slurry-pumps.html"><span class="t"><strong>浆料泵</strong><small>重载 · 高浓度磨蚀介质</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="maglev-blowers.html"><span class="t"><strong>磁悬浮鼓风机</strong><small>30–400 kW · 无油气路</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="mobile-pumps.html"><span class="t"><strong>移动泵站</strong><small>拖车或撬装 · 柴油/电动</small></span><span class="chev">›</span></a><a class="m-sheet-item" href="edge-ai.html"><span class="t"><strong>工业智能体</strong><small>装在现场设备上的边缘智能体</small></span><span class="chev">›</span></a>
+    </div>
+    <a class="m-sheet-all" href="plunger-pumps.html">全部产品 ›</a>
+  </div>
+</div>
 <div class="mbar">
   <a href="index.html"><span class="ic">⌂</span>首页</a>
-  <a href="plunger-pumps.html"><span class="ic">▤</span>产品</a>
+  <button type="button" class="mbar-prod" id="mProdBtn" aria-expanded="false" aria-controls="mSheet"><span class="ic">▤</span>产品</button>
   <a class="cta" href="contact.html"><span class="ic">✉</span>获取报价</a>
 </div>
 <script src="../../assets/js/version.js" defer></script>
 <script src="../../assets/js/chat.js" defer></script>
+<script>
+(function(){
+  var b=document.getElementById('mProdBtn'),s=document.getElementById('mSheet');
+  if(!b||!s)return;
+  function open(){s.hidden=false;document.body.classList.add('m-lock');b.setAttribute('aria-expanded','true');}
+  function close(){s.hidden=true;document.body.classList.remove('m-lock');b.setAttribute('aria-expanded','false');}
+  b.addEventListener('click',function(){s.hidden?open():close();});
+  s.addEventListener('click',function(e){if(e.target.closest('[data-close]'))close();});
+  s.addEventListener('click',function(e){var a=e.target.closest('a');if(a)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+}());
+</script>
 </body>
 </html>
