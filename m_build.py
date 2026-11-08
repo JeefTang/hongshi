@@ -106,7 +106,7 @@ SPEC_LABELS = {
 
 
 def render_specgrid(el):
-    """Turn div.spec-grid (13 product cards) into a grouped, readable table."""
+    """Turn div.spec-grid (13 product cards) into grouped cards: photo + parameters."""
     lab = SPEC_LABELS["zh" if CUR_LANG == "zh" else "en"]
     rows = []
     for art in el.findall(".//article"):
@@ -114,23 +114,23 @@ def render_specgrid(el):
         if h is None:
             continue
         model = txt(h)
+        im = art.find(".//img")
+        img = im.get("src") if im is not None else ""
         vals = {}
         dl = art.find(".//dl")
         if dl is not None:
-            key = None
-            for ch in dl:
-                if ch.tag == "dt":
-                    key = txt(ch).lower()
-                elif ch.tag == "dd" and key:
-                    vals[key] = txt(ch)
-                    key = None
+            # dt labels differ per language (Flow / 流量), so read the dd values
+            # in document order: flow, head, pressure.
+            dds = [txt(ch) for ch in dl if ch.tag == "dd" and txt(ch)]
+            for key, value in zip(("flow", "head", "pressure"), dds):
+                vals[key] = value
         duty = ""
         for p in art.findall(".//p"):
             if p.get("class") and "small" in p.get("class"):
                 duty = txt(p)
                 break
         rows.append((model, vals.get("flow", ""), vals.get("head", ""),
-                     vals.get("pressure", ""), duty))
+                     vals.get("pressure", ""), duty, img))
 
     if not rows:
         return ""
@@ -149,18 +149,19 @@ def render_specgrid(el):
         if not sel:
             continue
         out.append(f'<p class="m-spec-grp">{esc(glabel)}</p>')
-        out.append(
-            '<div class="m-spec-scroll"><table class="m-spec-t">'
-            f'<thead><tr><th>{lab["model"]}</th><th>{lab["flow"]}</th>'
-            f'<th>{lab["head"]}</th><th>{lab["pressure"]}</th></tr></thead><tbody>'
-        )
-        for model, flow, head, press, duty in sel:
+        for model, flow, head, press, duty, img in sel:
             out.append(
-                f'<tr><td class="mdl"><b>{esc(model)}</b>'
-                f'{f"<span>{esc(duty)}</span>" if duty else ""}</td>'
-                f'<td>{esc(flow)}</td><td>{esc(head)}</td><td>{esc(press)}</td></tr>'
+                '<article class="m-pc">'
+                + (f'<img src="{img}" alt="{esc(model)}" loading="lazy">' if img else "")
+                + '<div class="bd">'
+                f'<h3>{esc(model)}</h3>'
+                + (f'<p class="use">{esc(duty)}</p>' if duty else "")
+                + '<ul class="kv">'
+                f'<li><span>{lab["flow"]}</span><b>{esc(flow)}</b></li>'
+                f'<li><span>{lab["head"]}</span><b>{esc(head)}</b></li>'
+                f'<li><span>{lab["pressure"]}</span><b>{esc(press)}</b></li>'
+                "</ul></div></article>"
             )
-        out.append("</tbody></table></div>")
     out.append("</div>")
     return "".join(out)
 

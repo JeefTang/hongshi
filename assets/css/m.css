@@ -169,20 +169,22 @@ body.m-lock{overflow:hidden}
 .m-sheet-all{margin:6px 18px 0;padding:13px 0 4px;border-top:1px solid #eef2f6;
   display:block;font-size:14px;font-weight:600;color:#e2570f}
 
-/* ---------- grouped spec table (plunger model range) ---------- */
+/* ---------- grouped spec cards (plunger model range) ---------- */
 .m-spec{margin:16px 0 4px}
 .m-spec-grp{margin:18px 0 8px;font-size:13px;font-weight:700;color:#e2570f;
   letter-spacing:.02em;padding-left:2px}
 .m-spec-grp:first-child{margin-top:4px}
-.m-spec-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;
-  border:1px solid #e3e8ee;border-radius:12px;background:#fff}
-.m-spec-t{border-collapse:collapse;width:100%;font-size:12.5px;min-width:340px}
-.m-spec-t th,.m-spec-t td{padding:9px 8px;border-bottom:1px solid #eef2f6;
-  text-align:left;vertical-align:top;white-space:nowrap}
-.m-spec-t th{background:#f5f8fa;color:#5a6b78;font-size:11.5px;font-weight:700;
-  letter-spacing:.02em}
-.m-spec-t tr:last-child td{border-bottom:0}
-.m-spec-t td.mdl{white-space:normal;min-width:132px}
-.m-spec-t td.mdl b{display:block;font-size:13.5px;color:#0c1a26}
-.m-spec-t td.mdl span{display:block;margin-top:2px;font-size:11.5px;
-  line-height:1.45;color:#7d8f9b}
+.m-pc{display:flex;gap:12px;align-items:flex-start;background:#fff;
+  border:1px solid #e3e8ee;border-radius:13px;padding:12px;margin:0 0 10px}
+.m-pc>img{width:92px;height:92px;flex:none;object-fit:contain;background:#f5f8fa;
+  border-radius:10px;border:1px solid #eef2f6}
+.m-pc .bd{flex:1;min-width:0}
+.m-pc h3{margin:0;font-size:15.5px;line-height:1.25;color:#0c1a26}
+.m-pc .use{margin:3px 0 8px;font-size:11.5px;line-height:1.4;color:#7d8f9b}
+.m-pc .kv{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
+  list-style:none;margin:0;padding:0}
+.m-pc .kv li{background:#f7f9fb;border-radius:8px;padding:5px 6px;min-width:0}
+.m-pc .kv span{display:block;font-size:10px;line-height:1.2;color:#8b9aa6;
+  letter-spacing:.02em;margin-bottom:2px}
+.m-pc .kv b{display:block;font-size:12px;line-height:1.25;color:#0c1a26;
+  font-weight:700;word-break:break-word}
