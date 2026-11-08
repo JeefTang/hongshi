@@ -21,7 +21,7 @@ MAGLEV_EN = """
 <section class="page-head">
   <div class="wrap">
     <p class="eyebrow">High-speed turbo machinery · oil-free</p>
-    <h1>Blowers, compressors and vacuum pumps on a levitated shaft</h1>
+    <h1>Truly energy-efficient gas handling solutions</h1>
     <p class="lead">18.5–750 kW centrifugal blowers on magnetic bearings, 15–300 kW air-foil blowers, and air-foil compressors to 500 kPa. No gearbox, no oil, no mechanical contact — 85%+ efficiency where a Roots blower delivers under 65%.</p>
   </div>
 </section>
