@@ -118,6 +118,42 @@ MAGLEV_EN = """
 <section>
   <div class="wrap">
     <div class="sec-head">
+      <p class="eyebrow">Machine and site</p>
+      <h2>What a levitated rotor looks like in service</h2>
+      <p class="lead">A magnetic-bearing blower on fluidising duty at a thermal power plant, the impeller that is the only moving part, the bearing that carries it, and an aeration retrofit where three 75 kW Roots blowers became one 160 kW air-foil unit.</p>
+    </div>
+    <div class="gallery">
+      <figure>
+        <img src="assets/img/maglev/maglev-blower-powerplant.jpg" alt="Magnetic-bearing centrifugal blower installed at a thermal power plant for a fluidising-fan retrofit" loading="lazy">
+        <figcaption>Magnetic-bearing blower — fluidising-fan retrofit, thermal power plant</figcaption>
+      </figure>
+      <figure class="contain">
+        <img src="assets/img/maglev/maglev-impeller.jpg" alt="High-speed centrifugal impeller, the only moving part of a levitated blower" loading="lazy">
+        <figcaption>Impeller — the only moving part, up to 40,000 rpm</figcaption>
+      </figure>
+      <figure class="contain">
+        <img src="assets/img/maglev/maglev-bearing-rotor.jpg" alt="Magnetic bearing and rotor assembly of a high-speed centrifugal blower" loading="lazy">
+        <figcaption>Magnetic bearing and rotor assembly</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/maglev/airfoil-blower-water-treatment-1.jpg" alt="Aeration blower retrofit at a water treatment plant" loading="lazy">
+        <figcaption>Aeration retrofit, water treatment plant</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/maglev/airfoil-blower-water-treatment-2.jpg" alt="Air-foil blower unit installed after the retrofit" loading="lazy">
+        <figcaption>Air-foil unit in place — three Roots blowers out, one unit in</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/maglev/airfoil-blower-water-treatment-3.jpg" alt="Blower room and discharge pipework after the retrofit" loading="lazy">
+        <figcaption>Blower room and discharge pipework</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
       <p class="eyebrow">Selection table · magnetic bearing blowers</p>
       <h2>DHMCB 18–110</h2>
       <p class="lead">Flow in m³/min at 1 atm, 20 °C, 65% RH. Where a cell is blank the model is not offered at that pressure rise.</p>
@@ -726,6 +762,42 @@ MAGLEV_ZH = """
           <li>18~107 m³/min</li>
         </ul>
       </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">实物与现场</p>
+      <h2>悬浮转子在设备里长什么样</h2>
+      <p class="lead">火力发电厂流化风机上的磁悬浮鼓风机、唯一的运动件叶轮、托住它的磁悬浮轴承，以及一处曝气改造现场——三台 75 kW 罗茨风机换成一台 160 kW 空气悬浮机组。</p>
+    </div>
+    <div class="gallery">
+      <figure>
+        <img src="../assets/img/maglev/maglev-blower-powerplant.jpg" alt="火电厂流化风机改造现场安装的磁悬浮离心鼓风机" loading="lazy">
+        <figcaption>磁悬浮鼓风机——火电厂流化风机改造</figcaption>
+      </figure>
+      <figure class="contain">
+        <img src="../assets/img/maglev/maglev-impeller.jpg" alt="高速离心叶轮，悬浮鼓风机唯一的运动件" loading="lazy">
+        <figcaption>叶轮——唯一的运动件，最高 40,000 rpm</figcaption>
+      </figure>
+      <figure class="contain">
+        <img src="../assets/img/maglev/maglev-bearing-rotor.jpg" alt="高速离心鼓风机的磁悬浮轴承与转子总成" loading="lazy">
+        <figcaption>磁悬浮轴承与转子总成</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/img/maglev/airfoil-blower-water-treatment-1.jpg" alt="水处理曝气风机改造现场" loading="lazy">
+        <figcaption>曝气改造现场——水处理厂</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/img/maglev/airfoil-blower-water-treatment-2.jpg" alt="改造后就位的空气悬浮鼓风机" loading="lazy">
+        <figcaption>空气悬浮机组就位——三台罗茨风机换一台</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/img/maglev/airfoil-blower-water-treatment-3.jpg" alt="改造后的风机房与出口管路" loading="lazy">
+        <figcaption>风机房与出口管路</figcaption>
+      </figure>
     </div>
   </div>
 </section>
