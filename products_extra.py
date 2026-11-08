@@ -50,11 +50,7 @@ MAGLEV_EN = """
       <div class="callout"><p><strong>No oil, no water, no gearbox.</strong> That removes the oil circuit, the oil cooler, the sealing-water supply and the belt drive from the equipment list — and from the maintenance schedule as well.</p></div>
     </div>
     <div>
-      <figure class="lead-photo">
-        <img src="assets/img/maglev/maglev-blower-unit.jpg" alt="Magnetic-bearing high-speed centrifugal blower, complete unit" loading="eager">
-        <figcaption>Magnetic-bearing centrifugal blower — complete unit, oil-free direct drive.</figcaption>
-      </figure>
-      <div class="card" style="margin-top:20px">
+      <div class="card">
         <h3>At a glance</h3>
         <ul class="checks">
           <li>Magnetic-bearing blowers: 18.5–750 kW, pressure rise 60–120 kPa, flow 16.4–640 m³/min</li>
@@ -705,11 +701,7 @@ MAGLEV_ZH = """
       <div class="callout"><p><strong>无油、无水、无齿轮箱。</strong>设备清单里少了油站、油冷却器、供水系统和皮带传动，维修计划里也一并少了。</p></div>
     </div>
     <div>
-      <figure class="lead-photo">
-        <img src="../assets/img/maglev/maglev-blower-unit.jpg" alt="磁悬浮高速离心鼓风机整机" loading="eager">
-        <figcaption>磁悬浮离心鼓风机整机——无油直驱，无齿轮箱。</figcaption>
-      </figure>
-      <div class="card" style="margin-top:20px">
+      <div class="card">
         <h3>关键指标</h3>
         <ul class="checks">
           <li>磁悬浮鼓风机：18.5~750 kW，压升 60~120 kPa，风量 16.4~640 m³/min</li>
