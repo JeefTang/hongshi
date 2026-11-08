@@ -393,6 +393,15 @@ EDGE_EN = """
   </div>
 </section>
 
+<section class="tight">
+  <div class="wrap">
+    <figure style="margin:0">
+      <img src="assets/img/edge-box-1.jpg" alt="Industrial AI agent appliance, desktop enclosure with DC input and dual Ethernet ports" style="width:100%;height:auto;border-radius:14px;display:block">
+      <figcaption class="small" style="margin-top:12px">Reference unit: desktop enclosure, 12 V DC input, two Ethernet ports — one gigabit for the plant network, one 100 Mb for an instrument segment or an isolated cell.</figcaption>
+    </figure>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="kpi-row" style="margin-top:0">
@@ -428,7 +437,7 @@ EDGE_EN = """
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Accelerators</span><b>4 × RK1828</b></div>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>AI throughput</span><b>20 TOPS INT8 / 40 TOPS INT4 per card</b></div>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Memory</span><b>15.6 GB visible, 4 × 5 GB stacked</b></div>
-        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Network</span><b>2 × GbE, optional 4G/5G</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Network</span><b>1 × GbE + 1 × 100M, optional 4G/5G</b></div>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Power</span><b>12–36 V DC, ~58 W average</b></div>
         <div class="kv" style="border:0"><span>Enclosure</span><b>Desktop or DIN-rail, fanless option</b></div>
       </div>
@@ -947,6 +956,15 @@ EDGE_ZH = """
   </div>
 </section>
 
+<section class="tight">
+  <div class="wrap">
+    <figure style="margin:0">
+      <img src="assets/img/edge-box-1.jpg" alt="工业智能体整机，桌面式机箱，直流输入，双以太网口" style="width:100%;height:auto;border-radius:14px;display:block">
+      <figcaption class="small" style="margin-top:12px">参考样机：桌面式机箱、12 V 直流输入、双以太网口——千兆口接厂内网络，百兆口接仪表段或隔离单元。</figcaption>
+    </figure>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="kpi-row" style="margin-top:0">
@@ -982,7 +1000,7 @@ EDGE_ZH = """
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>加速卡</span><b>4 × RK1828</b></div>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>算力</span><b>单卡 20 TOPS INT8 / 40 TOPS INT4</b></div>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>内存</span><b>可见 15.6 GB（4×5 GB 堆叠）</b></div>
-        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>网络</span><b>2 × 千兆，可选 4G/5G</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>网络</span><b>1 × 千兆 + 1 × 百兆，可选 4G/5G</b></div>
         <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>供电</span><b>12~36 V DC，均值约 58 W</b></div>
         <div class="kv" style="border:0"><span>结构</span><b>台式或导轨安装，可选无风扇</b></div>
       </div>
