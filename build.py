@@ -288,7 +288,7 @@ home_body = f"""
         <div class="icon">◍</div>
         <p class="tag">Maglev / air-foil</p>
         <h3>High-speed blowers &amp; vacuum pumps</h3>
-        <p>20–400 m³/min at 40–100 kPa, vacuum to −75 kPa. No oil, no gearbox, 70–80% efficiency — 20–35% less power than the water-ring or Roots machine it replaces.</p>
+        <p>18.5–750 kW magnetic-bearing blowers, 15–300 kW air-foil units, compressors to 500 kPa. No oil, no gearbox, 85%+ efficiency — where a Roots blower manages under 65%.</p>
         <a class="more" href="maglev-blowers.html">See the ranges →</a>
       </article>
       <article class="card">

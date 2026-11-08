@@ -21,8 +21,8 @@ MAGLEV_EN = """
 <section class="page-head">
   <div class="wrap">
     <p class="eyebrow">High-speed turbo machinery · oil-free</p>
-    <h1>Blowers and vacuum pumps on a levitated shaft</h1>
-    <p class="lead">Direct-drive high-speed permanent-magnet rotors carried on magnetic or air-foil bearings. No gearbox, no oil, no mechanical contact — 70–80% isothermal efficiency where a water-ring or Roots machine delivers 30–65%.</p>
+    <h1>Blowers, compressors and vacuum pumps on a levitated shaft</h1>
+    <p class="lead">18.5–750 kW centrifugal blowers on magnetic bearings, 15–300 kW air-foil blowers, and air-foil compressors to 500 kPa. No gearbox, no oil, no mechanical contact — 85%+ efficiency where a Roots blower delivers under 65%.</p>
   </div>
 </section>
 
@@ -30,39 +30,44 @@ MAGLEV_EN = """
   <div class="wrap grid-2" style="gap:56px;align-items:start">
     <div class="prose">
       <h2>Where the energy goes</h2>
-      <p>Air and vacuum duty is sized in cubic metres per minute, but it is paid for in kilowatts, continuously. A water-ring vacuum pump spends a third to a half of its shaft power churning the sealing water. A Roots blower loses the rest to tip clearance that opens as the rotors wear.</p>
-      <p>A levitated rotor removes both losses. The impeller is the only moving part, it turns on a film of magnetic force or air, and nothing touches anything until the rotor lands — which only happens at standstill.</p>
+      <p>Air duty is sized in cubic metres per minute and paid for in kilowatts, continuously. A Roots blower loses its efficiency to tip clearance and to a belt drive; a water-ring vacuum pump spends a third to a half of its shaft power churning sealing water.</p>
+      <p>A levitated rotor removes both losses. The impeller is the only moving part, it runs at up to 40,000 rpm on a film of magnetic force or air, and nothing touches anything until the rotor lands at standstill.</p>
       <div class="table-wrap" style="margin:26px 0">
         <table>
-          <thead><tr><th>Machine</th><th>Typical efficiency</th><th>Working fluid</th><th>Wear parts</th></tr></thead>
+          <thead><tr><th>&nbsp;</th><th>Roots vacuum pump</th><th>Ceramic-bearing turbo</th><th>Air-foil turbo</th></tr></thead>
           <tbody>
-            <tr><td>Water-ring vacuum pump</td><td>30–50%</td><td>Sealing water, continuous</td><td>Impeller, cone, shaft</td></tr>
-            <tr><td>Roots blower / wet Roots vacuum pump</td><td>50–65%</td><td>Sealing water on wet types</td><td>Rotors, gears, seals</td></tr>
-            <tr><td><strong>Turbo blower / turbo vacuum pump, levitated rotor</strong></td><td><strong>70–80%</strong></td><td>None — dry running</td><td>Air filter only</td></tr>
+            <tr><td>Rotor speed</td><td>&lt; 2,000 rpm</td><td>≤ 20,000 rpm</td><td>≤ 40,000 rpm</td></tr>
+            <tr><td>Bearing</td><td>Conventional ball</td><td>Ceramic ball</td><td>Hydrodynamic air film</td></tr>
+            <tr><td>Bearing life</td><td>1–2 years</td><td>under 1 year</td><td>Semi-permanent</td></tr>
+            <tr><td>Bearing power loss</td><td>2–5%</td><td>2–5%</td><td>&lt; 0.1%</td></tr>
+            <tr><td>Drive</td><td>Belt</td><td>Direct</td><td>Direct</td></tr>
+            <tr><td>Unit efficiency</td><td>&lt; 65%</td><td>&gt; 80%</td><td>&gt; 85%</td></tr>
+            <tr><td>Noise</td><td>90–105 dB(A)</td><td>≤ 90 dB(A)</td><td>≤ 70 dB(A)</td></tr>
+            <tr><td>Annual maintenance</td><td>Belts, oil, shaft seals</td><td>Bearing replacement</td><td>Filter mat</td></tr>
           </tbody>
         </table>
       </div>
-      <p>On a 250 kW duty the difference between 55% and 75% is roughly 120 kW of shaft power — close to a million kilowatt-hours a year at 8,000 hours, before any maintenance saving is counted.</p>
-      <div class="callout"><p><strong>No oil, no water, no gearbox.</strong> That removes the oil circuit, the oil cooler, the water supply and the gear-mesh noise from the equipment list — and removes them from the maintenance schedule as well.</p></div>
+      <div class="callout"><p><strong>No oil, no water, no gearbox.</strong> That removes the oil circuit, the oil cooler, the sealing-water supply and the belt drive from the equipment list — and from the maintenance schedule as well.</p></div>
     </div>
     <div>
       <div class="card">
         <h3>At a glance</h3>
         <ul class="checks">
-          <li>Flow 20–400 m³/min, pressure rise 40–100 kPa (blower)</li>
-          <li>Suction to −58 kPa single stage, −75 kPa two stage (vacuum)</li>
-          <li>Isothermal efficiency 70–80%, 20–35% saving against the machine replaced</li>
-          <li>Variable speed 45–100%, surge protection and anti-surge recycle built in</li>
-          <li>Remote monitoring over Modbus TCP / Ethernet as standard</li>
+          <li>Magnetic-bearing blowers: 18.5–750 kW, pressure rise 60–120 kPa, flow 16.4–640 m³/min</li>
+          <li>Air-foil blowers: 15–300 kW, 40–120 kPa, 14–330 m³/min</li>
+          <li>Air-foil compressors: 75–300 kW, 200–500 kPa, 18–107 m³/min</li>
+          <li>Air-foil vacuum pumps for process duty, to −60 kPa</li>
+          <li>Noise ≤ 70 dB(A) on the air-foil range</li>
+          <li>Built-in surge protection, variable speed, remote monitoring</li>
         </ul>
       </div>
       <div class="card" style="margin-top:20px;background:#0c1a26;border-color:#0c1a26;color:#fff">
-        <p class="tag" style="color:#ffb08a">Duty benchmark</p>
-        <h3 style="color:#fff">Coal-mine gas drainage</h3>
-        <p style="color:#c6d6df">Replacing a wet Roots station at 60 kPa: a levitated turbo vacuum pump at 70% efficiency against Roots at 55% gives 21% lower shaft power at the same suction volume — 34 to 126 MWh saved per machine per year across the 200–750 m³/min range.</p>
-        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Suction volume</span><b>200–750 m³/min</b></div>
-        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Working vacuum</span><b>−60 kPa</b></div>
-        <div class="kv" style="border:0"><span>Typical saving</span><b style="color:#7ee2c4">21% shaft power</b></div>
+        <p class="tag" style="color:#ffb08a">Field reference</p>
+        <h3 style="color:#fff">Fushun thermal power — return-air fan retrofit</h3>
+        <p style="color:#c6d6df">A magnetic-bearing high-speed blower replaced the return-air fan on a circulating-fluidised-bed boiler. Belt drive and gearbox out, direct-drive rotor in — lower parasitic loss, no lubrication schedule, and stable pressure at part load.</p>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Application</span><b>CFB return-air fan</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Machine</span><b>Magnetic-bearing blower</b></div>
+        <div class="kv" style="border:0"><span>Status</span><b style="color:#7ee2c4">In service</b></div>
       </div>
     </div>
   </div>
@@ -71,36 +76,40 @@ MAGLEV_EN = """
 <section class="alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Two bearing technologies</p>
-      <h2>Magnetic where the duty is heavy, air foil where it is tight</h2>
-      <p class="lead">Both are oil-free. The choice is made on power, duty cycle and how much control you want over rotor position.</p>
+      <p class="eyebrow">Three families</p>
+      <h2>Magnetic bearings where the power is, air foil where the speed is</h2>
+      <p class="lead">Both are oil-free and both are direct drive. Magnetic bearings carry the large rotors and report rotor position continuously; air-foil bearings are the simpler, lower-cost architecture at moderate power.</p>
     </div>
-    <div class="grid-2">
-      <article class="card prod-card" style="padding:28px">
-        <div class="card-body" style="padding:0">
-          <p class="tag">MB series · active magnetic bearing</p>
-          <h3>Magnetic-bearing blowers and vacuum pumps</h3>
-          <p>Five-axis active magnetic bearings with digital position control. Rotor position, vibration and temperature are measured continuously and reported — the machine tells you its own condition instead of failing without warning.</p>
-          <ul class="checks">
-            <li>30–400 kW motor range, 20–400 m³/min</li>
-            <li>Pressure rise 40–100 kPa; vacuum to −58 kPa (single) / −75 kPa (two stage)</li>
-            <li>Rotor lands on backup bearings only at standstill</li>
-            <li>Condition data available to the plant DCS</li>
-          </ul>
-        </div>
+    <div class="grid-3">
+      <article class="card">
+        <p class="tag">DHMCB · magnetic bearing</p>
+        <h3>Centrifugal blower</h3>
+        <p>Five-axis active magnetic bearings with digital control. Rotor displacement, vibration and temperature are measured and reported — the machine tells you its condition instead of failing without warning.</p>
+        <ul class="checks">
+          <li>18.5–750 kW</li>
+          <li>Pressure rise 60–120 kPa</li>
+          <li>16.4–640 m³/min</li>
+        </ul>
       </article>
-      <article class="card prod-card" style="padding:28px">
-        <div class="card-body" style="padding:0">
-          <p class="tag">AB series · air foil bearing</p>
-          <h3>Air-foil-bearing blowers</h3>
-          <p>Compliant foil bearings that ride on an air film generated by the rotor itself. No controller, no electromagnets, no backup bearing electronics — the simplest oil-free architecture, and the cheapest to own at moderate power.</p>
-          <ul class="checks">
-            <li>30–250 kW motor range, 20–120 m³/min</li>
-            <li>Pressure rise 40–80 kPa</li>
-            <li>No bearing control cabinet; starts on the foil, not on a lift-off sequence</li>
-            <li>Best fit for aeration and low-pressure process air</li>
-          </ul>
-        </div>
+      <article class="card">
+        <p class="tag">DHK · air foil bearing</p>
+        <h3>Centrifugal blower</h3>
+        <p>Compliant foil bearings riding on an air film generated by the rotor itself. No bearing controller, no electromagnets, no backup-bearing electronics.</p>
+        <ul class="checks">
+          <li>15–300 kW</li>
+          <li>Pressure rise 40–120 kPa</li>
+          <li>14–330 m³/min · ≤ 70 dB(A)</li>
+        </ul>
+      </article>
+      <article class="card">
+        <p class="tag">DKY · air foil bearing</p>
+        <h3>Centrifugal compressor</h3>
+        <p>Oil-free compressed air at process pressure, for plants that cannot accept oil carry-over in the air line.</p>
+        <ul class="checks">
+          <li>75–300 kW</li>
+          <li>200–500 kPa</li>
+          <li>18–107 m³/min</li>
+        </ul>
       </article>
     </div>
   </div>
@@ -109,93 +118,100 @@ MAGLEV_EN = """
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Supply envelope</p>
-      <h2>Standard ranges</h2>
-      <p class="lead">These are the envelopes we quote from. The exact model, impeller trim and motor rating are fixed against your duty point — flow, pressure or vacuum, inlet temperature, altitude and gas composition.</p>
+      <p class="eyebrow">Selection table · magnetic bearing blowers</p>
+      <h2>DHMCB 18–110</h2>
+      <p class="lead">Flow in m³/min at 1 atm, 20 °C, 65% RH. Where a cell is blank the model is not offered at that pressure rise.</p>
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Family</th><th>Duty</th><th>Flow / suction volume</th><th>Pressure</th><th>Motor</th></tr></thead>
+        <thead><tr><th>Model</th><th>18</th><th>22</th><th>30</th><th>37</th><th>45</th><th>55</th><th>75</th><th>90</th><th>110</th></tr></thead>
         <tbody>
-          <tr><td>MB blower</td><td>Process air, aeration, conveying</td><td>30–400 m³/min</td><td>40–100 kPa rise</td><td>30–400 kW</td></tr>
-          <tr><td>AB blower</td><td>Aeration, low-pressure air</td><td>20–120 m³/min</td><td>40–80 kPa rise</td><td>30–250 kW</td></tr>
-          <tr><td>MB vacuum, single stage</td><td>Vacuum, filtration, gas drainage</td><td>100–750 m³/min</td><td>to −58 kPa</td><td>75–400 kW</td></tr>
-          <tr><td>MB vacuum, two stage</td><td>High-vacuum process duty</td><td>100–750 m³/min</td><td>to −75 kPa</td><td>110–450 kW</td></tr>
+          <tr><td>Power (kW)</td><td>18.5</td><td>22</td><td>30</td><td>37</td><td>45</td><td>55</td><td>75</td><td>90</td><td>110</td></tr>
+          <tr><td>60 kPa</td><td>16.4</td><td>20</td><td>27</td><td>34</td><td>42</td><td>52</td><td>69</td><td>82</td><td>105</td></tr>
+          <tr><td>80 kPa</td><td>12.7</td><td>17</td><td>23</td><td>28</td><td>34</td><td>43</td><td>56</td><td>71</td><td>84</td></tr>
+          <tr><td>100 kPa</td><td>—</td><td>—</td><td>—</td><td>22</td><td>26</td><td>35</td><td>48</td><td>57</td><td>73</td></tr>
+          <tr><td>120 kPa</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>39</td><td>48</td><td>58</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="small" style="margin-top:16px">Gas with entrained liquid or dust requires a separator and filtration package ahead of the machine — quoted with the unit, not assumed.</p>
+
+    <div class="sec-head" style="margin-top:44px">
+      <h2>DHMCB 150–750</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Model</th><th>150</th><th>185</th><th>220</th><th>250</th><th>300</th><th>400</th><th>500</th><th>800</th><th>1000</th></tr></thead>
+        <tbody>
+          <tr><td>Power (kW)</td><td>150</td><td>185</td><td>220</td><td>250</td><td>300</td><td>400</td><td>500</td><td>600</td><td>750</td></tr>
+          <tr><td>60 kPa</td><td>140</td><td>160</td><td>210</td><td>228</td><td>272</td><td>320</td><td>420</td><td>545</td><td>640</td></tr>
+          <tr><td>80 kPa</td><td>109</td><td>135</td><td>164</td><td>175</td><td>216</td><td>270</td><td>325</td><td>430</td><td>540</td></tr>
+          <tr><td>100 kPa</td><td>96</td><td>118</td><td>145</td><td>146</td><td>190</td><td>225</td><td>270</td><td>360</td><td>452</td></tr>
+          <tr><td>120 kPa</td><td>78</td><td>95</td><td>117</td><td>123</td><td>156</td><td>200</td><td>240</td><td>318</td><td>400</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:18px">Flow m³/min. Flange sizes from DN125 to DN600 depending on model and pressure rise; dimensions and mass are issued with the datasheet.</p>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Scope of supply</p>
-      <h2>What arrives on the skid</h2>
+      <p class="eyebrow">Selection tables · air foil bearing</p>
+      <h2>DHK blowers and DKY compressors</h2>
     </div>
-    <div class="grid-3">
-      <article class="card">
-        <div class="icon">◍</div>
-        <h3>Core machine</h3>
-        <p>High-speed PM rotor, titanium or aluminium impeller, magnetic or foil bearings, integrated high-frequency drive.</p>
-      </article>
-      <article class="card">
-        <div class="icon">▤</div>
-        <h3>Air path</h3>
-        <p>Inlet filter and silencer, discharge silencer, check valve, flexible connectors, anti-surge recycle line where the duty needs it.</p>
-      </article>
-      <article class="card">
-        <div class="icon">⌁</div>
-        <h3>Control</h3>
-        <p>Local HMI, VFD, surge and overspeed protection, Modbus TCP / Ethernet to the plant system, optional remote access.</p>
-      </article>
-      <article class="card">
-        <div class="icon">▣</div>
-        <h3>Mechanical</h3>
-        <p>Common baseframe, spring isolators, anchor plan, lifting points, weatherproof canopy on outdoor units.</p>
-      </article>
-      <article class="card">
-        <div class="icon">◷</div>
-        <h3>Documentation</h3>
-        <p>General arrangement, wiring diagram, I/O list, commissioning procedure, O&amp;M manual — English, with the quotation.</p>
-      </article>
-      <article class="card">
-        <div class="icon">✦</div>
-        <h3>Services</h3>
-        <p>Selection and system design, commissioning support, remote diagnostics, spare parts and rotor exchange programme.</p>
-      </article>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>DHK blower</th><th>15</th><th>22</th><th>37</th><th>55</th><th>75</th><th>90</th><th>110</th><th>150</th><th>185</th><th>220</th><th>300</th></tr></thead>
+        <tbody>
+          <tr><td>Power (kW)</td><td>15</td><td>22</td><td>37</td><td>55</td><td>75</td><td>90</td><td>110</td><td>150</td><td>185</td><td>220</td><td>300</td></tr>
+          <tr><td>40 kPa</td><td>16</td><td>31</td><td>48</td><td>74</td><td>100</td><td>120</td><td>147</td><td>201</td><td>220</td><td>260</td><td>330</td></tr>
+          <tr><td>60 kPa</td><td>14</td><td>21</td><td>35</td><td>53</td><td>70</td><td>85</td><td>108</td><td>141</td><td>170</td><td>212</td><td>278</td></tr>
+          <tr><td>80 kPa</td><td>—</td><td>17</td><td>28</td><td>42</td><td>56</td><td>70</td><td>88</td><td>110</td><td>138</td><td>165</td><td>220</td></tr>
+          <tr><td>100 kPa</td><td>—</td><td>—</td><td>22</td><td>35</td><td>46</td><td>58</td><td>68</td><td>88</td><td>110</td><td>135</td><td>176</td></tr>
+          <tr><td>120 kPa</td><td>—</td><td>—</td><td>19</td><td>29</td><td>37</td><td>48</td><td>58</td><td>78</td><td>96</td><td>114</td><td>145</td></tr>
+        </tbody>
+      </table>
     </div>
+    <div class="table-wrap" style="margin-top:22px">
+      <table>
+        <thead><tr><th>DKY compressor</th><th>75</th><th>90</th><th>110</th><th>150</th><th>185</th><th>220</th><th>300</th></tr></thead>
+        <tbody>
+          <tr><td>Power (kW)</td><td>75</td><td>90</td><td>110</td><td>150</td><td>185</td><td>220</td><td>300</td></tr>
+          <tr><td>200 kPa</td><td>25</td><td>32</td><td>42</td><td>54</td><td>66</td><td>78</td><td>107</td></tr>
+          <tr><td>300 kPa</td><td>22</td><td>28</td><td>33</td><td>46</td><td>58</td><td>69</td><td>96</td></tr>
+          <tr><td>400 kPa</td><td>19</td><td>26</td><td>29</td><td>41</td><td>50</td><td>60</td><td>84</td></tr>
+          <tr><td>500 kPa</td><td>18</td><td>24</td><td>27</td><td>36</td><td>45</td><td>55</td><td>74</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:18px">Air-foil centrifugal vacuum pumps are built on the same platform; the model is fixed against suction volume and working vacuum, so we quote them from the duty point rather than from a single table.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap grid-2" style="gap:56px;align-items:start">
     <div class="prose">
+      <h2>Monitoring is part of the machine</h2>
+      <p>Every unit can be delivered with a remote monitoring platform: live status, pressure and flow trends, running hours, fault levels and maintenance reminders, presented on a web dashboard and a phone.</p>
+      <ul>
+        <li>Device list with online/offline state and location map</li>
+        <li>Real-time curves against historical data</li>
+        <li>Alarm log with fault level, not just a trip signal</li>
+        <li>Maintenance schedule driven by actual running hours</li>
+        <li>Role-based access for the plant, the service team and the distributor</li>
+      </ul>
+    </div>
+    <div class="prose">
       <h2>Where they are used</h2>
       <ul>
-        <li><strong>Wastewater aeration.</strong> The classic application: continuous duty, wide flow turndown, and the electricity bill is the largest line in the plant budget.</li>
-        <li><strong>Coal-mine gas drainage and ventilation.</strong> High suction volume at moderate vacuum, with the flow chasing methane concentration all shift long.</li>
-        <li><strong>Paper, chemical and pharmaceutical vacuum.</strong> Dry running matters where the process cannot tolerate oil or sealing water carry-over.</li>
-        <li><strong>Power plant FGD oxidation air, cement and steel process air.</strong> Constant pressure, long runs, no tolerance for a gearbox failure.</li>
-        <li><strong>Semiconductor and electronics.</strong> Clean vacuum with no hydrocarbon backstreaming.</li>
+        <li><strong>Wastewater aeration.</strong> Continuous duty, wide turndown, and the electricity bill is the largest line in the plant budget.</li>
+        <li><strong>Power plant FGD oxidation air and CFB return air.</strong> Constant pressure, long runs, no tolerance for a gearbox failure.</li>
+        <li><strong>Coal-mine gas drainage and ventilation.</strong> High suction volume at moderate vacuum, flow chasing methane concentration all shift.</li>
+        <li><strong>Paper, chemical and pharmaceutical vacuum.</strong> Dry running where the process cannot take oil or water carry-over.</li>
+        <li><strong>Cement, steel and glass.</strong> Process air and combustion air at stable pressure.</li>
       </ul>
-      <h2>What we do not claim</h2>
-      <p>Certification for a specific market — CE, ATEX, EAC, or a mining approval such as MA — is quoted item by item against the target country and application. We do not describe the machines as certified for a market where that approval has not been issued for the delivered configuration.</p>
-    </div>
-    <div>
-      <div class="card">
-        <h3>Send us the duty</h3>
-        <p class="small" style="margin-bottom:14px">To select a machine we need five numbers and one description:</p>
-        <ul class="checks">
-          <li>Flow or suction volume (m³/min or Nm³/h)</li>
-          <li>Pressure rise or working vacuum (kPa)</li>
-          <li>Inlet temperature, altitude, relative humidity</li>
-          <li>Gas composition — air, methane mix, solvent vapour, dust load</li>
-          <li>Hours per year and ambient conditions on site</li>
-        </ul>
-        <p style="margin-top:16px"><a class="btn" href="contact.html">Request a selection</a></p>
-      </div>
+      <p class="small">Certification for a specific market — CE, ATEX, EAC, or a mining approval such as MA — is quoted item by item against the target country and application. We do not describe a machine as certified for a market where that approval has not been issued for the delivered configuration.</p>
     </div>
   </div>
 </section>
@@ -214,7 +230,7 @@ MAGLEV_EN = """
   <div class="wrap">
     <div class="band">
       <div>
-        <h2>Replace the water ring, keep the pipework.</h2>
+        <h2>Replace the Roots blower, keep the pipework.</h2>
         <p>Send the nameplate of the machine you are running now. We answer with the equivalent levitated model, its power at your duty, and the annual kWh difference.</p>
       </div>
       <a class="btn light" href="contact.html">Ask for a comparison</a>
@@ -557,8 +573,8 @@ MAGLEV_ZH = """
 <section class="page-head">
   <div class="wrap">
     <p class="eyebrow">高速透平机械 · 无油</p>
-    <h1>悬在磁场与气膜上的鼓风机与真空泵</h1>
-    <p class="lead">高速永磁电机直驱，磁悬浮或空气悬浮轴承承载，无齿轮箱、无润滑油、无机械接触。等温效率 70~80%，同样工况下水环泵/罗茨风机只有 30~65%。</p>
+    <h1>悬在磁场与气膜上的鼓风机、压缩机与真空泵</h1>
+    <p class="lead">18.5~750 kW 磁悬浮离心鼓风机、15~300 kW 空气悬浮鼓风机、200~500 kPa 空气悬浮压缩机。无齿轮箱、无润滑油、无机械接触——罗茨风机效率不到 65% 的地方，这里做到 85% 以上。</p>
   </div>
 </section>
 
@@ -566,39 +582,44 @@ MAGLEV_ZH = """
   <div class="wrap grid-2" style="gap:56px;align-items:start">
     <div class="prose">
       <h2>电都耗在哪里</h2>
-      <p>风量和真空度按立方米每分钟选型，电费却按千瓦连续支付。水环真空泵三到五成轴功率耗在搅动密封水上；罗茨风机则把功率丢在随磨损不断变大的叶轮间隙里。</p>
-      <p>悬浮转子把这两项损失一起去掉：唯一运动件是叶轮，它浮在磁场或气膜上，直到停机落座之前，没有任何零件互相接触。</p>
+      <p>风量按立方米每分钟选型，电费却按千瓦连续支付。罗茨风机的效率丢在叶轮间隙和皮带上；水环真空泵三到五成轴功率耗在搅动密封水里。</p>
+      <p>悬浮转子把这两项损失一起去掉：唯一运动件是叶轮，最高 40,000 rpm，浮在磁场或气膜上，直到停机落座之前没有任何零件互相接触。</p>
       <div class="table-wrap" style="margin:26px 0">
         <table>
-          <thead><tr><th>机型</th><th>典型效率</th><th>工作液</th><th>易损件</th></tr></thead>
+          <thead><tr><th>&nbsp;</th><th>罗茨真空泵</th><th>陶瓷轴承离心</th><th>空气悬浮离心</th></tr></thead>
           <tbody>
-            <tr><td>水环真空泵</td><td>30~50%</td><td>需连续供水</td><td>叶轮、分配器、轴</td></tr>
-            <tr><td>罗茨风机 / 湿式罗茨真空泵</td><td>50~65%</td><td>湿式需喷水</td><td>转子、齿轮、密封</td></tr>
-            <tr><td><strong>悬浮转子透平鼓风机 / 真空泵</strong></td><td><strong>70~80%</strong></td><td>无（干运行）</td><td>仅进气过滤器</td></tr>
+            <tr><td>工作转速</td><td>&lt; 2,000 rpm</td><td>≤ 20,000 rpm</td><td>≤ 40,000 rpm</td></tr>
+            <tr><td>轴承</td><td>普通滚珠轴承</td><td>陶瓷球轴承</td><td>动压空气轴承</td></tr>
+            <tr><td>轴承寿命</td><td>1~2 年</td><td>不足 1 年</td><td>半永久</td></tr>
+            <tr><td>轴承功耗</td><td>2~5%</td><td>2~5%</td><td>&lt; 0.1%</td></tr>
+            <tr><td>传动形式</td><td>皮带</td><td>直连</td><td>直连</td></tr>
+            <tr><td>整机效率</td><td>&lt; 65%</td><td>&gt; 80%</td><td>&gt; 85%</td></tr>
+            <tr><td>噪声</td><td>90~105 dB(A)</td><td>≤ 90 dB(A)</td><td>≤ 70 dB(A)</td></tr>
+            <tr><td>年度维护</td><td>皮带、润滑油、轴封</td><td>定期换轴承</td><td>过滤棉</td></tr>
           </tbody>
         </table>
       </div>
-      <p>250 kW 的工况，效率从 55% 提到 75%，轴功率就差约 120 kW——按年运行 8000 小时算，接近一百万度电，还没算省下来的维修费。</p>
-      <div class="callout"><p><strong>无油、无水、无齿轮箱。</strong>设备清单里少了油站、油冷却器、供水系统和齿轮啮合噪声，维修计划里也一并少了。</p></div>
+      <div class="callout"><p><strong>无油、无水、无齿轮箱。</strong>设备清单里少了油站、油冷却器、供水系统和皮带传动，维修计划里也一并少了。</p></div>
     </div>
     <div>
       <div class="card">
         <h3>关键指标</h3>
         <ul class="checks">
-          <li>风量 20~400 m³/min，压升 40~100 kPa（鼓风机）</li>
-          <li>真空：单级 −58 kPa，双级 −75 kPa</li>
-          <li>等温效率 70~80%，较被替换机型节电 20~35%</li>
-          <li>变频调速 45~100%，内置喘振保护与防喘回流</li>
-          <li>标配 Modbus TCP / 以太网远程监控</li>
+          <li>磁悬浮鼓风机：18.5~750 kW，压升 60~120 kPa，风量 16.4~640 m³/min</li>
+          <li>空气悬浮鼓风机：15~300 kW，40~120 kPa，14~330 m³/min</li>
+          <li>空气悬浮压缩机：75~300 kW，200~500 kPa，18~107 m³/min</li>
+          <li>空气悬浮离心真空泵，适合工艺真空，真空度可至 −60 kPa</li>
+          <li>空浮系列噪声 ≤ 70 dB(A)</li>
+          <li>内置喘振保护、变频调速、远程监控</li>
         </ul>
       </div>
       <div class="card" style="margin-top:20px;background:#0c1a26;border-color:#0c1a26;color:#fff">
-        <p class="tag" style="color:#ffb08a">工况对标</p>
-        <h3 style="color:#fff">煤矿瓦斯抽采</h3>
-        <p style="color:#c6d6df">替代 60 kPa 湿式罗茨抽采站：磁悬浮透平真空泵按 70%、罗茨按 55% 计，同等抽气量下轴功率低 21%；200~750 m³/min 档位，单台年节电 34~126 万 kWh。</p>
-        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>抽气量</span><b>200~750 m³/min</b></div>
-        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>工作负压</span><b>−60 kPa</b></div>
-        <div class="kv" style="border:0"><span>典型节电</span><b style="color:#7ee2c4">轴功率 21%</b></div>
+        <p class="tag" style="color:#ffb08a">现场案例</p>
+        <h3 style="color:#fff">抚顺中机热电 · 返料风机改造</h3>
+        <p style="color:#c6d6df">循环流化床锅炉返料风机改用磁悬浮高速鼓风机：去掉皮带与齿轮箱，改为直驱转子，寄生损耗降低、不再排润滑油计划，部分负荷下压力依然稳定。</p>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>应用</span><b>CFB 返料风机</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>机型</span><b>磁悬浮离心鼓风机</b></div>
+        <div class="kv" style="border:0"><span>状态</span><b style="color:#7ee2c4">已投运</b></div>
       </div>
     </div>
   </div>
@@ -607,36 +628,40 @@ MAGLEV_ZH = """
 <section class="alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">两条轴承路线</p>
-      <h2>大功率走磁悬浮，紧凑场合走空气悬浮</h2>
-      <p class="lead">两者都无油。分界看功率、连续运行要求，以及你对转子位置控制的要求有多细。</p>
+      <p class="eyebrow">三个系列</p>
+      <h2>大功率走磁悬浮，高转速走空气悬浮</h2>
+      <p class="lead">两者都无油、都是直驱。磁悬浮承载大转子并实时反馈转子位置；空气悬浮在中等功率下结构最简、成本最低。</p>
     </div>
-    <div class="grid-2">
-      <article class="card prod-card" style="padding:28px">
-        <div class="card-body" style="padding:0">
-          <p class="tag">MB 系列 · 主动磁悬浮</p>
-          <h3>磁悬浮鼓风机 / 真空泵</h3>
-          <p>五轴主动磁悬浮轴承 + 数字位置控制。转子位移、振动、温度全程在线测量并上报——机器自己报状态，而不是突然停给你看。</p>
-          <ul class="checks">
-            <li>电机 30~400 kW，风量 20~400 m³/min</li>
-            <li>压升 40~100 kPa；真空单级 −58 kPa / 双级 −75 kPa</li>
-            <li>仅在停机时落座保护轴承</li>
-            <li>状态数据可接入厂区 DCS</li>
-          </ul>
-        </div>
+    <div class="grid-3">
+      <article class="card">
+        <p class="tag">DHMCB · 磁悬浮</p>
+        <h3>离心鼓风机</h3>
+        <p>五轴主动磁悬浮轴承 + 数字控制。转子位移、振动、温度全程测量并上报——机器自己报状态，而不是突然停给你看。</p>
+        <ul class="checks">
+          <li>18.5~750 kW</li>
+          <li>压升 60~120 kPa</li>
+          <li>16.4~640 m³/min</li>
+        </ul>
       </article>
-      <article class="card prod-card" style="padding:28px">
-        <div class="card-body" style="padding:0">
-          <p class="tag">AB 系列 · 空气悬浮</p>
-          <h3>空浮鼓风机</h3>
-          <p>弹性箔片轴承靠转子自身带起的气膜承载，无控制器、无电磁铁、无后备轴承电子件——结构最简的无油方案，中等功率下全生命周期成本最低。</p>
-          <ul class="checks">
-            <li>电机 30~250 kW，风量 20~120 m³/min</li>
-            <li>压升 40~80 kPa</li>
-            <li>无轴承控制柜，箔片上直接起浮</li>
-            <li>适合曝气与低压工艺风</li>
-          </ul>
-        </div>
+      <article class="card">
+        <p class="tag">DHK · 空气悬浮</p>
+        <h3>离心鼓风机</h3>
+        <p>弹性箔片轴承靠转子自身带起的气膜承载，无轴承控制器、无电磁铁、无后备轴承电子件。</p>
+        <ul class="checks">
+          <li>15~300 kW</li>
+          <li>压升 40~120 kPa</li>
+          <li>14~330 m³/min · ≤ 70 dB(A)</li>
+        </ul>
+      </article>
+      <article class="card">
+        <p class="tag">DKY · 空气悬浮</p>
+        <h3>离心压缩机</h3>
+        <p>工艺压力的无油压缩空气，适合不允许油分进入气路的工厂。</p>
+        <ul class="checks">
+          <li>75~300 kW</li>
+          <li>200~500 kPa</li>
+          <li>18~107 m³/min</li>
+        </ul>
       </article>
     </div>
   </div>
@@ -645,69 +670,100 @@ MAGLEV_ZH = """
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">供货范围</p>
-      <h2>标准型谱</h2>
-      <p class="lead">下表是我们报价的覆盖范围，具体型号、叶轮切割与电机功率按你的工况点确定——风量、压升或真空度、进气温度、海拔、气体成分。</p>
+      <p class="eyebrow">选型表 · 磁悬浮鼓风机</p>
+      <h2>DHMCB 18~110</h2>
+      <p class="lead">风量单位 m³/min，工况：1 atm、20 ℃、相对湿度 65%。空格表示该型号不提供此压升。</p>
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>系列</th><th>用途</th><th>风量 / 抽气量</th><th>压力</th><th>电机</th></tr></thead>
+        <thead><tr><th>型号</th><th>18</th><th>22</th><th>30</th><th>37</th><th>45</th><th>55</th><th>75</th><th>90</th><th>110</th></tr></thead>
         <tbody>
-          <tr><td>MB 鼓风机</td><td>工艺风、曝气、输送</td><td>30~400 m³/min</td><td>压升 40~100 kPa</td><td>30~400 kW</td></tr>
-          <tr><td>AB 鼓风机</td><td>曝气、低压风</td><td>20~120 m³/min</td><td>压升 40~80 kPa</td><td>30~250 kW</td></tr>
-          <tr><td>MB 真空泵（单级）</td><td>真空、过滤、瓦斯抽采</td><td>100~750 m³/min</td><td>至 −58 kPa</td><td>75~400 kW</td></tr>
-          <tr><td>MB 真空泵（双级）</td><td>高真空工艺</td><td>100~750 m³/min</td><td>至 −75 kPa</td><td>110~450 kW</td></tr>
+          <tr><td>功率 (kW)</td><td>18.5</td><td>22</td><td>30</td><td>37</td><td>45</td><td>55</td><td>75</td><td>90</td><td>110</td></tr>
+          <tr><td>60 kPa</td><td>16.4</td><td>20</td><td>27</td><td>34</td><td>42</td><td>52</td><td>69</td><td>82</td><td>105</td></tr>
+          <tr><td>80 kPa</td><td>12.7</td><td>17</td><td>23</td><td>28</td><td>34</td><td>43</td><td>56</td><td>71</td><td>84</td></tr>
+          <tr><td>100 kPa</td><td>—</td><td>—</td><td>—</td><td>22</td><td>26</td><td>35</td><td>48</td><td>57</td><td>73</td></tr>
+          <tr><td>120 kPa</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>39</td><td>48</td><td>58</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="small" style="margin-top:16px">含液滴或粉尘的气体需在机前配置分离器与过滤装置，随主机一并报价，不默认"现场应该有"。</p>
+
+    <div class="sec-head" style="margin-top:44px">
+      <h2>DHMCB 150~750</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>型号</th><th>150</th><th>185</th><th>220</th><th>250</th><th>300</th><th>400</th><th>500</th><th>800</th><th>1000</th></tr></thead>
+        <tbody>
+          <tr><td>功率 (kW)</td><td>150</td><td>185</td><td>220</td><td>250</td><td>300</td><td>400</td><td>500</td><td>600</td><td>750</td></tr>
+          <tr><td>60 kPa</td><td>140</td><td>160</td><td>210</td><td>228</td><td>272</td><td>320</td><td>420</td><td>545</td><td>640</td></tr>
+          <tr><td>80 kPa</td><td>109</td><td>135</td><td>164</td><td>175</td><td>216</td><td>270</td><td>325</td><td>430</td><td>540</td></tr>
+          <tr><td>100 kPa</td><td>96</td><td>118</td><td>145</td><td>146</td><td>190</td><td>225</td><td>270</td><td>360</td><td>452</td></tr>
+          <tr><td>120 kPa</td><td>78</td><td>95</td><td>117</td><td>123</td><td>156</td><td>200</td><td>240</td><td>318</td><td>400</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:18px">风量 m³/min。出口口径按型号与压升在 DN125~DN600 之间选取；外形尺寸与重量随数据表提供。</p>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">供货内容</p>
-      <h2>到货即一套系统</h2>
+      <p class="eyebrow">选型表 · 空气悬浮</p>
+      <h2>DHK 鼓风机与 DKY 压缩机</h2>
     </div>
-    <div class="grid-3">
-      <article class="card"><div class="icon">◍</div><h3>主机</h3><p>高速永磁转子、钛合金或铝合金叶轮、磁悬浮或箔片轴承、一体化高频驱动器。</p></article>
-      <article class="card"><div class="icon">▤</div><h3>气路</h3><p>进气过滤器与消声器、排气消声器、止回阀、柔性接头，工况需要时配防喘回流管路。</p></article>
-      <article class="card"><div class="icon">⌁</div><h3>控制</h3><p>本地触摸屏、变频器、喘振与超速保护、Modbus TCP / 以太网接口，可选远程访问。</p></article>
-      <article class="card"><div class="icon">▣</div><h3>机械</h3><p>公共底座、弹簧减振器、地脚图、吊点，室外机型配防雨罩。</p></article>
-      <article class="card"><div class="icon">◷</div><h3>文件</h3><p>总图、电气原理图、I/O 清单、调试大纲、运行维护手册，随报价提供。</p></article>
-      <article class="card"><div class="icon">✦</div><h3>服务</h3><p>选型与系统设计、调试支持、远程诊断、备件与转子返修计划。</p></article>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>DHK 鼓风机</th><th>15</th><th>22</th><th>37</th><th>55</th><th>75</th><th>90</th><th>110</th><th>150</th><th>185</th><th>220</th><th>300</th></tr></thead>
+        <tbody>
+          <tr><td>功率 (kW)</td><td>15</td><td>22</td><td>37</td><td>55</td><td>75</td><td>90</td><td>110</td><td>150</td><td>185</td><td>220</td><td>300</td></tr>
+          <tr><td>40 kPa</td><td>16</td><td>31</td><td>48</td><td>74</td><td>100</td><td>120</td><td>147</td><td>201</td><td>220</td><td>260</td><td>330</td></tr>
+          <tr><td>60 kPa</td><td>14</td><td>21</td><td>35</td><td>53</td><td>70</td><td>85</td><td>108</td><td>141</td><td>170</td><td>212</td><td>278</td></tr>
+          <tr><td>80 kPa</td><td>—</td><td>17</td><td>28</td><td>42</td><td>56</td><td>70</td><td>88</td><td>110</td><td>138</td><td>165</td><td>220</td></tr>
+          <tr><td>100 kPa</td><td>—</td><td>—</td><td>22</td><td>35</td><td>46</td><td>58</td><td>68</td><td>88</td><td>110</td><td>135</td><td>176</td></tr>
+          <tr><td>120 kPa</td><td>—</td><td>—</td><td>19</td><td>29</td><td>37</td><td>48</td><td>58</td><td>78</td><td>96</td><td>114</td><td>145</td></tr>
+        </tbody>
+      </table>
     </div>
+    <div class="table-wrap" style="margin-top:22px">
+      <table>
+        <thead><tr><th>DKY 压缩机</th><th>75</th><th>90</th><th>110</th><th>150</th><th>185</th><th>220</th><th>300</th></tr></thead>
+        <tbody>
+          <tr><td>功率 (kW)</td><td>75</td><td>90</td><td>110</td><td>150</td><td>185</td><td>220</td><td>300</td></tr>
+          <tr><td>200 kPa</td><td>25</td><td>32</td><td>42</td><td>54</td><td>66</td><td>78</td><td>107</td></tr>
+          <tr><td>300 kPa</td><td>22</td><td>28</td><td>33</td><td>46</td><td>58</td><td>69</td><td>96</td></tr>
+          <tr><td>400 kPa</td><td>19</td><td>26</td><td>29</td><td>41</td><td>50</td><td>60</td><td>84</td></tr>
+          <tr><td>500 kPa</td><td>18</td><td>24</td><td>27</td><td>36</td><td>45</td><td>55</td><td>74</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:18px">空气悬浮离心真空泵与上述平台同源，按抽气量与工作真空度选型，因此不单列型谱表，按工况点报价选型。</p>
   </div>
 </section>
 
 <section>
   <div class="wrap grid-2" style="gap:56px;align-items:start">
     <div class="prose">
+      <h2>监控是标配的一部分</h2>
+      <p>整机可配远程物联网监控平台：运行状态、压力与流量趋势、运行小时、故障等级与维保提醒，网页与手机同步查看。</p>
+      <ul>
+        <li>设备清单，含在线/离线状态与地域分布</li>
+        <li>实时曲线与历史数据对照</li>
+        <li>告警记录带故障等级，不只是一个跳机信号</li>
+        <li>按实际运行小时驱动的维保计划</li>
+        <li>厂方、服务团队与经销商分角色权限</li>
+      </ul>
+    </div>
+    <div class="prose">
       <h2>用在哪里</h2>
       <ul>
-        <li><strong>污水处理曝气。</strong>典型连续工况、流量调节范围宽，电费是厂里最大一笔支出。</li>
+        <li><strong>污水处理曝气。</strong>连续工况、流量调节范围宽，电费是厂里最大一笔支出。</li>
+        <li><strong>电厂脱硫氧化风、CFB 返料风。</strong>定压长周期运行，容不得齿轮箱出事。</li>
         <li><strong>煤矿瓦斯抽采与通风。</strong>中等负压下大抽气量，风量整天跟着甲烷浓度跑。</li>
-        <li><strong>造纸、化工、制药真空。</strong>工艺不能容忍油或密封水带出的场合，干运行就是刚需。</li>
-        <li><strong>电厂脱硫氧化风、水泥与钢铁工艺风。</strong>定压长周期运行，容不得齿轮箱出事。</li>
-        <li><strong>半导体与电子。</strong>洁净真空，无碳氢返流。</li>
+        <li><strong>造纸、化工、制药真空。</strong>工艺不能容忍油或水带出的场合，干运行就是刚需。</li>
+        <li><strong>水泥、钢铁、玻璃。</strong>工艺风与助燃风，压力要稳。</li>
       </ul>
-      <h2>我们不承诺什么</h2>
-      <p>目标市场认证——CE、ATEX、EAC，或矿用产品安全标志（MA）——按目标国家与具体应用逐项报价。对交付配置尚未取得批准的认证，我们不会在页面上写成"已通过"。</p>
-    </div>
-    <div>
-      <div class="card">
-        <h3>发工况给我们</h3>
-        <p class="small" style="margin-bottom:14px">选型需要五个数字和一段描述：</p>
-        <ul class="checks">
-          <li>风量或抽气量（m³/min 或 Nm³/h）</li>
-          <li>压升或工作真空度（kPa）</li>
-          <li>进气温度、海拔、相对湿度</li>
-          <li>气体成分——空气、瓦斯混合、溶剂蒸气、含尘量</li>
-          <li>年运行小时与现场环境</li>
-        </ul>
-        <p style="margin-top:16px"><a class="btn" href="contact.html">提交选型需求</a></p>
-      </div>
+      <p class="small">目标市场认证——CE、ATEX、EAC，或矿用产品安全标志（MA）——按目标国家与具体应用逐项报价。对交付配置尚未取得批准的认证，我们不会写成"已通过"。</p>
     </div>
   </div>
 </section>
@@ -726,7 +782,7 @@ MAGLEV_ZH = """
   <div class="wrap">
     <div class="band">
       <div>
-        <h2>换掉水环泵，管路不用动。</h2>
+        <h2>换掉罗茨风机，管路不用动。</h2>
         <p>把现用机组的铭牌发给我们。回你对应悬浮机型、该工况下的功率，以及一年省多少度电。</p>
       </div>
       <a class="btn light" href="contact.html">索取对比测算</a>
@@ -1048,14 +1104,14 @@ PRODUCTS = [
     {
         "slug": "maglev-blowers.html",
         "en": {
-            "title": "Maglev & Air-Foil Bearing Blowers and Vacuum Pumps | DALIAN HONGSHI TECHNOLOGY",
-            "desc": "Oil-free high-speed turbo blowers 20-400 m3/min at 40-100 kPa and turbo vacuum pumps to -75 kPa. Magnetic or air-foil bearings, direct-drive PM motor, 70-80% efficiency, 20-35% less power than water-ring or Roots machines.",
+            "title": "Maglev & Air-Foil Blowers, Compressors and Vacuum Pumps | DALIAN HONGSHI TECHNOLOGY",
+            "desc": "Oil-free levitated-rotor machines: 18.5-750 kW magnetic-bearing blowers, 15-300 kW air-foil blowers and compressors to 500 kPa, vacuum pumps to -60 kPa. 85%+ efficiency, 70 dB(A).",
             "crumb": "Maglev Blowers",
             "body": MAGLEV_EN,
         },
         "zh": {
-            "title": "磁悬浮 / 空浮高压鼓风机与真空泵 | 大连宏实科技",
-            "desc": "无油高速透平鼓风机，风量 20~400 m³/min、压升 40~100 kPa；透平真空泵真空度可达 −75 kPa。磁悬浮或空气悬浮轴承、永磁电机直驱，效率 70~80%，较水环泵与罗茨风机节电 20~35%。",
+            "title": "磁悬浮 / 空气悬浮鼓风机、压缩机与真空泵 | 大连宏实科技",
+            "desc": "无油悬浮转子机械：18.5~750 kW 磁悬浮鼓风机、15~300 kW 空气悬浮鼓风机与 200~500 kPa 压缩机、真空泵至 −60 kPa。效率 85% 以上，噪声低至 70 dB(A)。",
             "crumb": "磁悬浮鼓风机",
             "body": MAGLEV_ZH,
         },

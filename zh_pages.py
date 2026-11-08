@@ -234,7 +234,7 @@ INDEX_BODY = f"""
         <div class="icon">◍</div>
         <p class="tag">磁悬浮 / 空浮</p>
         <h3>高速鼓风机与真空泵</h3>
-        <p>风量 20–400 m³/min、压升 40–100 kPa，真空度可达 −75 kPa。无油、无齿轮箱，效率 70–80%，比被替换的水环泵或罗茨风机节电 20–35%。</p>
+        <p>18.5~750 kW 磁悬浮鼓风机、15~300 kW 空气悬浮机组，压缩机压力至 500 kPa。无油、无齿轮箱，效率 85% 以上——罗茨风机不到 65%。</p>
         <a class="more" href="maglev-blowers.html">查看型谱 →</a>
       </article>
       <article class="card">
