@@ -95,6 +95,7 @@ def header(active="", en_href="index.html"):
   <div class="wrap nav">
     <a class="brand" href="index.html">{LOGO}<span>{CONFIG['brand_short']}<small>工业泵</small></span></a>
     <ul>{items}</ul>
+    <a class="view-switch" href="m/{en_href.lstrip('./')}?view=mobile" title="手机版">手机版</a>
     <a class="lang-switch" href="{en_href}" hreflang="en" title="English version">EN</a>
     <a class="btn cta" href="contact.html">获取报价</a>
   </div>
@@ -1435,7 +1436,7 @@ def main():
             + header(p["active"], en_href="../" + p["slug"])
             + p["body"]
             + footer()
-            + '\n<script src="../assets/js/calc.js" defer></script>\n<script src="../assets/js/chat.js" defer></script>\n</body>\n</html>'
+            + '\n<script src="../assets/js/calc.js" defer></script>\n<script src="../assets/js/chat.js" defer></script>\n<script src="../assets/js/version.js" defer></script>\n</body>\n</html>'
         )
         with open(os.path.join(OUT_ZH, p["slug"]), "w", encoding="utf-8") as f:
             f.write(doc)

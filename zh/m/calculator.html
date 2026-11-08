@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>选型与节电计算器｜大连宏实科技有限公司</title>
+<meta name="description" content="免费泵计算器：水力与轴功率、年电费、相对离心泵的节电量、静态回收期，以及含混合密度的浆体工况校核。">
+<link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/m/calculator.html">
+<meta name="theme-color" content="#0c1a26">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="../../assets/css/chat.css">
+<link rel="stylesheet" href="../../assets/css/m.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='9' fill='%230c1a26'/><path d='M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z' fill='%23e2570f'/></svg>">
+</head>
+<body>
+<div class="mhead">
+  <a class="brand" href="index.html"><svg viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#e2570f"/><path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#fff"/><path d="M17 22.7v4.8M11 14.5h12" stroke="#0c1a26" stroke-width="1.6" stroke-linecap="round" opacity=".85"/></svg><span>HONGSHI<small>工业泵</small></span></a>
+  <span class="sp"></span>
+  <a class="link" href="../../m/calculator.html">EN</a>
+  <a class="link" href="../calculator.html?view=desktop">电脑版</a>
+</div>
+<div class="mhero"><p class="eyebrow">工程工具</p><h1>选型与节电计算器</h1><p class="lead">每个项目我们都会算的两笔账：一个工况点要多少轴功率，以及离心泵换成柱塞泵后差多少。全部在浏览器里算，数据不外传。</p></div><section class="m-sec"><div class="m-form"><div>
+      <button data-tab="energy">节电与回收期</button>
+      <button data-tab="slurry">浆体工况校核</button>
+    </div>
+
+    </div><div class="m-form"><div data-panel="energy">
+      <div>
+        <div>
+          <div><label for="e_q">流量 Q（m³/h）</label><input id="e_q" type="number" value="250" min="1" step="1"><div>工况点体积流量</div></div>
+          <div><label for="e_h">总扬程 H（m）</label><input id="e_h" type="number" value="800" min="1" step="10"><div>排出压头减吸入压头，含管路损失</div></div>
+          <div><label for="e_rho">介质密度（kg/m³）</label><input id="e_rho" type="number" value="1000" min="500" step="10"></div>
+          <div><label for="e_eff">新泵效率（%）</label><input id="e_eff" type="number" value="90" min="30" max="98" step="1"><div>90% 为 UDZ 系列的公开效率值</div></div>
+          <div><label for="e_eff_old">原泵效率（%）</label><input id="e_eff_old" type="number" value="55" min="10" max="95" step="1"><div>填实测值或铭牌值；磨损的多级泵常在 45–65%</div></div>
+          <div><label for="e_hours">年运行小时</label><input id="e_hours" type="number" value="8000" min="100" step="100"></div>
+          <div><label for="e_price">电价（美元/kWh）</label><input id="e_price" type="number" value="0.08" min="0.01" step="0.01"></div>
+          <div><label for="e_capex">新泵投资（美元）</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div>可选——仅用于静态回收期</div></div>
+        </div>
+        <div>
+          <h3>计算结果</h3>
+          <div><span>水力功率</span><b id="o_ph">—</b></div>
+          <div><span>新泵轴功率</span><b id="o_pnew">—</b></div>
+          <div><span>原泵轴功率</span><b id="o_pold">—</b></div>
+          <div><span>新泵年耗电</span><b id="o_kwh">—</b></div>
+          <div><span>新泵年电费</span><b id="o_cost">—</b></div>
+          <div><span>年节省</span><b id="o_save">—</b></div>
+          <div><span>静态回收期</span><b id="o_payback">—</b></div>
+          <div><span>年减排 CO₂</span><b id="o_co2">—</b></div>
+          <p id="e_hint"></p>
+        </div>
+      </div>
+      <div>
+        P<sub>hyd</sub> = ρ · g · Q · H / 3.6×10⁶  [kW，Q 单位 m³/h]  ·  P<sub>shaft</sub> = P<sub>hyd</sub> / η  ·  CO₂ 系数 0.581 kg/kWh
+      </div>
+    </div>
+
+    </div><div class="m-form"><div data-panel="slurry">
+      <div>
+        <div>
+          <div><label for="s_q">浆体流量 Q（m³/h）</label><input id="s_q" type="number" value="250" min="1" step="1"></div>
+          <div><label for="s_h">扬程 H（m）</label><input id="s_h" type="number" value="120" min="1" step="5"></div>
+          <div><label for="s_c">固料浓度（重量 %）</label><input id="s_c" type="number" value="35" min="0" max="80" step="1"><div>按质量分数计的矿浆浓度</div></div>
+          <div><label for="s_sg">固料真密度（g/cm³）</label><input id="s_sg" type="number" value="2.7" min="1.1" max="8" step="0.1"><div>常见岩矿 / 煤矸石尾矿取 2.7</div></div>
+          <div><label for="s_eff">泵效率（%）</label><input id="s_eff" type="number" value="83" min="30" max="98" step="1"></div>
+          <div><label for="s_hours">年运行小时</label><input id="s_hours" type="number" value="8000" min="100" step="100"></div>
+          <div><label for="s_price">电价（美元/kWh）</label><input id="s_price" type="number" value="0.08" min="0.01" step="0.01"></div>
+        </div>
+        <div>
+          <h3>计算结果</h3>
+          <div><span>混合密度</span><b id="o_mix">—</b></div>
+          <div><span>混合比重</span><b id="o_sg_mix">—</b></div>
+          <div><span>水力功率</span><b id="o_sph">—</b></div>
+          <div><span>轴功率</span><b id="o_sshaft">—</b></div>
+          <div><span>年耗电</span><b id="o_skwh">—</b></div>
+          <div><span>年电费</span><b id="o_scost">—</b></div>
+          <p id="s_rec"></p>
+        </div>
+      </div>
+      <div>
+        ρ<sub>mix</sub> = 1 / (c/ρ<sub>s</sub> + (1−c)/ρ<sub>w</sub>)  ·  c = 固料质量分数  ·  P<sub>shaft</sub> = ρ<sub>mix</sub>·g·Q·H / (3.6×10⁶ · η)
+      </div>
+    </div>
+  </div></section><section class="m-sec tint"><h2>结果怎么读</h2><p>这是初筛数据，不是正式选型。计算按清水功率与你输入的效率进行，未计 NPSH、黏度修正与电机裕量。正式选型会再加 10–15% 电机裕量，并校核吸入条件。</p><h3>最容易让人意外的部分</h3><p>磨损离心泵的轴功率常是新泵的 1.6–2 倍——不是电机选大了，而是效率已经掉离设计点。你能提供的最有用的一项数据，是实测输入功率。</p><h3>回收期的口径</h3><p>这里只算静态回收期，未计维护费节省（磨蚀工况通常为节电额的 30–50%）、停产损失与旧机残值——所以真实回收期一般比显示值更短。</p></section>
+<div class="mfoot">
+  <div class="fnav">
+<a class="fnavlink" href="plunger-pumps.html"><strong>多柱塞泵</strong></a><a class="fnavlink" href="slurry-pumps.html"><strong>浆料泵</strong></a><a class="fnavlink" href="maglev-blowers.html"><strong>磁悬浮鼓风机</strong></a><a class="fnavlink" href="mobile-pumps.html"><strong>移动泵站</strong></a><a class="fnavlink" href="edge-ai.html"><strong>工业智能体</strong></a>
+  </div>
+  <p style="margin:0 0 8px">大连宏实科技有限公司 · DALIAN HONGSHI TECHNOLOGY</p>
+  <p style="margin:0"><a href="mailto:18041136555@189.cn">18041136555@189.cn</a></p>
+  <p style="margin:8px 0 0;color:#6f8794">© 2026 · 手机版 · Mobile edition</p>
+</div>
+<div class="mbar">
+  <a href="index.html"><span class="ic">⌂</span>首页</a>
+  <a href="plunger-pumps.html"><span class="ic">▤</span>产品</a>
+  <a class="cta" href="contact.html"><span class="ic">✉</span>获取报价</a>
+</div>
+<script src="../../assets/js/version.js" defer></script>
+<script src="../../assets/js/chat.js" defer></script>
+</body>
+</html>

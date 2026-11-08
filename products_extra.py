@@ -216,6 +216,60 @@ MAGLEV_EN = """
   </div>
 </section>
 
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Application · biogas</p>
+      <h2>Biogas: extraction at the pond, pressure at the engine</h2>
+      <p class="lead">Palm oil mill effluent (POME), landfill, starch and livestock waste. The gas leaves the digester at atmospheric pressure, saturated with water and carrying H2S, and every plant has to move it twice — once out of the covered lagoon, once into the engine.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Duty</th><th>Pressure band</th><th>Machine</th><th>What it is doing</th></tr></thead>
+        <tbody>
+          <tr><td>Covered lagoon and gas-well extraction</td><td>−5 to −30 kPa</td><td>Magnetic-bearing vacuum pump</td><td>Holding the cover under negative pressure so the gas goes to the flare or the engine instead of leaking at the pond edge</td></tr>
+          <tr><td>Boosting to genset, boiler or flare</td><td>10 to 80 kPa</td><td>DHMCB magnetic-bearing blower</td><td>Gas production moves through the day; variable speed follows it instead of throttling a valve</td></tr>
+          <tr><td>First stage ahead of upgrading</td><td>200 to 500 kPa</td><td>Magnetic-bearing or geared multistage compressor</td><td>Feed pressure for membrane, PSA or amine wash, quoted on the duty point. Ceramic ball bearings are not used in this band. Cylinder filling at 250 bar is a different machine and not ours</td></tr>
+          <tr><td>Aerobic polishing of POME, composting</td><td>40 to 80 kPa</td><td>DHK air-foil or DHMCB blower</td><td>Air duty, not gas duty — continuous aeration, the same as a municipal wastewater plant</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:26px;border-color:#e2570f">
+      <p class="tag">Bearing choice on gas duty</p>
+      <h3>No air-foil bearings on biogas</h3>
+      <p>An air-foil bearing rides on a gas film that only exists above a minimum speed. Every start and stop is a rub between foil and shaft, and in a flammable atmosphere that rub is a spark and static risk. On gas duty we specify the magnetic-bearing machine — no contact at any speed, start-up included — or, for blowers and vacuum pumps, the ceramic-ball-bearing version, whose rolling elements are non-metallic and do not spark. Air-foil stays where the medium is air: aeration, process air, combustion air.</p>
+      <p>Compression to 200–500 kPa is a different case: at those pressure ratios and speeds a ceramic ball bearing set is not specified, so that stage is geared multistage or magnetic bearing. We select between the two against the duty point, not by habit.</p>
+    </div>
+    <div class="grid-2" style="margin-top:36px;gap:56px;align-items:start">
+      <div class="prose">
+        <h3>Why a contact-free rotor suits a gas plant</h3>
+        <ul>
+          <li><strong>Nothing in the gas path to poison the downstream.</strong> No oil mist reaching the desulphuriser or the membrane.</li>
+          <li><strong>8,000 hours a year.</strong> A digester does not take weekends. With a levitated rotor the maintenance items are bearings and filters, not a gearbox rebuild.</li>
+          <li><strong>Typical turndown 45 to 100% of design flow.</strong> Gas yield drops after a wet season or when the mill runs light; the machine turns down instead of blowing off.</li>
+          <li><strong>No shaft seal.</strong> Nothing to repack on a schedule, and one less leak path on a gas line.</li>
+        </ul>
+      </div>
+      <div class="prose">
+        <h3>The part that is not off the shelf</h3>
+        <p>Biogas is flammable — methane's lower explosive limit is 5% by volume — and it arrives wet and sour. The machine, motor, terminal box and instruments are built to the hazardous-area classification of the site; the gas path is gas-tight, the bearing cavity is separated by buffer air, and the train needs leak detection, flame arrestor and venting. That configuration is quoted machine by machine, with the approval applied for against the country it will be sold into — ATEX Zone 1 or 2, IECEx, or the local equivalent.</p>
+        <p>Where the approval has not been issued for the configuration we would deliver, we say so, and propose an Ex-rated Roots or liquid-ring set for that duty rather than quote an approval we do not hold.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:34px">
+      <p class="tag">To quote a biogas machine</p>
+      <h3>Six numbers and we can size it</h3>
+      <div class="kv"><span>Gas flow</span><b>m³/h — normal or actual, please say which</b></div>
+      <div class="kv"><span>Methane content</span><b>% vol, and CO2 if known</b></div>
+      <div class="kv"><span>H2S</span><b>ppm before and after desulphurisation</b></div>
+      <div class="kv"><span>Pressure band</span><b>suction and discharge, kPa</b></div>
+      <div class="kv"><span>Running hours</span><b>per year, and whether the gas flow is steady</b></div>
+      <div class="kv" style="border:0"><span>Site classification</span><b>hazardous zone, ambient temperature, altitude</b></div>
+    </div>
+    <p class="small" style="margin-top:18px">Malaysia and Indonesia: the usual starting points are covered-lagoon POME plants, palm oil mill captive power and landfill sites. We supply the gas-handling machines and work with local partners for survey, installation and service.</p>
+  </div>
+</section>
+
 <section class="tight">
   <div class="wrap">
     <div class="card">
@@ -777,6 +831,60 @@ MAGLEV_ZH = """
   </div>
 </section>
 
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">应用 · 沼气</p>
+      <h2>沼气：池子上抽采，机组前增压</h2>
+      <p class="lead">棕榈油厂 POME 覆盖塘、填埋场、淀粉与养殖粪污。沼气出池时是常压，饱和带水、含硫化氢——每个项目都要把它搬两次：一次从覆盖塘里抽出来，一次送进发电机组。</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>工况</th><th>压力区间</th><th>机型</th><th>在干什么</th></tr></thead>
+        <tbody>
+          <tr><td>覆盖塘、气井抽采</td><td>−5 ~ −30 kPa</td><td>磁悬浮真空泵</td><td>把塘罩维持在负压，沼气去火炬或机组，不从池边缝隙跑掉</td></tr>
+          <tr><td>送发电机组、锅炉、火炬</td><td>10 ~ 80 kPa</td><td>DHMCB 磁悬浮鼓风机</td><td>产气量一天里在变，变频跟着走，不用阀门节流</td></tr>
+          <tr><td>提纯前的第一级增压</td><td>200 ~ 500 kPa</td><td>磁悬浮或齿轮箱增速多级压缩机</td><td>给膜分离、PSA 或胺洗供气，按工况点选型；该压比段不用陶瓷球轴承；250 bar 装瓶是另一类机器，我们不做</td></tr>
+          <tr><td>POME 好氧后处理、堆肥</td><td>40 ~ 80 kPa</td><td>DHK 空浮或 DHMCB 鼓风机</td><td>这是空气工况不是气体工况——连续曝气，同市政污水厂</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:26px;border-color:#e2570f">
+      <p class="tag">气体工况的轴承选择</p>
+      <h3>沼气不用空气悬浮</h3>
+      <p>箔片轴承靠气膜托起，转速低于起飞转速时箔片与轴是干摩擦接触——每次启停都磨一次，在爆炸性气体环境里这就是火花与静电风险。沼气工况只配磁悬浮（全程无接触，启停也不接触），或鼓风机、真空泵段用陶瓷球轴承（滚动体非金属、不产生火花）。空气悬浮只留在空气介质：曝气、工艺风、助燃风。</p>
+      <p>200~500 kPa 增压段是另一回事：这个压比与转速下陶瓷球轴承不适用，只能走传统齿轮箱增速多级或磁悬浮——两者按工况点选，不按习惯选。</p>
+    </div>
+    <div class="grid-2" style="margin-top:36px;gap:56px;align-items:start">
+      <div class="prose">
+        <h3>为什么气体装置适合无接触转子</h3>
+        <ul>
+          <li><strong>气路里没有油。</strong>不会有油雾带到脱硫剂或膜组件上去。</li>
+          <li><strong>年运行 8000 小时。</strong>厌氧罐不歇周末；悬浮转子的维保项是轴承与滤芯，不是拆齿轮箱。</li>
+          <li><strong>调节范围通常 45%~100%。</strong>雨季过后或油厂减产，产气量往下掉，机组降转速而不是放空。</li>
+          <li><strong>没有轴封。</strong>不用定期换盘根，气管路上也少一处泄漏点。</li>
+        </ul>
+      </div>
+      <div class="prose">
+        <h3>不能当现货卖的那一部分</h3>
+        <p>沼气是易燃气体（甲烷爆炸下限 5% 体积），而且是带水带硫的。机组、电机、接线盒与仪表按现场防爆分区做；气路气密、轴承腔用隔离气隔开，整条线上还要有泄漏检测、阻火器与放空。这类配置逐台报价，认证按销售国别申请——ATEX Zone 1/2、IECEx 或当地等效标准。</p>
+        <p>交付配置没有取得对应认证的，我们如实说明，并为该工况提供防爆罗茨或液环方案，不拿没有的证当卖点。</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:34px">
+      <p class="tag">沼气机组报价</p>
+      <h3>给六个数据，就能选型</h3>
+      <div class="kv"><span>气量</span><b>m³/h，标方还是实方，请注明</b></div>
+      <div class="kv"><span>甲烷含量</span><b>% 体积，有 CO₂ 数据一并给</b></div>
+      <div class="kv"><span>硫化氢</span><b>脱硫前后各多少 ppm</b></div>
+      <div class="kv"><span>压力区间</span><b>进口与出口，kPa</b></div>
+      <div class="kv"><span>运行小时</span><b>每年多少小时，气量是否稳定</b></div>
+      <div class="kv" style="border:0"><span>现场条件</span><b>防爆分区、环境温度、海拔</b></div>
+    </div>
+    <p class="small" style="margin-top:18px">马来西亚与印尼：常见起点是棕榈油厂 POME 覆盖塘、油厂自备电站与填埋场。我们供气路设备，勘查、安装与售后与当地伙伴一起做。</p>
+  </div>
+</section>
+
 <section class="tight">
   <div class="wrap">
     <div class="card">
@@ -1123,13 +1231,13 @@ PRODUCTS = [
         "slug": "maglev-blowers.html",
         "en": {
             "title": "Maglev & Air-Foil Blowers, Compressors and Vacuum Pumps | DALIAN HONGSHI TECHNOLOGY",
-            "desc": "Oil-free levitated-rotor machines: 18.5-750 kW magnetic-bearing blowers, 15-300 kW air-foil blowers and compressors to 500 kPa, vacuum pumps to -60 kPa. 85%+ efficiency, 70 dB(A).",
+            "desc": "Oil-free levitated-rotor machines: 18.5-750 kW magnetic-bearing blowers, 15-300 kW air-foil blowers and compressors to 500 kPa, vacuum pumps to -60 kPa. 85%+ efficiency, 70 dB(A). Biogas extraction and boosting for POME and landfill plants.",
             "crumb": "Maglev Blowers",
             "body": MAGLEV_EN,
         },
         "zh": {
             "title": "磁悬浮 / 空气悬浮鼓风机、压缩机与真空泵 | 大连宏实科技",
-            "desc": "无油悬浮转子机械：18.5~750 kW 磁悬浮鼓风机、15~300 kW 空气悬浮鼓风机与 200~500 kPa 压缩机、真空泵至 −60 kPa。效率 85% 以上，噪声低至 70 dB(A)。",
+            "desc": "无油悬浮转子机械：18.5~750 kW 磁悬浮鼓风机、15~300 kW 空气悬浮鼓风机与 200~500 kPa 压缩机、真空泵至 −60 kPa。效率 85% 以上，噪声低至 70 dB(A)。含沼气抽采与增压配套。",
             "crumb": "磁悬浮鼓风机",
             "body": MAGLEV_ZH,
         },

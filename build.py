@@ -65,6 +65,7 @@ def head(title, desc, slug, extra_head="", jsonld=None):
 <link rel="alternate" hreflang="en" href="{canonical}">
 <link rel="alternate" hreflang="zh-CN" href="{CONFIG['domain']}/zh/{slug or 'index.html'}">
 <link rel="alternate" hreflang="x-default" href="{canonical}">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="{CONFIG['domain']}/m/{slug or 'index.html'}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{CONFIG['brand']}">
 <meta property="og:title" content="{title}">
@@ -97,6 +98,7 @@ def header(active="", slug="index.html"):
   <div class="wrap nav">
     <a class="brand" href="index.html">{LOGO}<span>{CONFIG['brand_short']}<small>Industrial Pumps</small></span></a>
     <ul>{items}</ul>
+    <a class="view-switch" href="m/{slug}?view=mobile" title="手机版">手机版</a>
     <a class="lang-switch" href="zh/{slug}" hreflang="zh-CN" title="中文版">中文</a>
     <a class="btn cta" href="contact.html">Request a Quote</a>
   </div>
@@ -154,6 +156,7 @@ def page(slug, title, desc, body, active="", jsonld=None, extra_head=""):
     doc = head(title, desc, slug, extra_head, jsonld) + header(active, slug) + body + footer() + """
 <script src="assets/js/calc.js" defer></script>
 <script src="assets/js/chat.js" defer></script>
+<script src="assets/js/version.js" defer></script>
 </body>
 </html>"""
     with open(os.path.join(OUT, slug), "w", encoding="utf-8") as f:
