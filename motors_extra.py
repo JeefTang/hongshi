@@ -63,6 +63,58 @@ MOTORS_EN = """
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Bought on its own</p>
+      <h2>A motor does not have to arrive with a pump</h2>
+      <p class="lead">Most of the motors we ship to Malaysia and Indonesia go into palm oil mills as single replacement units: one motor in a crate, a test report with it, landing on a baseplate poured twenty years ago. We match the frame, not the catalogue number.</p>
+    </div>
+    <div class="grid-2" style="gap:40px;align-items:start">
+      <div class="prose">
+        <h3>Replacement is the largest motor market in ASEAN</h3>
+        <p>A screw press stops on a Tuesday. The mill needs a 4-pole motor with the same foot holes, the same shaft height and the same shaft extension, running before the weekend. That is not a pump project and we do not treat it as one: it is a single unit, nameplate-matched, crated and shipped.</p>
+        <ul class="checks">
+          <li>One-off replacement units — no minimum quantity</li>
+          <li>Frame, foot holes, flange and shaft matched to the motor coming out</li>
+          <li>IE3 / IE4 / IE5 equivalent of an old IE1 / IE2 machine — same baseplate</li>
+          <li>VFD-duty version where the drive stays and only the motor is replaced</li>
+          <li>Ex d version where the area classification requires it</li>
+          <li>Spare unit for the critical drive, ordered with the replacement</li>
+        </ul>
+      </div>
+      <div class="prose">
+        <h3>415 V, 380 V, 50 Hz</h3>
+        <p>Malaysian mills are normally 415 V / 50 Hz; Indonesian mills are 380 V or 415 V / 50 Hz, with 60 Hz gensets on some isolated lines. All of these are standard builds for us — the motor is wound for the supply on site, not for a generic export voltage.</p>
+        <h3>What we need to match it</h3>
+        <ul>
+          <li>A photo of the nameplate — kW, poles, voltage, frequency, frame, mounting</li>
+          <li>Shaft extension and flange drawing, if the coupling or pulley is fixed</li>
+          <li>Duty — continuous, or starts per hour</li>
+          <li>Environment — ambient, humidity, dust, washdown</li>
+          <li>Starting — direct-on-line, star-delta, soft starter or drive; cable length if driven</li>
+        </ul>
+        <p class="small">Send the photo and we reply with the equivalent model, a frame check against the baseplate, the price and the lead time. If the old frame is obsolete, we say what has to change before anything is ordered.</p>
+      </div>
+    </div>
+    <div class="table-wrap" style="margin-top:38px">
+      <table>
+        <thead><tr><th>Palm oil mill drive</th><th>What usually decides the motor</th><th>What we match</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Sterilizer / cage hauling</strong></td><td>Frequent starts, brake or geared drive, hot and wet surroundings</td><td>Frame and shaft, brake torque, IP55, VFD duty if the drive stays</td></tr>
+          <tr><td><strong>Screw press</strong></td><td>High starting torque, continuous duty, heavy radial load</td><td>Foot or flange pattern, shaft extension, thermal margin</td></tr>
+          <tr><td><strong>Thresher / bunch crusher</strong></td><td>High inertia at start, shock load in service</td><td>Frame, starting torque, IE3 or IE4 equivalent</td></tr>
+          <tr><td><strong>Kernel plant</strong> — crusher, separator, winnower</td><td>Dust, continuous running, small frames</td><td>Frame 80–200, IP55, IE3 / IE4</td></tr>
+          <tr><td><strong>EFB shredder / press</strong></td><td>Very high inertia, load swings, long acceleration</td><td>VFD duty with independent fan; thermal margin stated, not assumed</td></tr>
+          <tr><td><strong>Boiler feed and process pumps</strong></td><td>Continuous duty, pressure controlled by speed</td><td>2- or 4-pole, VFD duty, motor alone or pump-and-motor</td></tr>
+          <tr><td><strong>Sludge, desander and POME pumps</strong></td><td>Moisture, corrosive atmosphere, intermittent running</td><td>IP55 / IP65, moisture-resistant winding, frame match</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:16px">The table is a checklist, not a selection: the rating is read off the nameplate and the driven machine, not off the equipment name. Where a mill replaces an IE1 or IE2 motor, the IE3 or IE4 equivalent is normally the same frame — the efficiency step costs nothing in civil works.</p>
+  </div>
+</section>
+
 <section class="alt">
   <div class="wrap">
     <div class="sec-head">
@@ -204,8 +256,8 @@ MOTORS_EN = """
       <p class="small">Send the nameplate photo of the motor you are replacing and we will come back with the equivalent model, its efficiency class and the annual kWh difference at your running hours.</p>
     </div>
     <div class="prose">
-      <h2>Supplied as part of the pump package</h2>
-      <p>Every plunger pump, slurry pump and mobile unit on this site can now be quoted as a complete train: pump, motor, coupling and guard, baseplate, VFD or starter, instrumentation and control panel — assembled, aligned and tested before shipment.</p>
+      <h2>On its own, or as part of the pump package</h2>
+      <p>A motor is a product line for us, not an accessory. It can ship as a single replacement unit against a nameplate — that is the usual order from a palm oil mill — or as part of a complete train: pump, motor, coupling and guard, baseplate, VFD or starter, instrumentation and control panel, assembled, aligned and tested before shipment.</p>
       <ul>
         <li><strong>One interface.</strong> One supplier for the shaft alignment, the coupling selection and the starting method.</li>
         <li><strong>One guarantee.</strong> The train is warranted as a train, not as three parts from three vendors.</li>
@@ -282,6 +334,58 @@ MOTORS_ZH = """
         <div class="kv" style="border:0"><span>永磁标准</span><b>GB 30253-2013</b></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">单独供货</p>
+      <h2>电机不必跟着泵一起买</h2>
+      <p class="lead">我们发往马来西亚、印尼的电机，多数是棕榈油厂的单台替换件：一台电机装箱发货、随附试验报告，落在二十年前浇的底座上。我们匹配的是机座和安装尺寸，不是产品目录上的型号。</p>
+    </div>
+    <div class="grid-2" style="gap:40px;align-items:start">
+      <div class="prose">
+        <h3>替换，是东盟最大的电机市场</h3>
+        <p>周二一台螺旋压榨机停了。厂里需要的是一台同样底脚孔距、同样轴高、同样轴伸的 4 极电机，周末之前转起来。这不是一个泵类项目，我们也不按项目做：就是单台供货，按铭牌匹配，装箱发运。</p>
+        <ul class="checks">
+          <li>单台替换，无起订量</li>
+          <li>机座、底脚孔、法兰与轴伸，按拆下来的那台匹配</li>
+          <li>老 IE1 / IE2 电机可换 IE3 / IE4 / IE5 等效机型，原底座不动</li>
+          <li>变频器保留、只换电机时，供变频专用机型</li>
+          <li>区域划分要求时，供 Ex d 隔爆机型</li>
+          <li>关键驱动可同时订一台备机</li>
+        </ul>
+      </div>
+      <div class="prose">
+        <h3>415 V、380 V、50 Hz</h3>
+        <p>马来西亚棕榈油厂通常 415 V / 50 Hz；印尼多为 380 V 或 415 V / 50 Hz，部分孤网线路带 60 Hz 发电机组。这几种都是我们的标准供货电压——按现场电源绕线，不按通用出口电压凑。</p>
+        <h3>匹配需要哪些信息</h3>
+        <ul>
+          <li>铭牌照片——功率、极数、电压、频率、机座号、安装方式</li>
+          <li>联轴器或皮带轮已固定的，给轴伸与法兰尺寸图</li>
+          <li>工作制——连续运行，还是每小时启动次数</li>
+          <li>环境——环温、湿度、粉尘、是否冲洗</li>
+          <li>启动方式——直接启动、星三角、软启或变频；变频时给电缆长度</li>
+        </ul>
+        <p class="small">把铭牌照片发来，我们回等效型号、与原底座的机座核对结果、价格和交期。老机座已停产的，先说清必须改什么，再谈下单。</p>
+      </div>
+    </div>
+    <div class="table-wrap" style="margin-top:38px">
+      <table>
+        <thead><tr><th>棕榈油厂驱动</th><th>决定电机选型的因素</th><th>我们匹配的内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>杀菌罐 / 吊笼牵引</strong></td><td>频繁启停、带制动或减速机、湿热环境</td><td>机座与轴伸、制动转矩、IP55；变频保留时供变频专用</td></tr>
+          <tr><td><strong>螺旋压榨机</strong></td><td>启动转矩大、连续运行、径向载荷重</td><td>底脚或法兰孔距、轴伸、热裕量</td></tr>
+          <tr><td><strong>脱果机 / 果串破碎机</strong></td><td>启动惯量大、运行中有冲击负载</td><td>机座、启动转矩、IE3 或 IE4 等效</td></tr>
+          <tr><td><strong>仁厂</strong>——破碎、分离、风选</td><td>粉尘、连续运行、机座偏小</td><td>80–200 机座、IP55、IE3 / IE4</td></tr>
+          <tr><td><strong>EFB 撕碎机 / 压榨机</strong></td><td>惯量很大、负载波动、加速时间长</td><td>独立风机变频专用；热裕量写清楚，不靠默认</td></tr>
+          <tr><td><strong>锅炉给水与工艺泵</strong></td><td>连续运行、靠调速控压</td><td>2 极或 4 极、变频专用；可只供电机，也可泵机成套</td></tr>
+          <tr><td><strong>污泥泵、除砂泵、POME 泵</strong></td><td>潮湿、腐蚀性气氛、间歇运行</td><td>IP55 / IP65、防潮绕组、机座匹配</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:16px">这张表是核对清单，不是选型结果：功率从铭牌和被驱动机械上读，不从设备名称上猜。老厂把 IE1 / IE2 换成 IE3 / IE4，机座通常不变——提一档能效，土建上一分钱不用花。</p>
   </div>
 </section>
 
@@ -425,8 +529,8 @@ MOTORS_ZH = """
       <p class="small">把在役电机的铭牌拍照发来，我们回等效型号、能效等级，以及按您的年运行小时算出的年节电量。</p>
     </div>
     <div class="prose">
-      <h2>随泵组成套供货</h2>
-      <p>本站的柱塞泵、浆料泵、移动泵站，现在都可以按整机机组报价：泵、电机、联轴器与护罩、底座、变频器或启动柜、仪表与控制柜——出厂前组装、对中、试车。</p>
+      <h2>可以单供，也可以随泵组成套</h2>
+      <p>电机在我们这里是一条产品线，不是泵的附件。可以按铭牌单供一台替换机——棕榈油厂的订单多是这种；也可以按整机机组报价：泵、电机、联轴器与护罩、底座、变频器或启动柜、仪表与控制柜——出厂前组装、对中、试车。</p>
       <ul>
         <li><strong>一个接口。</strong>对中、联轴器选型、启动方式，由一家负责。</li>
         <li><strong>一个质保。</strong>按机组整体质保，不是三家供应商各保一段。</li>
@@ -604,7 +708,7 @@ VFD_EN = """
     <div class="sec-head">
       <p class="eyebrow">As a package</p>
       <h2>Motor, drive, panel and pump as one train</h2>
-      <p class="lead">The failure modes on a VFD-driven train are interface failures: the drive's overload setting against the motor's thermal time constant, the cable against the winding insulation, the minimum speed against the pump's bearing film. Buying them from one place puts that interface on one drawing.</p>
+      <p class="lead">The failure modes on a VFD-driven train are interface failures: the drive's overload setting against the motor's thermal time constant, the cable against the winding insulation, the minimum speed against the pump's bearing film. Buying them from one place puts that interface on one drawing. The motor can also ship on its own, with or without a drive — a replacement on a palm oil mill's EFB line or screw press is the usual case.</p>
     </div>
     <div class="spec-grid">
       <article class="card"><p class="tag">01 · Drive selection</p><h3>Sized to the duty, not the nameplate</h3><p>Heavy-duty overload margin, switching frequency, and the actual cable length are part of the selection — not left to whoever supplies the drive.</p></article>
@@ -775,7 +879,7 @@ VFD_ZH = """
     <div class="sec-head">
       <p class="eyebrow">成套</p>
       <h2>电机、变频器、控制柜、泵——按一套机组供货</h2>
-      <p class="lead">变频机组的故障，多数出在接口上：变频器的过载设定对不上电机的热时间常数、电缆对不上绕组绝缘、最低转速对不上泵的轴承油膜。从一家买，这些接口就在同一张图纸上。</p>
+      <p class="lead">变频机组的故障，多数出在接口上：变频器的过载设定对不上电机的热时间常数、电缆对不上绕组绝缘、最低转速对不上泵的轴承油膜。从一家买，这些接口就在同一张图纸上。电机也可以单台供货，带不带变频器都行——棕榈油厂 EFB 线、螺旋压榨机换电机，多是这种情况。</p>
     </div>
     <div class="spec-grid">
       <article class="card"><p class="tag">01 · 变频器选型</p><h3>按工况选，不按铭牌选</h3><p>重载过载裕量、开关频率、实际电缆长度都算进选型，不留给"谁供变频器谁定"。</p></article>

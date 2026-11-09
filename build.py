@@ -320,7 +320,7 @@ home_body = f"""
         <div class="icon">◉</div>
         <p class="tag">Motors</p>
         <h3>IE3–IE5 induction &amp; PM synchronous</h3>
-        <p>0.12–375 kW at 380 V and 160–2,500 kW at 6/10 kV, plus permanent-magnet synchronous motors to 450 kW. Same IEC frames — a higher efficiency class drops onto the existing baseplate.</p>
+        <p>0.12–375 kW at 380 V and 160–2,500 kW at 6/10 kV, plus permanent-magnet synchronous motors to 450 kW. Same IEC frames — a higher efficiency class drops onto the existing baseplate. Supplied on its own for replacement, or as part of a pump train.</p>
         <a class="more" href="motors.html">See the type spectrum →</a>
       </article>
       <article class="card">

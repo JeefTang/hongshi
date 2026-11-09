@@ -1263,13 +1263,13 @@ PRODUCTS = [
         "slug": "motors.html",
         "en": {
             "title": "High-Efficiency Motors — IE3 to IE5 Induction and PM Synchronous | DALIAN HONGSHI TECHNOLOGY",
-            "desc": "YE5 (IE5), YE4 (IE4) and YE3 (IE3) asynchronous motors 0.12-375 kW, YKK 6/10 kV to 2,500 kW, and TYCP/TYCP2 permanent-magnet synchronous motors to 450 kW. IEC frames, IP55, F class. Quoted with the pump as one train.",
+            "desc": "YE5 (IE5), YE4 (IE4) and YE3 (IE3) asynchronous motors 0.12-375 kW, YKK 6/10 kV to 2,500 kW, and TYCP/TYCP2 permanent-magnet synchronous motors to 450 kW. IEC frames, IP55, F class. Supplied on their own as replacement units for palm oil mills in Malaysia and Indonesia, or as part of a pump train.",
             "crumb": "Motors",
             "body": MOTORS_EN,
         },
         "zh": {
             "title": "高能效电机 · IE3–IE5 异步电机与永磁同步电机 | 大连宏实科技",
-            "desc": "YE5（IE5）、YE4（IE4）、YE3（IE3）异步电动机 0.12–375 kW，YKK 高压 6/10 kV 至 2,500 kW，TYCP/TYCP2 永磁同步电动机至 450 kW。IEC 机座、IP55、F 级，可与泵组成套报价。",
+            "desc": "YE5（IE5）、YE4（IE4）、YE3（IE3）异步电动机 0.12–375 kW，YKK 高压 6/10 kV 至 2,500 kW，TYCP/TYCP2 永磁同步电动机至 450 kW。IEC 机座、IP55、F 级。可单台供货，用于马来西亚、印尼棕榈油厂电机替换；也可与泵组成套。",
             "crumb": "电机",
             "body": MOTORS_ZH,
         },
