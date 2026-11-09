@@ -84,9 +84,28 @@ MOTORS_EN = """
     </div>
     <p class="small" style="margin-top:18px">Standard: 380 V / 50 Hz (other voltages and 60 Hz to order) · S1 duty · IP55 · F class · IC411 · B3 / B5 / B35 / V1 mounting. Derivatives available on the same platform: VFD-duty (YVF2 / YXVF), electromagnetic brake, multi-speed, low-vibration, marine, roller-table and stainless-steel shell.</p>
 
-    <figure style="margin:34px 0 0">
-      <img src="assets/img/motors-induction.svg" alt="Totally enclosed fan-cooled induction motor, frame 63 to 355" loading="lazy" style="width:100%;max-width:780px;display:block;margin:0 auto;border:1px solid #e2eaef;border-radius:14px;background:#fff">
-    </figure>
+    <div class="spec-grid" style="margin-top:34px">
+      <article class="card" style="padding:0;overflow:hidden">
+        <img src="assets/img/wn-motor-ye5.jpg" alt="YE5 series IE5 high-efficiency induction motor" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block">
+        <div style="padding:16px 18px 18px"><p class="tag" style="margin:0 0 6px">YE5 · IE5</p><p style="margin:0;font-size:14px">0.75–375 kW · frame 80–355</p></div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <img src="assets/img/wn-motor-ye4.jpg" alt="YE4 series IE4 high-efficiency induction motor" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block">
+        <div style="padding:16px 18px 18px"><p class="tag" style="margin:0 0 6px">YE4 · IE4</p><p style="margin:0;font-size:14px">0.37–375 kW · frame 63–355</p></div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <img src="assets/img/wn-motor-ye3.jpg" alt="YE3 series IE3 high-efficiency induction motor" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block">
+        <div style="padding:16px 18px 18px"><p class="tag" style="margin:0 0 6px">YE3 · IE3</p><p style="margin:0;font-size:14px">0.12–375 kW · frame 63–355</p></div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <img src="assets/img/wn-motor-ybx5.jpg" alt="YBX5 series explosion-proof IE5 induction motor" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block">
+        <div style="padding:16px 18px 18px"><p class="tag" style="margin:0 0 6px">YBX5 · Ex d · IE5</p><p style="margin:0;font-size:14px">0.18–375 kW · frame 80–355</p></div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <img src="assets/img/wn-motor-ykk.jpg" alt="YKK series high-voltage induction motor" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block">
+        <div style="padding:16px 18px 18px"><p class="tag" style="margin:0 0 6px">YKK · 6/10 kV</p><p style="margin:0;font-size:14px">160–2,500 kW · frame 355–630</p></div>
+      </article>
+    </div>
 
     <div class="grid-2" style="margin-top:40px;gap:26px">
       <div class="card">
@@ -126,7 +145,8 @@ MOTORS_EN = """
       </table>
     </div>
     <figure style="margin:34px 0 0">
-      <img src="assets/img/motors-pm.svg" alt="Permanent-magnet synchronous motor with matched variable-frequency drive" loading="lazy" style="width:100%;max-width:780px;display:block;margin:0 auto;border:1px solid #e2eaef;border-radius:14px;background:#fff">
+      <img src="assets/img/wn-motor-tycp.jpg" alt="TYCP series permanent-magnet synchronous motor" loading="lazy" style="width:100%;max-width:620px;display:block;margin:0 auto;border:1px solid #e2eaef;border-radius:14px;background:#fff">
+      <figcaption class="small" style="text-align:center;margin-top:10px">TYCP / TYCP2 frame family — same 80–355 mounting envelope as the YE series induction motors.</figcaption>
     </figure>
     <div class="grid-2" style="margin-top:36px;gap:56px;align-items:start">
       <div class="prose">
@@ -286,9 +306,28 @@ MOTORS_ZH = """
     </div>
     <p class="small" style="margin-top:18px">标准：380 V / 50 Hz（其他电压、60 Hz 可定制）· S1 工作制 · IP55 · F 级 · IC411 · B3 / B5 / B35 / V1 安装。同平台派生：变频调速（YVF2 / YXVF）、电磁制动、变极多速、低振动低噪声、船用、辊道、不锈钢机壳。</p>
 
-    <figure style="margin:34px 0 0">
-      <img src="assets/img/motors-induction.svg" alt="全封闭风扇冷却异步电动机，机座号 63–355" loading="lazy" style="width:100%;max-width:780px;display:block;margin:0 auto;border:1px solid #e2eaef;border-radius:14px;background:#fff">
-    </figure>
+    <div class="spec-grid" style="margin-top:34px">
+      <article class="card" style="padding:0;overflow:hidden">
+        <img src="assets/img/wn-motor-ye5.jpg" alt="YE5 系列 1 级能效（IE5）三相异步电动机" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block">
+        <div style="padding:16px 18px 18px"><p class="tag" style="margin:0 0 6px">YE5 · IE5</p><p style="margin:0;font-size:14px">0.75–375 kW · 机座 80–355</p></div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <img src="assets/img/wn-motor-ye4.jpg" alt="YE4 系列 2 级能效（IE4）三相异步电动机" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block">
+        <div style="padding:16px 18px 18px"><p class="tag" style="margin:0 0 6px">YE4 · IE4</p><p style="margin:0;font-size:14px">0.37–375 kW · 机座 63–355</p></div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <img src="assets/img/wn-motor-ye3.jpg" alt="YE3 系列 3 级能效（IE3）三相异步电动机" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block">
+        <div style="padding:16px 18px 18px"><p class="tag" style="margin:0 0 6px">YE3 · IE3</p><p style="margin:0;font-size:14px">0.12–375 kW · 机座 63–355</p></div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <img src="assets/img/wn-motor-ybx5.jpg" alt="YBX5 系列隔爆型 1 级能效异步电动机" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block">
+        <div style="padding:16px 18px 18px"><p class="tag" style="margin:0 0 6px">YBX5 · Ex d · IE5</p><p style="margin:0;font-size:14px">0.18–375 kW · 机座 80–355</p></div>
+      </article>
+      <article class="card" style="padding:0;overflow:hidden">
+        <img src="assets/img/wn-motor-ykk.jpg" alt="YKK 系列高压三相异步电动机" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;display:block">
+        <div style="padding:16px 18px 18px"><p class="tag" style="margin:0 0 6px">YKK · 6/10 kV</p><p style="margin:0;font-size:14px">160–2,500 kW · 机座 355–630</p></div>
+      </article>
+    </div>
 
     <div class="grid-2" style="margin-top:40px;gap:26px">
       <div class="card">
@@ -328,7 +367,8 @@ MOTORS_ZH = """
       </table>
     </div>
     <figure style="margin:34px 0 0">
-      <img src="assets/img/motors-pm.svg" alt="永磁同步电动机与配套变频器" loading="lazy" style="width:100%;max-width:780px;display:block;margin:0 auto;border:1px solid #e2eaef;border-radius:14px;background:#fff">
+      <img src="assets/img/wn-motor-tycp.jpg" alt="TYCP 系列永磁同步电动机" loading="lazy" style="width:100%;max-width:620px;display:block;margin:0 auto;border:1px solid #e2eaef;border-radius:14px;background:#fff">
+      <figcaption class="small" style="text-align:center;margin-top:10px">TYCP / TYCP2 同一机座族——与 YE 系列异步电机同 80–355 安装尺寸。</figcaption>
     </figure>
     <div class="grid-2" style="margin-top:36px;gap:56px;align-items:start">
       <div class="prose">
