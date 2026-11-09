@@ -14,6 +14,8 @@ Spec numbers are supply-envelope ranges, not model commitments; the exact model 
 fixed per duty point at quotation time (same policy as the existing pump pages).
 """
 
+from motors_extra import MOTORS_EN, MOTORS_ZH
+
 # ------------------------------------------------------------------ EN: maglev
 
 MAGLEV_EN = """
@@ -1255,6 +1257,21 @@ PRODUCTS = [
             "desc": "手提式轴向磁通屏蔽泵：8000 L/h、扬程 62 m（两级串联 124 m），IP68 可潜水，无轴封无油，220/110/72 V 供电，变频调速、手机 APP 控制。",
             "crumb": "便携式水泵",
             "body": MOBILE_ZH,
+        },
+    },
+    {
+        "slug": "motors.html",
+        "en": {
+            "title": "High-Efficiency Motors — IE3 to IE5 Induction and PM Synchronous | DALIAN HONGSHI TECHNOLOGY",
+            "desc": "YE5 (IE5), YE4 (IE4) and YE3 (IE3) asynchronous motors 0.12-375 kW, YKK 6/10 kV to 2,500 kW, and TYCP/TYCP2 permanent-magnet synchronous motors to 450 kW. IEC frames, IP55, F class. Quoted with the pump as one train.",
+            "crumb": "Motors",
+            "body": MOTORS_EN,
+        },
+        "zh": {
+            "title": "高能效电机 · IE3–IE5 异步电机与永磁同步电机 | 大连宏实科技",
+            "desc": "YE5（IE5）、YE4（IE4）、YE3（IE3）异步电动机 0.12–375 kW，YKK 高压 6/10 kV 至 2,500 kW，TYCP/TYCP2 永磁同步电动机至 450 kW。IEC 机座、IP55、F 级，可与泵组成套报价。",
+            "crumb": "电机",
+            "body": MOTORS_ZH,
         },
     },
     {

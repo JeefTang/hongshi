@@ -45,6 +45,7 @@ NAV_PRODUCTS = [
     ("slurry-pumps.html", "Slurry pumps", "浆料泵"),
     ("maglev-blowers.html", "Maglev blowers", "磁悬浮鼓风机"),
     ("mobile-pumps.html", "Mobile pump units", "移动泵站"),
+    ("motors.html", "Motors IE3–IE5", "高效电机"),
     ("edge-ai.html", "Industrial AI box", "工业智能体"),
 ]
 
@@ -427,6 +428,7 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
         "slurry-pumps.html": ("Heavy duty · abrasive solids", "重载 · 高浓度磨蚀介质"),
         "maglev-blowers.html": ("30–400 kW · oil-free air", "30–400 kW · 无油气路"),
         "mobile-pumps.html": ("Trailer or skid · diesel / electric", "拖车或撬装 · 柴油/电动"),
+        "motors.html": ("IE3–IE5 · 0.12–2,500 kW", "IE3–IE5 · 0.12–2,500 kW"),
         "edge-ai.html": ("On-machine edge agent", "装在现场设备上的边缘智能体"),
     }
     sheet_items = ""

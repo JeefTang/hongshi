@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-label="Permanent-magnet synchronous motor with variable-frequency drive">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6fafb"/><stop offset="1" stop-color="#e3eef1"/>
+    </linearGradient>
+    <linearGradient id="body2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f5b62"/><stop offset=".45" stop-color="#204649"/><stop offset="1" stop-color="#14302f"/>
+    </linearGradient>
+    <linearGradient id="steel2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8e2e8"/><stop offset=".5" stop-color="#a9bac5"/><stop offset="1" stop-color="#7d8f9b"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9eef2"/><stop offset="1" stop-color="#cfdae2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="675" fill="url(#bg2)"/>
+  <path d="M0 560h900v115H0z" fill="#dee9ee"/>
+  <ellipse cx="420" cy="556" rx="300" ry="24" fill="#cbd8e0" opacity=".85"/>
+
+  <!-- base rail -->
+  <rect x="210" y="520" width="430" height="16" rx="4" fill="#94a6b2"/>
+
+  <!-- feet -->
+  <path d="M262 452h88l16 68h-120z" fill="#132a2b"/>
+  <path d="M508 452h88l16 68h-120z" fill="#132a2b"/>
+  <rect x="242" y="508" width="126" height="14" rx="3" fill="#0b1c1d"/>
+  <rect x="488" y="508" width="126" height="14" rx="3" fill="#0b1c1d"/>
+
+  <!-- shaft -->
+  <rect x="110" y="342" width="110" height="24" rx="4" fill="url(#steel2)"/>
+  <rect x="110" y="348" width="110" height="5" fill="#eef4f8" opacity=".7"/>
+
+  <!-- end shield -->
+  <rect x="215" y="268" width="32" height="188" rx="12" fill="#12282a"/>
+  <!-- body -->
+  <rect x="240" y="250" width="316" height="206" rx="32" fill="url(#body2)"/>
+  <g stroke="#3a6a6f" stroke-width="9" stroke-linecap="round" opacity=".95">
+    <path d="M268 268v170"/><path d="M296 264v178"/><path d="M324 262v182"/>
+    <path d="M352 260v186"/><path d="M380 260v186"/><path d="M408 260v186"/>
+    <path d="M436 260v186"/><path d="M464 260v186"/><path d="M492 262v182"/>
+    <path d="M520 264v178"/>
+  </g>
+
+  <!-- cutaway window showing magnets -->
+  <circle cx="398" cy="352" r="76" fill="#0d1f21" stroke="#4d7f83" stroke-width="6"/>
+  <circle cx="398" cy="352" r="46" fill="#204446" stroke="#6ea3a5" stroke-width="3"/>
+  <g fill="#e2570f">
+    <rect x="378" y="292" width="40" height="16" rx="3"/>
+    <rect x="378" y="396" width="40" height="16" rx="3"/>
+    <rect x="338" y="344" width="16" height="40" rx="3"/>
+    <rect x="442" y="344" width="16" height="40" rx="3"/>
+  </g>
+  <circle cx="398" cy="352" r="16" fill="#8fb6b8"/>
+  <text x="398" y="359" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="bold" fill="#123033">PM</text>
+
+  <!-- terminal box -->
+  <rect x="336" y="182" width="112" height="70" rx="10" fill="#2b575b"/>
+  <rect x="330" y="174" width="124" height="16" rx="6" fill="#457b7f"/>
+
+  <!-- fan cowl -->
+  <rect x="548" y="266" width="30" height="190" rx="10" fill="#12282a"/>
+  <rect x="570" y="272" width="56" height="178" rx="26" fill="#1a3d40"/>
+
+  <!-- drive cabinet -->
+  <g>
+    <rect x="660" y="250" width="160" height="270" rx="10" fill="url(#panel)" stroke="#aabbc6"/>
+    <rect x="660" y="250" width="160" height="26" rx="10" fill="#37474f"/>
+    <rect x="674" y="292" width="132" height="86" rx="6" fill="#22313a"/>
+    <text x="740" y="330" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#7ee2c4">VFD</text>
+    <text x="740" y="356" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#9fb4bd">0 – 200 Hz</text>
+    <g fill="#aab8c1">
+      <rect x="674" y="396" width="132" height="10" rx="5"/>
+      <rect x="674" y="418" width="132" height="10" rx="5"/>
+      <rect x="674" y="440" width="96" height="10" rx="5"/>
+    </g>
+    <circle cx="742" cy="488" r="14" fill="#e2570f"/>
+    <rect x="676" y="508" width="132" height="6" rx="3" fill="#9fb0bc"/>
+  </g>
+  <!-- cable motor -> drive -->
+  <path d="M628 420 C 644 470, 660 470, 668 470" fill="none" stroke="#37474f" stroke-width="7" stroke-linecap="round"/>
+
+  <text x="390" y="620" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" fill="#6f8892" letter-spacing="4">PM SYNCHRONOUS · IE5 BAND</text>
+</svg>

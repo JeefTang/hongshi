@@ -31,6 +31,7 @@ PRODUCT_NAV = [
     ("slurry-pumps.html", "Slurry pumps"),
     ("maglev-blowers.html", "Maglev blowers &amp; vacuum"),
     ("mobile-pumps.html", "Mobile pump units"),
+    ("motors.html", "Motors · IE3–IE5"),
     ("edge-ai.html", "Industrial AI edge box"),
 ]
 
@@ -131,6 +132,7 @@ def footer():
           <li><a href="slurry-pumps.html">Slurry pumps</a></li>
           <li><a href="maglev-blowers.html">Maglev blowers &amp; vacuum pumps</a></li>
           <li><a href="mobile-pumps.html">Mobile pump units</a></li>
+          <li><a href="motors.html">High-efficiency motors</a></li>
           <li><a href="edge-ai.html">Industrial AI edge box</a></li>
           <li><a href="calculator.html">Sizing calculator</a></li>
         </ul>
@@ -294,10 +296,10 @@ home_body = f"""
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">New product lines</p>
-      <h2>Oil-free air, mobile water, on-site intelligence</h2>
-      <p class="lead">Three additions to the pump business: levitated-rotor blowers and vacuum pumps, self-contained mobile pump units, and an industrial AI appliance that runs on the plant network.</p>
+      <h2>Oil-free air, mobile water, on-site intelligence, efficient drive</h2>
+      <p class="lead">Four additions to the pump business: levitated-rotor blowers and vacuum pumps, self-contained mobile pump units, an industrial AI appliance that runs on the plant network, and the motors that drive all of it.</p>
     </div>
-    <div class="grid-3">
+    <div class="grid-4">
       <article class="card">
         <div class="icon">◍</div>
         <p class="tag">Maglev / air-foil</p>
@@ -311,6 +313,13 @@ home_body = f"""
         <h3>Portable and trailer-mounted pump sets</h3>
         <p>Emergency dewatering, flood response and temporary transfer. Diesel or electric, quick-connect pipework, running the same day it arrives.</p>
         <a class="more" href="mobile-pumps.html">See the formats →</a>
+      </article>
+      <article class="card">
+        <div class="icon">◉</div>
+        <p class="tag">Motors</p>
+        <h3>IE3–IE5 induction &amp; PM synchronous</h3>
+        <p>0.12–375 kW at 380 V and 160–2,500 kW at 6/10 kV, plus permanent-magnet synchronous motors to 450 kW. Same IEC frames — a higher efficiency class drops onto the existing baseplate.</p>
+        <a class="more" href="motors.html">See the type spectrum →</a>
       </article>
       <article class="card">
         <div class="icon">⌁</div>
@@ -1548,6 +1557,7 @@ urls = [
     ("slurry-pumps.html", "0.9", "monthly"),
     ("maglev-blowers.html", "0.9", "monthly"),
     ("mobile-pumps.html", "0.8", "monthly"),
+    ("motors.html", "0.9", "monthly"),
     ("edge-ai.html", "0.9", "monthly"),
     ("applications.html", "0.8", "monthly"),
     ("mine-dewatering.html", "0.7", "monthly"),

@@ -31,6 +31,7 @@ PRODUCT_NAV = [
     ("slurry-pumps.html", "浆料泵"),
     ("maglev-blowers.html", "磁悬浮鼓风机与真空泵"),
     ("mobile-pumps.html", "移动式便携水泵"),
+    ("motors.html", "高效电机"),
     ("edge-ai.html", "工业智能体盒子"),
 ]
 
@@ -128,6 +129,7 @@ def footer():
           <li><a href="slurry-pumps.html">浆料泵</a></li>
           <li><a href="maglev-blowers.html">磁悬浮鼓风机与真空泵</a></li>
           <li><a href="mobile-pumps.html">移动式便携水泵</a></li>
+          <li><a href="motors.html">高效电机</a></li>
           <li><a href="edge-ai.html">工业智能体盒子</a></li>
           <li><a href="calculator.html">选型计算器</a></li>
         </ul>
@@ -238,10 +240,10 @@ INDEX_BODY = f"""
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">新增产品线</p>
-      <h2>无油风、移动水、厂内智能</h2>
-      <p class="lead">在泵业务之外新增三条线：悬浮转子鼓风机与真空泵、成套移动泵组，以及跑在厂区网络里的工业智能体。</p>
+      <h2>无油风、移动水、厂内智能、高效驱动</h2>
+      <p class="lead">在泵业务之外新增四条线：悬浮转子鼓风机与真空泵、成套移动泵组、跑在厂区网络里的工业智能体，以及驱动这一切的电机。</p>
     </div>
-    <div class="grid-3">
+    <div class="grid-4">
       <article class="card">
         <div class="icon">◍</div>
         <p class="tag">磁悬浮 / 空浮</p>
@@ -255,6 +257,13 @@ INDEX_BODY = f"""
         <h3>便携式与拖车式泵组</h3>
         <p>应急排水、防汛抢险与临时输送。柴油或电机驱动，快接管路，到现场当天就能开。</p>
         <a class="more" href="mobile-pumps.html">查看形式 →</a>
+      </article>
+      <article class="card">
+        <div class="icon">◉</div>
+        <p class="tag">电机</p>
+        <h3>IE3–IE5 异步与永磁同步</h3>
+        <p>380 V 0.12–375 kW、6/10 kV 160–2,500 kW，永磁同步至 450 kW。机座符合 IEC，提一档能效，原底座直接换。</p>
+        <a class="more" href="motors.html">查看型谱 →</a>
       </article>
       <article class="card">
         <div class="icon">⌁</div>
