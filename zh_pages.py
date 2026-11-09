@@ -32,6 +32,7 @@ PRODUCT_NAV = [
     ("maglev-blowers.html", "磁悬浮鼓风机与真空泵"),
     ("mobile-pumps.html", "移动式便携水泵"),
     ("motors.html", "高效电机"),
+    ("vfd-motors.html", "变频电机"),
     ("edge-ai.html", "工业智能体盒子"),
 ]
 
@@ -130,6 +131,7 @@ def footer():
           <li><a href="maglev-blowers.html">磁悬浮鼓风机与真空泵</a></li>
           <li><a href="mobile-pumps.html">移动式便携水泵</a></li>
           <li><a href="motors.html">高效电机</a></li>
+          <li><a href="vfd-motors.html">变频电机</a></li>
           <li><a href="edge-ai.html">工业智能体盒子</a></li>
           <li><a href="calculator.html">选型计算器</a></li>
         </ul>

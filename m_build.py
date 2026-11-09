@@ -46,6 +46,7 @@ NAV_PRODUCTS = [
     ("maglev-blowers.html", "Maglev blowers", "磁悬浮鼓风机"),
     ("mobile-pumps.html", "Mobile pump units", "移动泵站"),
     ("motors.html", "Motors IE3–IE5", "高效电机"),
+    ("vfd-motors.html", "VFD motors", "变频电机"),
     ("edge-ai.html", "Industrial AI box", "工业智能体"),
 ]
 
@@ -429,6 +430,7 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
         "maglev-blowers.html": ("30–400 kW · oil-free air", "30–400 kW · 无油气路"),
         "mobile-pumps.html": ("Trailer or skid · diesel / electric", "拖车或撬装 · 柴油/电动"),
         "motors.html": ("IE3–IE5 · 0.12–2,500 kW", "IE3–IE5 · 0.12–2,500 kW"),
+        "vfd-motors.html": ("VFD duty · 0.55–315 kW", "变频专用 · 0.55–315 kW"),
         "edge-ai.html": ("On-machine edge agent", "装在现场设备上的边缘智能体"),
     }
     sheet_items = ""

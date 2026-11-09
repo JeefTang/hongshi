@@ -459,3 +459,352 @@ MOTORS_ZH = """
   </div>
 </section>
 """
+
+
+# ======================================================================
+# Variable-frequency duty motors (added 2026-11-09, per Lao Tang)
+# Separate product entry under the motor category: YVF2 / YXVF / YBBP.
+# Ranges are supply-envelope, confirmed per model at quotation.
+# ======================================================================
+
+VFD_EN = """
+{crumbs}
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">VFD-duty motors · 0.55–315 kW · YVF2 / YXVF</p>
+    <h1>A motor on a drive is not a standard motor</h1>
+    <p class="lead">A variable-frequency drive changes more than the speed. It changes how the motor is cooled at low speed, what the winding insulation has to survive, where the current goes in the bearings, and which part of the torque curve you are allowed to use. The YVF2 / YXVF series is built for that duty from the frame up.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid-2" style="gap:56px;align-items:start">
+    <div class="prose">
+      <h2>Four things a general-purpose motor gets wrong on a drive</h2>
+      <p>Bolting a VFD onto a standard YE3 works — for a fan running at 80–100% speed. It stops working when the duty spends real hours at low speed, in a hot plant, on a long cable, or at constant torque. The failure is rarely immediate; it shows up as a winding that smells hot after eighteen months.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>What the drive does</th><th>What it breaks on a standard motor</th><th>What the VFD motor does instead</th></tr></thead>
+          <tbody>
+            <tr><td>Runs below base speed</td><td>The shaft-mounted fan moves almost no air at 30% speed, so the winding cooks at exactly the moment the load is highest</td><td>Independent constant-speed cooling fan (IC416) — full airflow at any rotor speed</td></tr>
+            <tr><td>Switches at 4–16 kHz</td><td>PWM pulses arrive as a steep wavefront; on a long cable the reflected wave can nearly double the peak voltage at the terminals</td><td>Inverter-grade magnet wire and reinforced turn/phase insulation, rated for the pulse stress</td></tr>
+            <tr><td>Creates common-mode voltage</td><td>Shaft voltage discharges through the bearings and erodes the raceway</td><td>Insulated bearing on the non-drive end and a shaft grounding path on the larger frames</td></tr>
+            <tr><td>Holds constant torque at low speed</td><td>Self-ventilation and the standard thermal margin run out; the motor cannot hold the load</td><td>Thermal design and fan sized for continuous constant-torque duty across the stated range</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" style="margin-top:16px">This is why the two products are not interchangeable on paper even when the nameplate kW matches. The frame may be the same; the cooling, insulation system and bearing arrangement are not.</p>
+    </div>
+    <div>
+      <div class="card">
+        <h3>At a glance</h3>
+        <ul class="checks">
+          <li>YVF2 general VFD duty: 0.55–315 kW, frame 80–355</li>
+          <li>YXVF high-efficiency VFD duty: 0.75–375 kW, frame 80–355</li>
+          <li>2, 4, 6 and 8 poles; 380 V as standard</li>
+          <li>Independent cooling fan, IC416, full airflow down to minimum speed</li>
+          <li>Insulation class F standard, H on request; IP55</li>
+          <li>Constant torque below base speed, constant power above</li>
+          <li>Explosion-proof VFD duty (YBBP, Ex d) quoted per area classification</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:20px;background:#0c1a26;border-color:#0c1a26;color:#fff">
+        <p class="tag" style="color:#ffb08a">Where they go</p>
+        <h3 style="color:#fff">Pumps, fans, conveyors, mixers</h3>
+        <p style="color:#c6d6df">Any duty where the flow or the process sets the speed instead of the mains: boiler feed on sliding pressure, mine dewatering on varying inflow, aeration on dissolved-oxygen control, slurry transfer on density, cooling-tower fans on wet-bulb.</p>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Typical base frequency</span><b>50 Hz</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>Typical speed range</span><b>5–100 Hz</b></div>
+        <div class="kv" style="border:0"><span>Duty</span><b>S1, continuous</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Type spectrum</p>
+      <h2>VFD-duty series</h2>
+      <p class="lead">Same IEC frames as the YE series, so the motor still lands on the existing baseplate — but the cooling and insulation system are specified for drive supply, not for the mains.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Series</th><th>Duty</th><th>Power</th><th>Frame</th><th>Poles</th><th>Cooling</th><th>Typical use</th></tr></thead>
+        <tbody>
+          <tr><td><strong>YVF2</strong></td><td>General VFD duty, constant torque below base speed</td><td>0.55–315 kW</td><td>80–355</td><td>2, 4, 6, 8</td><td>IC416 independent fan</td><td>Pumps, fans, conveyors, mixers on a drive</td></tr>
+          <tr><td><strong>YXVF</strong></td><td>High-efficiency VFD duty</td><td>0.75–375 kW</td><td>80–355</td><td>2, 4, 6, 8</td><td>IC416 independent fan</td><td>Continuous duties where the kWh bill dominates</td></tr>
+          <tr><td><strong>YBBP</strong></td><td>Flameproof VFD duty, Ex d</td><td>Quoted per area classification</td><td>Per Ex schedule</td><td>2, 4, 6, 8</td><td>IC416 independent fan</td><td>Flammable-gas areas: gas boosting, refinery, solvent plants</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:18px">Above about 300 kW the cable and switchgear for 380 V become the expensive part of the installation; a high-voltage YKK machine (160–2,500 kW, 6/10 kV) can be supplied for drive duty with the drive and the winding insulation co-specified. Ranges above are supply envelopes, not model commitments — the exact model is fixed against the duty point at quotation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Duty envelope · indicative</p>
+      <h2>Torque, speed and the limits in between</h2>
+      <p class="lead">A drive-duty motor is normally sold as constant torque below base speed and constant power above it. What that means for a pump is simple: below base speed you can hold any head the pump can make at that speed; above it you get more flow but the torque falls away.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Region</th><th>Range (typical)</th><th>What is available</th><th>What to watch</th></tr></thead>
+        <tbody>
+          <tr><td>Constant torque</td><td>5–50 Hz</td><td>Rated torque continuously, with full cooling from the independent fan</td><td>Minimum continuous speed is set by the driven machine, not only by the motor — check pump lubrication and bearing film</td></tr>
+          <tr><td>Constant power</td><td>50–100 Hz</td><td>Rated power, torque falls in inverse proportion to speed</td><td>Above base speed the mechanical limits of the driven machine matter more than the motor</td></tr>
+          <tr><td>Below minimum</td><td>&lt; 5 Hz</td><td>Short-term only, or not at all</td><td>Low-speed continuous duty needs a different thermal arrangement; ask before assuming</td></tr>
+          <tr><td>Skip bands</td><td>Case by case</td><td>—</td><td>The drive is programmed to jump critical speeds of the train; we need the shaft and baseplate data</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:18px">A pump or fan load is quadratic: at 80% speed the shaft power is about half, at 50% speed about one eighth. That is the whole economic case for the drive — the motor only has to survive the trip down there.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap grid-2" style="gap:56px;align-items:start">
+    <div class="prose">
+      <h2>When a standard motor plus a drive is enough</h2>
+      <p>We would rather sell the cheaper answer when it is the right one. A general-purpose YE3 or YE4 on a drive is a sensible choice when all of the following hold:</p>
+      <ul>
+        <li>The duty stays above roughly 70% of rated speed for most running hours</li>
+        <li>The load is quadratic (centrifugal pump or fan), not constant torque</li>
+        <li>Starts and stops are infrequent, and the ambient is normal</li>
+        <li>The motor-to-drive cable is short and the drive output is filtered if it is not</li>
+      </ul>
+      <p>Specify VFD duty when any of these is true:</p>
+      <ul>
+        <li>Continuous operation below about 50% speed</li>
+        <li>Constant-torque load — positive-displacement pumps, conveyors, mixers, crushers</li>
+        <li>High ambient, high altitude, or a hot enclosure</li>
+        <li>Frequent starts, high switching frequency, or a long cable run to the motor</li>
+      </ul>
+    </div>
+    <div class="prose">
+      <h2>What we need to quote one</h2>
+      <ul>
+        <li><strong>Duty point</strong> — kW at the shaft at rated speed, and the driven machine's curve</li>
+        <li><strong>Speed range</strong> — minimum and maximum operating speed, and how long is spent at each</li>
+        <li><strong>Load type</strong> — quadratic or constant torque; starting torque if it is heavy</li>
+        <li><strong>Supply</strong> — voltage, frequency, phases; 380 V or 6/10 kV</li>
+        <li><strong>Drive</strong> — make and model, or let us select it with the motor</li>
+        <li><strong>Installation</strong> — cable length from drive to motor, ambient, altitude, indoor/outdoor, IP requirement</li>
+        <li><strong>Area classification</strong> — safe area, or the Ex zone and gas group</li>
+        <li><strong>Extras</strong> — encoder, winding and bearing RTDs, space heaters, brake, terminal box position</li>
+      </ul>
+      <p class="small">Send the existing nameplate and the drive model and we will come back with the equivalent YVF2 / YXVF frame, the cooling arrangement, the minimum continuous speed and the torque available at your lowest operating point.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">As a package</p>
+      <h2>Motor, drive, panel and pump as one train</h2>
+      <p class="lead">The failure modes on a VFD-driven train are interface failures: the drive's overload setting against the motor's thermal time constant, the cable against the winding insulation, the minimum speed against the pump's bearing film. Buying them from one place puts that interface on one drawing.</p>
+    </div>
+    <div class="spec-grid">
+      <article class="card"><p class="tag">01 · Drive selection</p><h3>Sized to the duty, not the nameplate</h3><p>Heavy-duty overload margin, switching frequency, and the actual cable length are part of the selection — not left to whoever supplies the drive.</p></article>
+      <article class="card"><p class="tag">02 · Cable and filter</p><h3>Long runs get a filter</h3><p>Above the drive manufacturer's cable limit we add a dv/dt or sine filter, or specify a reinforced winding. The motor is ordered to match the decision.</p></article>
+      <article class="card"><p class="tag">03 · Panel</p><h3>One enclosure, one set of drawings</h3><p>Drive, breaker, line reactor, cooling and terminals assembled and tested as a panel, not shipped as loose components.</p></article>
+      <article class="card"><p class="tag">04 · Commissioning</p><h3>Aligned and run before shipment</h3><p>Pump, motor, coupling and baseplate aligned; the train run at minimum, base and maximum speed before it leaves.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="card">
+      <p class="tag">Compliance</p>
+      <h3>Efficiency, and what we will not claim</h3>
+      <p style="max-width:900px">The IE classes in GB 18613-2020 are written for line-start machines. For a motor running from a drive, the meaningful figure is the type-test efficiency at the speed and load where it actually runs, and we state the standard and the test point it was measured against. We do not label a VFD-duty motor with an IE class borrowed from its line-start equivalent. Market certifications — CE, EAC, UL/CSA or a hazardous-area approval — are quoted item by item against the motor, the drive, the voltage and the country of installation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <h2>Tell us the speed range, not just the kW.</h2>
+        <p>Minimum speed, maximum speed, load type and cable length decide whether the answer is a standard motor on a drive or a VFD-duty machine. We will tell you which, and why.</p>
+      </div>
+      <a class="btn light" href="contact.html">Ask for a VFD motor selection</a>
+    </div>
+  </div>
+</section>
+"""
+
+VFD_ZH = """
+{crumbs}
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">变频调速电机 · 0.55–315 kW · YVF2 / YXVF</p>
+    <h1>带变频器的电机，不是普通电机</h1>
+    <p class="lead">变频器改变的不只是转速。低速时怎么散热、绕组绝缘要承受什么、电流从轴承里走哪条路、转矩曲线的哪一段能用——这四件事全都变了。YVF2 / YXVF 系列是按变频工况从机座开始设计的。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid-2" style="gap:56px;align-items:start">
+    <div class="prose">
+      <h2>普通电机上变频，四处会出问题</h2>
+      <p>把变频器接到普通 YE3 上，能用——前提是风机水泵常年跑在 80–100% 转速。一旦工况真的要在低速停留几个小时、车间温度高、电缆拉得长，或者负载是恒转矩，问题就来了。而且很少当场坏：通常是一年半以后，绕组发出一股焦味。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>变频器做的事</th><th>普通电机坏在哪</th><th>变频电机怎么解决</th></tr></thead>
+          <tbody>
+            <tr><td>低于基频运行</td><td>同轴风扇在 30% 转速下几乎不送风，负载最重的时候恰恰散热最差</td><td>独立恒速风机（IC416）——任何转速下风量不变</td></tr>
+            <tr><td>4–16 kHz 开关</td><td>PWM 脉冲以陡波前到达；电缆一长，反射波会把端子峰值电压抬到接近两倍</td><td>变频专用漆包线 + 加强匝间/相间绝缘，按脉冲应力选型</td></tr>
+            <tr><td>产生共模电压</td><td>轴电压经轴承放电，电蚀滚道</td><td>非驱动端绝缘轴承，较大机座加轴接地</td></tr>
+            <tr><td>低速恒转矩</td><td>自扇冷和标准热裕量都不够，带不动负荷</td><td>热设计与风机按连续恒转矩工况选，覆盖标称调速范围</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" style="margin-top:16px">所以两者不能只看铭牌 kW 互换：机座可能一样，冷却方式、绝缘系统和轴承结构不一样。</p>
+    </div>
+    <div>
+      <div class="card">
+        <h3>一眼看全</h3>
+        <ul class="checks">
+          <li>YVF2 通用变频：0.55–315 kW，机座 80–355</li>
+          <li>YXVF 高效变频：0.75–375 kW，机座 80–355</li>
+          <li>2、4、6、8 极；标准 380 V</li>
+          <li>独立风机 IC416，最低转速下仍满风量</li>
+          <li>绝缘 F 级（可定制 H 级）；防护 IP55</li>
+          <li>基频以下恒转矩，基频以上恒功率</li>
+          <li>隔爆变频（YBBP，Ex d）按防爆区域逐项报价</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:20px;background:#0c1a26;border-color:#0c1a26;color:#fff">
+        <p class="tag" style="color:#ffb08a">用在哪</p>
+        <h3 style="color:#fff">泵、风机、输送机、搅拌机</h3>
+        <p style="color:#c6d6df">所有"流量或工艺决定转速、而不是电网决定转速"的工况：滑压运行的锅炉给水、来水量变化的矿井排水、按溶解氧控制的曝气、按浓度调转速的浆料输送、按湿球温度调转速的冷却塔风机。</p>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>典型基频</span><b>50 Hz</b></div>
+        <div class="kv" style="border-color:rgba(255,255,255,.14)"><span>典型调速范围</span><b>5–100 Hz</b></div>
+        <div class="kv" style="border:0"><span>工作制</span><b>S1 连续</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">型谱</p>
+      <h2>变频调速系列</h2>
+      <p class="lead">与 YE 系列同一套 IEC 机座，仍然落在原底座上——但冷却和绝缘是按变频供电选的，不是按电网直供选的。</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>系列</th><th>用途</th><th>功率</th><th>机座</th><th>极数</th><th>冷却</th><th>典型场合</th></tr></thead>
+        <tbody>
+          <tr><td><strong>YVF2</strong></td><td>通用变频，基频以下恒转矩</td><td>0.55–315 kW</td><td>80–355</td><td>2、4、6、8</td><td>IC416 独立风机</td><td>泵、风机、输送机、搅拌机变频拖动</td></tr>
+          <tr><td><strong>YXVF</strong></td><td>高效变频</td><td>0.75–375 kW</td><td>80–355</td><td>2、4、6、8</td><td>IC416 独立风机</td><td>电费占比高的连续工况</td></tr>
+          <tr><td><strong>YBBP</strong></td><td>隔爆变频，Ex d</td><td>按防爆区域报价</td><td>按防爆型谱</td><td>2、4、6、8</td><td>IC416 独立风机</td><td>易燃易爆气体场所：增压、炼化、溶剂车间</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:18px">约 300 kW 以上，380 V 的电缆与开关柜会成为安装成本的大头；高压 YKK（160–2,500 kW，6/10 kV）可按变频工况供货，绕组绝缘与变频器一并指定。以上功率为供货区间，不是型号承诺——具体型号按工况点在报价时锁定。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">工况包络 · 参考</p>
+      <h2>转矩、转速，以及两者之间的边界</h2>
+      <p class="lead">变频电机通常按"基频以下恒转矩、基频以上恒功率"供货。对泵来说意思很简单：基频以下，泵在该转速下能打的扬程都能打；基频以上，流量更大，但转矩按转速反比下降。</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>区间</th><th>范围（典型）</th><th>能用什么</th><th>要注意什么</th></tr></thead>
+        <tbody>
+          <tr><td>恒转矩</td><td>5–50 Hz</td><td>连续输出额定转矩，独立风机保证满风量</td><td>最低连续转速由被驱动机械决定，不只由电机决定——要核泵的润滑与轴承油膜</td></tr>
+          <tr><td>恒功率</td><td>50–100 Hz</td><td>额定功率，转矩随转速反比下降</td><td>基频以上，被驱动机械的机械极限比电机更关键</td></tr>
+          <tr><td>低于下限</td><td>&lt; 5 Hz</td><td>仅短时，或不建议</td><td>低速连续运行要另做热设计，别默认能用</td></tr>
+          <tr><td>跳频段</td><td>逐案</td><td>—</td><td>变频器会设定跳过机组临界转速；需要轴系与底座数据</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:18px">泵与风机是平方转矩负载：80% 转速时轴功率约一半，50% 转速时约八分之一。这就是变频的全部经济性来源——电机只要保证能在这个区间里长期活下来。</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap grid-2" style="gap:56px;align-items:start">
+    <div class="prose">
+      <h2>什么时候普通电机加变频就够</h2>
+      <p>该用便宜方案的时候，我们宁可卖便宜的。以下条件全部满足时，普通 YE3 / YE4 配变频器是合理选择：</p>
+      <ul>
+        <li>大部分运行时间在额定转速 70% 以上</li>
+        <li>负载是平方转矩（离心泵、风机），不是恒转矩</li>
+        <li>启停不频繁，环境温度正常</li>
+        <li>电机到变频器的电缆不长，长了就加输出滤波</li>
+      </ul>
+      <p>出现以下任一情况，就应选变频专用电机：</p>
+      <ul>
+        <li>长期在约 50% 转速以下连续运行</li>
+        <li>恒转矩负载——容积泵、输送机、搅拌机、破碎机</li>
+        <li>高环温、高海拔，或装在闷热的柜体/罩壳里</li>
+        <li>频繁启停、高开关频率，或电机电缆很长</li>
+      </ul>
+    </div>
+    <div class="prose">
+      <h2>报价需要哪些参数</h2>
+      <ul>
+        <li><strong>工况点</strong>——额定转速下的轴功率 kW，以及被驱动机械的性能曲线</li>
+        <li><strong>调速范围</strong>——最低/最高运行转速，以及各转速停留多久</li>
+        <li><strong>负载类型</strong>——平方转矩还是恒转矩；重载启动要给启动转矩</li>
+        <li><strong>电源</strong>——电压、频率、相数；380 V 还是 6/10 kV</li>
+        <li><strong>变频器</strong>——品牌型号，或由我们与电机一起选</li>
+        <li><strong>安装</strong>——变频器到电机电缆长度、环温、海拔、室内/室外、防护等级要求</li>
+        <li><strong>区域划分</strong>——安全区，或防爆区域与气体组别</li>
+        <li><strong>附加</strong>——编码器、绕组与轴承测温、防凝露加热器、制动器、接线盒方位</li>
+      </ul>
+      <p class="small">把在役电机铭牌和变频器型号发来，我们回等效的 YVF2 / YXVF 机座、冷却方式、最低连续转速，以及在你最低运行点上还能输出多少转矩。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">成套</p>
+      <h2>电机、变频器、控制柜、泵——按一套机组供货</h2>
+      <p class="lead">变频机组的故障，多数出在接口上：变频器的过载设定对不上电机的热时间常数、电缆对不上绕组绝缘、最低转速对不上泵的轴承油膜。从一家买，这些接口就在同一张图纸上。</p>
+    </div>
+    <div class="spec-grid">
+      <article class="card"><p class="tag">01 · 变频器选型</p><h3>按工况选，不按铭牌选</h3><p>重载过载裕量、开关频率、实际电缆长度都算进选型，不留给"谁供变频器谁定"。</p></article>
+      <article class="card"><p class="tag">02 · 电缆与滤波</p><h3>长线加滤波</h3><p>超过变频器厂家允许的电缆长度，就加 dv/dt 或正弦波滤波器，或者改订加强绝缘绕组——电机按这个决定下单。</p></article>
+      <article class="card"><p class="tag">03 · 控制柜</p><h3>一个柜，一套图纸</h3><p>变频器、断路器、进线电抗器、散热与端子，组装成柜并通电测试后出厂，不是散件发货。</p></article>
+      <article class="card"><p class="tag">04 · 出厂试车</p><h3>对中、试运行后再发运</h3><p>泵、电机、联轴器、底座对中；最低、基频、最高三个转速点在厂内跑过再出厂。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="card">
+      <p class="tag">合规口径</p>
+      <h3>能效标识，以及我们不会说的话</h3>
+      <p style="max-width:900px">GB 18613-2020 的 IE 等级是写给电网直供（line-start）电机的。变频运行的电机，真正有意义的数字是"在实际运行的那个转速和负载点上的型式试验效率"，我们会同时说明它按哪个标准、在哪个测试点测得。我们不会把直供机型的 IE 等级直接贴到变频电机上。面向特定市场的认证——CE、EAC、UL/CSA 或防爆认证——按电机、变频器、电压与安装国别逐项报价。</p>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <h2>请告诉我们调速范围，而不只是 kW。</h2>
+        <p>最低转速、最高转速、负载类型、电缆长度，这四项决定答案是"普通电机配变频"还是"变频专用电机"。我们会告诉你选哪个，以及为什么。</p>
+      </div>
+      <a class="btn light" href="contact.html">索取变频电机选型</a>
+    </div>
+  </div>
+</section>
+"""

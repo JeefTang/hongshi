@@ -32,6 +32,7 @@ PRODUCT_NAV = [
     ("maglev-blowers.html", "Maglev blowers &amp; vacuum"),
     ("mobile-pumps.html", "Mobile pump units"),
     ("motors.html", "Motors · IE3–IE5"),
+    ("vfd-motors.html", "VFD-duty motors"),
     ("edge-ai.html", "Industrial AI edge box"),
 ]
 
@@ -133,6 +134,7 @@ def footer():
           <li><a href="maglev-blowers.html">Maglev blowers &amp; vacuum pumps</a></li>
           <li><a href="mobile-pumps.html">Mobile pump units</a></li>
           <li><a href="motors.html">High-efficiency motors</a></li>
+          <li><a href="vfd-motors.html">VFD-duty motors</a></li>
           <li><a href="edge-ai.html">Industrial AI edge box</a></li>
           <li><a href="calculator.html">Sizing calculator</a></li>
         </ul>
@@ -1558,6 +1560,7 @@ urls = [
     ("maglev-blowers.html", "0.9", "monthly"),
     ("mobile-pumps.html", "0.8", "monthly"),
     ("motors.html", "0.9", "monthly"),
+    ("vfd-motors.html", "0.8", "monthly"),
     ("edge-ai.html", "0.9", "monthly"),
     ("applications.html", "0.8", "monthly"),
     ("mine-dewatering.html", "0.7", "monthly"),

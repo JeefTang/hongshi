@@ -14,7 +14,7 @@ Spec numbers are supply-envelope ranges, not model commitments; the exact model 
 fixed per duty point at quotation time (same policy as the existing pump pages).
 """
 
-from motors_extra import MOTORS_EN, MOTORS_ZH
+from motors_extra import MOTORS_EN, MOTORS_ZH, VFD_EN, VFD_ZH
 
 # ------------------------------------------------------------------ EN: maglev
 
@@ -1287,6 +1287,21 @@ PRODUCTS = [
             "desc": "本机运行 27B 语言模型与 OpenClaw 智能体运行时：四路并发、合计 40+ token/s、平均功耗约 58 W，数据不出厂，无需云账号。",
             "crumb": "工业智能体",
             "body": EDGE_ZH,
+        },
+    },
+    {
+        "slug": "vfd-motors.html",
+        "en": {
+            "title": "VFD-Duty Motors — YVF2 / YXVF Variable-Frequency Motors 0.55–315 kW | DALIAN HONGSHI TECHNOLOGY",
+            "desc": "Variable-frequency duty motors with independent cooling fan (IC416), inverter-grade insulation and insulated bearings: YVF2 0.55-315 kW, YXVF 0.75-375 kW, YBBP flameproof VFD duty, high-voltage YKK on drive. Constant torque 5-50 Hz.",
+            "crumb": "VFD Motors",
+            "body": VFD_EN,
+        },
+        "zh": {
+            "title": "变频电机 · YVF2 / YXVF 变频调速电机 0.55–315 kW | 大连宏实科技",
+            "desc": "变频专用电机：独立风机 IC416、变频专用绝缘、绝缘轴承。YVF2 0.55–315 kW、YXVF 0.75–375 kW、YBBP 隔爆变频、高压 YKK 变频拖动；5–50 Hz 恒转矩运行。",
+            "crumb": "变频电机",
+            "body": VFD_ZH,
         },
     },
 ]
