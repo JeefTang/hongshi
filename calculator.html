@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>/* default view = mobile edition (/m/ , /zh/m/); ?view=desktop opts out */
-(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
-if(f==='mobile'||f==='desktop'){document.cookie='hs_view='+f+';path=/;max-age=31536000;SameSite=Lax';}
-var m=document.cookie.match(/(?:^|;\s*)hs_view=(mobile|desktop)/),pref=f||(m&&m[1])||'mobile';
-var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=='desktop'){
-var t=/\/$/.test(path)?path+'m/':path.replace(/\/([^\/]+)$/,'/m/$1');
-if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');location.replace(t+q+location.hash);}}}catch(e){}})();</script>
+(function(){try{var K="hs_view2",p=new URLSearchParams(location.search),f=p.get("view");
+if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
+try{document.cookie="hs_view=;path=/;max-age=0";}catch(e2){}
+var m=document.cookie.match(/(?:^|;\s*)hs_view2=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
+var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>Pump Sizing & Energy Saving Calculator | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="Free pump calculator: hydraulic and shaft power, annual energy cost, savings versus a centrifugal pump, simple payback, and a slurry duty check with mixture density.">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/calculator.html">

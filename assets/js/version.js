@@ -5,13 +5,16 @@
       preference (cookie/param) redirects to the /m/ twin of that page.
    3. Mobile pages never auto-redirect back (no loops); the "Desktop" link there
       passes ?view=desktop.
+   4. Cookie key is hs_view2; the legacy hs_view cookie (1-year, set by the
+      earlier UA-based switcher) is cleared so everyone falls back to the
+      mobile default once.
 */
 (function () {
-  var COOKIE = 'hs_view';
+  var COOKIE = 'hs_view2';
   var MAXAGE = 60 * 60 * 24 * 365;
 
   function getPref() {
-    var m = document.cookie.match(/(?:^|;\s*)hs_view=(mobile|desktop)/);
+    var m = document.cookie.match(/(?:^|;\s*)hs_view2=(mobile|desktop)/);
     return m ? m[1] : null;
   }
   function setPref(v) {
@@ -19,6 +22,8 @@
     document.cookie = COOKIE + '=' + v + ';path=/;max-age=' + MAXAGE + ';SameSite=Lax';
   }
   window.hsView = { get: getPref, set: setPref };
+
+  try { document.cookie = 'hs_view=;path=/;max-age=0'; } catch (e) {}
 
   var params = new URLSearchParams(location.search);
   var forced = params.get('view');

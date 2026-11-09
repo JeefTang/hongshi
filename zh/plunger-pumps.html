@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>/* default view = mobile edition (/m/ , /zh/m/); ?view=desktop opts out */
-(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
-if(f==='mobile'||f==='desktop'){document.cookie='hs_view='+f+';path=/;max-age=31536000;SameSite=Lax';}
-var m=document.cookie.match(/(?:^|;\s*)hs_view=(mobile|desktop)/),pref=f||(m&&m[1])||'mobile';
-var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=='desktop'){
-var t=/\/$/.test(path)?path+'m/':path.replace(/\/([^\/]+)$/,'/m/$1');
-if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');location.replace(t+q+location.hash);}}}catch(e){}})();</script>
+(function(){try{var K="hs_view2",p=new URLSearchParams(location.search),f=p.get("view");
+if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
+try{document.cookie="hs_view=;path=/;max-age=0";}catch(e2){}
+var m=document.cookie.match(/(?:^|;\s*)hs_view2=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
+var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>多柱塞往复泵 12–600 m³/h，扬程至 3,150 m｜大连宏实科技有限公司</title>
 <meta name="description" content="三柱塞、五柱塞、七柱塞往复泵：12–600 m³/h，扬程 200–3,150 m，注水系列至 70 MPa，效率 90% 以上。可直接替换多级离心泵。">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/plunger-pumps.html">
