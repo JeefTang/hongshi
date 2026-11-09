@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* default view = mobile edition (/m/ , /zh/m/); ?view=desktop opts out */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view='+f+';path=/;max-age=31536000;SameSite=Lax';}
+var m=document.cookie.match(/(?:^|;\s*)hs_view=(mobile|desktop)/),pref=f||(m&&m[1])||'mobile';
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=='desktop'){
+var t=/\/$/.test(path)?path+'m/':path.replace(/\/([^\/]+)$/,'/m/$1');
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>工业智能体 · 边缘计算盒子（内嵌 OpenClaw）| 大连宏实科技</title>
 <meta name="description" content="本机运行 27B 语言模型与 OpenClaw 智能体运行时：四路并发、合计 40+ token/s、平均功耗约 58 W，数据不出厂，无需云账号。">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/edge-ai.html">

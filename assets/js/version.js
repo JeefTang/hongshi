@@ -1,8 +1,8 @@
 /* Version switcher — desktop <-> mobile edition (/m/ , /zh/m/)
    Rules
    1. ?view=mobile|desktop  → store preference in cookie, then act.
-   2. Mobile UA landing on a desktop page with no explicit "desktop" preference
-      → auto-redirect to the /m/ twin of that page.
+   2. Default = mobile edition: any desktop page with no explicit "desktop"
+      preference (cookie/param) redirects to the /m/ twin of that page.
    3. Mobile pages never auto-redirect back (no loops); the "Desktop" link there
       passes ?view=desktop.
 */
@@ -25,12 +25,9 @@
   if (forced) setPref(forced);
 
   var isMobilePage = /\/m\//.test(location.pathname) || /\/m$/.test(location.pathname);
-  var pref = forced || getPref();
+  var pref = forced || getPref() || 'mobile';
 
-  var ua = navigator.userAgent || '';
-  var mobileUA = /Android|iPhone|iPod|iPad|Mobile|HarmonyOS|Windows Phone|BlackBerry|Opera Mini/i.test(ua);
-
-  if (!isMobilePage && mobileUA && pref !== 'desktop') {
+  if (!isMobilePage && pref !== 'desktop') {
     var path = location.pathname;
     var target;
     if (/\/$/.test(path)) {

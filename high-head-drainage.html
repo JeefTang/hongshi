@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* default view = mobile edition (/m/ , /zh/m/); ?view=desktop opts out */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view='+f+';path=/;max-age=31536000;SameSite=Lax';}
+var m=document.cookie.match(/(?:^|;\s*)hs_view=(mobile|desktop)/),pref=f||(m&&m[1])||'mobile';
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=='desktop'){
+var t=/\/$/.test(path)?path+'m/':path.replace(/\/([^\/]+)$/,'/m/$1');
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>High-head drainage & mountain irrigation pumps | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="Multi-plunger pumps for high-lift water transfer: mountain irrigation, plateau supply and high-head drainage, 50–500 m3/h at 300–2,500 m head, single unit or series staged.">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/high-head-drainage.html">

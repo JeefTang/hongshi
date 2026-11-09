@@ -49,6 +49,15 @@ LOGO = """<svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidde
 </svg>"""
 
 
+VIEW_SNIP = r'''<script>/* default view = mobile edition (/m/ , /zh/m/); ?view=desktop opts out */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view='+f+';path=/;max-age=31536000;SameSite=Lax';}
+var m=document.cookie.match(/(?:^|;\s*)hs_view=(mobile|desktop)/),pref=f||(m&&m[1])||'mobile';
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=='desktop'){
+var t=/\/$/.test(path)?path+'m/':path.replace(/\/([^\/]+)$/,'/m/$1');
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');location.replace(t+q+location.hash);}}}catch(e){}})();</script>'''
+
+
 def head(title, desc, slug, extra_head="", jsonld=None):
     canonical = f"{CONFIG['domain']}/{slug}" if slug else f"{CONFIG['domain']}/"
     ld = ""
@@ -59,6 +68,7 @@ def head(title, desc, slug, extra_head="", jsonld=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{VIEW_SNIP}
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{canonical}">
