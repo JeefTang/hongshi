@@ -19,7 +19,7 @@
   <a class="link" href="../../m/calculator.html">EN</a>
   <a class="link" href="../calculator.html?view=desktop">电脑版</a>
 </div>
-<div class="mhero"><p class="eyebrow">工程工具</p><h1>选型与节电计算器</h1><p class="lead">每个项目我们都会算的两笔账：一个工况点要多少轴功率，以及离心泵换成柱塞泵后差多少。全部在浏览器里算，数据不外传。</p></div><section class="m-sec"><div class="m-form"><div>
+<div class="mhero"><p class="eyebrow">工程工具</p><h1>选型与节电计算器</h1><p class="lead">每个项目我们都会算的两笔账：一个工况点要多少轴功率，以及离心泵换成柱塞泵后差多少。全部在浏览器里算，数据不外传。</p></div><section class="m-sec"><div class="m-form"><div class="calc-tabs">
       <button data-tab="energy">节电与回收期</button>
       <button data-tab="slurry">浆体工况校核</button>
     </div>
@@ -36,7 +36,7 @@
           <div><label for="e_price">电价（美元/kWh）</label><input id="e_price" type="number" value="0.08" min="0.01" step="0.01"></div>
           <div><label for="e_capex">新泵投资（美元）</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div>可选——仅用于静态回收期</div></div>
         </div>
-        <div>
+        <div class="calc-out">
           <h3>计算结果</h3>
           <div><span>水力功率</span><b id="o_ph">—</b></div>
           <div><span>新泵轴功率</span><b id="o_pnew">—</b></div>
@@ -65,7 +65,7 @@
           <div><label for="s_hours">年运行小时</label><input id="s_hours" type="number" value="8000" min="100" step="100"></div>
           <div><label for="s_price">电价（美元/kWh）</label><input id="s_price" type="number" value="0.08" min="0.01" step="0.01"></div>
         </div>
-        <div>
+        <div class="calc-out">
           <h3>计算结果</h3>
           <div><span>混合密度</span><b id="o_mix">—</b></div>
           <div><span>混合比重</span><b id="o_sg_mix">—</b></div>
@@ -108,6 +108,7 @@
 </div>
 <script src="../../assets/js/version.js" defer></script>
 <script src="../../assets/js/chat.js" defer></script>
+<script src="../../assets/js/calc.js" defer></script>
 <script>
 (function(){
   var b=document.getElementById('mProdBtn'),s=document.getElementById('mSheet');

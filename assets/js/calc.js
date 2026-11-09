@@ -111,19 +111,27 @@
   }
 
   /* ---------- tabs ---------- */
+  function showTab(name) {
+    document.querySelectorAll("[data-tab]").forEach(function (x) {
+      x.classList.toggle("active", x.getAttribute("data-tab") === name);
+    });
+    document.querySelectorAll("[data-panel]").forEach(function (p) {
+      p.style.display = p.getAttribute("data-panel") === name ? "" : "none";
+    });
+  }
+
   function initTabs() {
     var tabs = document.querySelectorAll("[data-tab]");
+    if (!tabs.length) return;
     tabs.forEach(function (t) {
       t.addEventListener("click", function () {
-        var name = t.getAttribute("data-tab");
-        document.querySelectorAll("[data-tab]").forEach(function (x) {
-          x.classList.toggle("active", x === t);
-        });
-        document.querySelectorAll("[data-panel]").forEach(function (p) {
-          p.style.display = p.getAttribute("data-panel") === name ? "" : "none";
-        });
+        showTab(t.getAttribute("data-tab"));
       });
     });
+    /* set the initial state: an explicitly active tab, else the first one.
+       Needed on the mobile edition, where inline styles/classes are stripped. */
+    var active = document.querySelector("[data-tab].active") || tabs[0];
+    showTab(active.getAttribute("data-tab"));
   }
 
   document.addEventListener("DOMContentLoaded", function () {

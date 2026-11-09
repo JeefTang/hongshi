@@ -447,6 +447,13 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
     vjs = posixpath.relpath("assets/js/version.js", out_dir)
     cjs = posixpath.relpath("assets/js/chat.js", out_dir)
     ccss = posixpath.relpath("assets/css/chat.css", out_dir)
+    # the calculator is the only page with live client-side maths; the mobile
+    # build strips <script> from the desktop page, so load the shared calc.js here
+    calcjs = (
+        f'\n<script src="{posixpath.relpath("assets/js/calc.js", out_dir)}" defer></script>'
+        if slug == "calculator.html"
+        else ""
+    )
 
     return f"""<!doctype html>
 <html lang="{'en' if lang == 'en' else 'zh-CN'}">
@@ -496,7 +503,7 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
   <a class="cta" href="{ui['contact']}"><span class="ic">✉</span>{ui['quote']}</a>
 </div>
 <script src="{vjs}" defer></script>
-<script src="{cjs}" defer></script>
+<script src="{cjs}" defer></script>{calcjs}
 <script>
 (function(){{
   var b=document.getElementById('mProdBtn'),s=document.getElementById('mSheet');
@@ -511,6 +518,25 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
 </script>
 </body>
 </html>"""
+
+
+def tune_calculator(content):
+    """Restore the few class names the generic mobile converter strips.
+
+    The converter keeps form containers verbatim but removes class/style, so the
+    calculator loses .calc-tabs / .calc-out that m.css styles.
+    """
+    content = re.sub(
+        r'<div class="m-form"><div>(\s*<button data-tab=)',
+        r'<div class="m-form"><div class="calc-tabs">\1',
+        content,
+    )
+    content = re.sub(
+        r'<div>(\s*<h3>(?:Results|计算结果)</h3>)',
+        r'<div class="calc-out">\1',
+        content,
+    )
+    return content
 
 
 def build_dir(src_dir, out_dir, lang, depth_label):
@@ -531,6 +557,8 @@ def build_dir(src_dir, out_dir, lang, depth_label):
             continue
         canonical = f"{DOMAIN}/{posixpath.join(out_dir.replace(ROOT, '').lstrip('/'), name)}"
         content = rewrite_paths(content, src_dir, out_dir)
+        if name == "calculator.html":
+            content = tune_calculator(content)
         html_out = page_shell(lang, name, title, desc, content, src_dir, out_dir, canonical)
         with open(os.path.join(out_dir, name), "w", encoding="utf-8") as f:
             f.write(html_out)
