@@ -316,12 +316,48 @@
   }
 
   var endpoint = null;
-  var BASE = location.pathname.indexOf("/zh/") !== -1 ? "../" : "";
+  /* Site config lives at <site-root>/assets/data/chat-config.json. Resolve it by
+     trying candidates (script URL, script URL minus a trailing "zh/", site-root
+     guess) because pages live at "/", "/zh/", "/m/", "/zh/m/" — the old single
+     "/zh/" check made the mobile edition 404, so `endpoint` stayed null and
+     every consultation stayed in the browser (bug found 2026-11-10: a visitor
+     chatted on the mobile site and no message reached the relay or WeChat). */
+  var CFG_CANDIDATES = (function () {
+    var out = [], seen = {};
+    function add(u) { if (u && !seen[u]) { seen[u] = 1; out.push(u); } }
+    try {
+      var s = document.currentScript;
+      if (!s) {
+        var list = document.getElementsByTagName("script");
+        for (var i = list.length - 1; i >= 0; i--) {
+          if (/chat\.js(\?|$)/.test(list[i].src || "")) { s = list[i]; break; }
+        }
+      }
+      if (s && s.src) {
+        var p = new URL(s.src, location.href).pathname;
+        var m = p.match(/^(.*?)assets\/js\/chat\.js$/);
+        if (m) {
+          add(m[1] + "assets/data/chat-config.json");
+          add(m[1].replace(/zh\/$/, "") + "assets/data/chat-config.json");
+        }
+      }
+    } catch (e) {}
+    var seg = location.pathname.split("/")[1];
+    if (seg) add("/" + seg + "/assets/data/chat-config.json");
+    add("/assets/data/chat-config.json");
+    return out;
+  })();
   function loadConfig() {
-    fetch(BASE + "assets/data/chat-config.json", { cache: "no-store" })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (c) { if (c && c.endpoint) { endpoint = c.endpoint; startPoll(); } })
-      .catch(function () {});
+    var i = 0;
+    (function next() {
+      if (i >= CFG_CANDIDATES.length) return;
+      fetch(CFG_CANDIDATES[i++], { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (c) {
+          if (c && c.endpoint) { endpoint = c.endpoint; startPoll(); } else { next(); }
+        })
+        .catch(next);
+    })();
   }
 
   /* ---- conversation id (kept in this browser only, random) ---- */
