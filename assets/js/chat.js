@@ -56,6 +56,19 @@
   };
 
   var EMAIL = "18041136555@189.cn";
+  /* 零碳小助手微信二维码：按 chat.js 自身路径解析，兼容 /m/ 手机页 */
+  var QR_SRC = (function () {
+    try {
+      var s = document.currentScript, list = document.getElementsByTagName("script");
+      if (!s || !/chat\.js(\?|$)/.test(s.src || "")) {
+        for (var i = list.length - 1; i >= 0; i--) {
+          if (/chat\.js(\?|$)/.test(list[i].src || "")) { s = list[i]; break; }
+        }
+      }
+      if (s && s.src) return s.src.replace(/js\/chat\.js(\?.*)?$/, "img/wechat-qr.png");
+    } catch (e) {}
+    return "assets/img/wechat-qr.png";
+  })();
 
   /* ---------------------------------------------------------------- knowledge base
      Every figure below is taken from this website. Do not add unverified numbers. */
@@ -145,8 +158,8 @@
       zh: "质保条款随具体配置写在报价单里，同时给易损件更换周期。这里不先给一个可能与报价单不一致的数字——工程师会连同价格一起确认。" },
 
     { id: "contact", k: ["contact", "email", "phone", "whatsapp", "wechat", "call", "联系", "电话", "微信", "邮箱", "怎么联系"],
-      en: "Email: " + EMAIL + "\nWeChat: the QR code on the Contact page (mostly for China-based contacts).\nNo WhatsApp line in this market — email reaches the export desk directly and is the fastest route for overseas enquiries.\nLocation: Dalian, Liaoning, China.",
-      zh: "邮箱：" + EMAIL + "\n微信：联系页有二维码（主要面向国内联系人）。\n海外不用 WhatsApp——邮件直达出口部，是海外询盘最快的通道。\n地址：中国 · 辽宁 · 大连。" },
+      en: "Email: " + EMAIL + "\nWeChat: scan the QR code below to reach Zero Carbon Assistant directly (China-based contacts).\nNo WhatsApp line in this market — email reaches the export desk directly and is the fastest route for overseas enquiries.\nLocation: Dalian, Liaoning, China.\n[[QR]]",
+      zh: "邮箱：" + EMAIL + "\n微信：扫下面的二维码，直接加零碳小助手（国内联系人）。\n海外不用 WhatsApp——邮件直达出口部，是海外询盘最快的通道。\n地址：中国 · 辽宁 · 大连。\n[[QR]]" },
 
     { id: "who", k: ["who are you", "company", "about", "hongshi", "manufacturer", "factory or trader", "你们是谁", "公司", "介绍", "厂家", "贸易商"],
       en: "Dalian Hongshi Technology Co., Ltd. — high-pressure reciprocating pump and slurry pump systems for mining, power, oil & gas and process industries.\nWe supply complete machines and retrofit packages, with measured references in coal mine dewatering, oilfield injection, boiler feed and slurry transfer.",
@@ -219,12 +232,27 @@
   function plain(s) {
     return String(s).replace(/\*\*(.+?)\*\*/g, "$1").replace(/^#{1,6}\s*/gm, "").replace(/`/g, "");
   }
+  function renderBubble(b, text) {
+    if (String(text).indexOf("[[QR]]") < 0) { b.textContent = text; return; }
+    var parts = String(text).split("[[QR]]");
+    for (var i = 0; i < parts.length; i++) {
+      if (parts[i]) b.appendChild(document.createTextNode(parts[i]));
+      if (i < parts.length - 1) {
+        var q = document.createElement("img");
+        q.className = "hs-qr";
+        q.src = QR_SRC;
+        q.alt = "Zero Carbon Assistant WeChat QR code";
+        q.loading = "lazy";
+        b.appendChild(q);
+      }
+    }
+  }
   function add(who, text) {
     var row = document.createElement("div");
     row.className = "hs-msg " + who;
     var b = document.createElement("div");
     b.className = "hs-bubble";
-    b.textContent = who === "bot" ? plain(text) : text;
+    renderBubble(b, who === "bot" ? plain(text) : text);
     row.appendChild(b);
     body.appendChild(row);
     if (who !== "sys") history.push({ role: who === "me" ? "user" : "assistant", content: text });
