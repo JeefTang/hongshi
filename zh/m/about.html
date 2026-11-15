@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>关于大连宏实科技有限公司 — 工业工程与流体机械 · 大连</title>
 <meta name="description" content="多柱塞往复泵与浆料泵制造企业，研发依托四川省机械研究设计院；已交付锅炉给水、矿井排水与油田注水项目。">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/m/about.html">
