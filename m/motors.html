@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>High-Efficiency Motors — IE3 to IE5 Induction and PM Synchronous | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="YE5 (IE5), YE4 (IE4) and YE3 (IE3) asynchronous motors 0.12-375 kW, YKK 6/10 kV to 2,500 kW, and TYCP/TYCP2 permanent-magnet synchronous motors to 450 kW. IEC frames, IP55, F class. Supplied on their own as replacement units for palm oil mills in Malaysia and Indonesia, or as part of a pump train.">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/m/motors.html">
