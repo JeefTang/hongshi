@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>高压水除磷与清洗泵｜大连宏实科技有限公司</title>
 <meta name="description" content="钢厂除鳞集管与高压清洗用多柱塞泵：20–200 m³/h、10–40 MPa，特殊配置可至 70 MPa，过钢全程压力平稳。">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/m/high-pressure-descaling.html">
