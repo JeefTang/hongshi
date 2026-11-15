@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>Tailings &amp; Coal Slime Pumps — 30–60% Solids, 83%+ Efficiency | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="V5 five-plunger pumps for tailings and coal slime transport: 100–400 m³/h, 30–60% solids, 83%+ efficiency, 4,000 h wear parts, on-site maintenance.">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/m/tailings-transport.html">
