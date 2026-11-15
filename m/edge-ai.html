@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>Industrial AI Agent Appliance — Edge Inference Box | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="Edge appliance running a 27B language model and the OpenClaw agent runtime locally: four concurrent sessions, 40+ tokens/s aggregate, about 58 W. No cloud, no data leaving the plant.">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/m/edge-ai.html">
