@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>高压柱塞泵与浆料泵｜大连宏实科技有限公司</title>
 <meta name="description" content="多柱塞往复泵 12–600 m³/h、扬程至 3,150 m、注水系列至 70 MPa；浆料泵 100–400 m³/h、效率 83% 以上。可直接替换多级离心泵。">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/m/index.html">
