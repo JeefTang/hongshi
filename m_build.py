@@ -39,6 +39,16 @@ LOGO = (
     "</svg>"
 )
 
+# 手机版页面：记住用户点的「手机版 / 电脑版」
+# 桌面页会写 cookie hs_view2；手机页原先不回写 → 点了手机版，下次访问又跳回电脑版
+MV_SNIP = (
+    "<script>/* persist the mobile/desktop choice made on the mobile pages */\n"
+    "(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');\n"
+    "if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';\n"
+    "var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');\n"
+    "history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>"
+)
+
 # page slug -> (nav label EN, nav label ZH)
 NAV_PRODUCTS = [
     ("plunger-pumps.html", "Multi-plunger pumps", "多柱塞泵"),
@@ -464,6 +474,7 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{MV_SNIP}
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{canonical}">
