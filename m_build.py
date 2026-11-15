@@ -456,6 +456,23 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
     sheet_title = "Products" if lang == "en" else "产品"
     sheet_all = "All products" if lang == "en" else "全部产品"
     sheet_close = "Close" if lang == "en" else "关闭"
+    # 三站互联：节能测算 / KSTS BCU / 本站在手机版也保留（原先只在电脑版页脚）
+    REL_TITLE, REL_A, REL_A_URL, REL_B, REL_B_URL = {
+        "en": (
+            "Related sites",
+            "Fluid machinery energy-saving calculator",
+            "https://jeeftang.github.io/energy-calc-platform/en/",
+            "KSTS — biogas &amp; bioenergy, Sabah",
+            "https://jeeftang.github.io/BCU/",
+        ),
+        "zh": (
+            "关联站点",
+            "流体机械节能测算工具",
+            "https://jeeftang.github.io/energy-calc-platform/",
+            "KSTS 沼气与生物能源（沙巴）",
+            "https://jeeftang.github.io/BCU/zh/",
+        ),
+    }[lang]
 
     css = posixpath.relpath("assets/css/m.css", out_dir)
     vjs = posixpath.relpath("assets/js/version.js", out_dir)
@@ -497,6 +514,9 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
 {prod_links.replace('class="m-prod"', 'class="fnavlink"')}
   </div>
   <p style="margin:0 0 8px">大连宏实科技有限公司 · DALIAN HONGSHI TECHNOLOGY</p>
+  <div class="mrel"><strong>{REL_TITLE}</strong>
+    <a href="{REL_A_URL}">{REL_A}</a><span class="sep">·</span><a href="{REL_B_URL}">{REL_B}</a>
+  </div>
   <p style="margin:0"><a href="mailto:419480861@qq.com">419480861@qq.com</a></p>
   <p style="margin:8px 0 0;color:#6f8794">© 2026 · {ui['foot_note']}</p>
 </div>
