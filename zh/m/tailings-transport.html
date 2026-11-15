@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>尾矿与煤泥泵 — 固料 30–60% · 效率 83% 以上｜大连宏实科技有限公司</title>
 <meta name="description" content="V5 五柱塞尾矿与煤泥输送泵：100–400 m³/h，固料 30–60%，效率 83% 以上，易损件 4,000 h，现场维护。">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/m/tailings-transport.html">
