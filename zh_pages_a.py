@@ -15,7 +15,7 @@ CONFIG = {
     "brand_full": "Dalian Hongshi Technology Co., Ltd.",
     "tagline": "高压往复柱塞泵系统",
     "domain": "https://jeeftang.github.io/hongshi",
-    "email": "18041136555@189.cn",
+    "email": "419480861@qq.com",
     "wechat_qr": "assets/img/wechat-qr.png",
     "address": "中国 · 辽宁 · 大连",
     "year": date.today().year,

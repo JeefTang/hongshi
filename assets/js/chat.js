@@ -55,7 +55,7 @@
     humanBtn: "Talk to a human"
   };
 
-  var EMAIL = "18041136555@189.cn";
+  var EMAIL = "419480861@qq.com";
   /* 零碳小助手微信二维码：按 chat.js 自身路径解析，兼容 /m/ 手机页 */
   var QR_SRC = (function () {
     try {
@@ -335,8 +335,7 @@
   function answerFor(text) {
     var hit = match(text);
     if (hit) {
-      // 2026-11-15 定：官网咨询回复一律中英文对照（中文在前，英文紧随）
-      var a = hit.zh && hit.en ? (hit.zh + "\n" + hit.en) : (ZH ? hit.zh : hit.en);
+      var a = ZH ? hit.zh : hit.en;
       add("bot", a);
       logKB(text, a);
       return true;

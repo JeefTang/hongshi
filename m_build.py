@@ -486,7 +486,7 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
 {prod_links.replace('class="m-prod"', 'class="fnavlink"')}
   </div>
   <p style="margin:0 0 8px">大连宏实科技有限公司 · DALIAN HONGSHI TECHNOLOGY</p>
-  <p style="margin:0"><a href="mailto:18041136555@189.cn">18041136555@189.cn</a></p>
+  <p style="margin:0"><a href="mailto:419480861@qq.com">419480861@qq.com</a></p>
   <p style="margin:8px 0 0;color:#6f8794">© 2026 · {ui['foot_note']}</p>
 </div>
 <div class="m-sheet" id="mSheet" hidden>
