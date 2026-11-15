@@ -335,7 +335,8 @@
   function answerFor(text) {
     var hit = match(text);
     if (hit) {
-      var a = ZH ? hit.zh : hit.en;
+      // 2026-11-15 定：官网咨询回复一律中英文对照（中文在前，英文紧随）
+      var a = hit.zh && hit.en ? (hit.zh + "\n" + hit.en) : (ZH ? hit.zh : hit.en);
       add("bot", a);
       logKB(text, a);
       return true;
