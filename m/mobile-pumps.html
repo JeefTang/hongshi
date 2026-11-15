@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>Portable Axial-Flux Pump — 2 kW, 62 m Head, 2.7 kg | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="Hand-carried axial-flux pump: 8,000 L/h, 62 m head (124 m in series), IP68, no shaft seal, no oil. Runs on 220/110/72 V, variable speed, WiFi app control.">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/m/mobile-pumps.html">
