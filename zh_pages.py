@@ -156,6 +156,10 @@ def footer():
         </ul>
       </div>
     </div>
+    <div class="related">
+      <h4>关联站点</h4>
+      <p><a href="https://jeeftang.github.io/energy-calc-platform/" hreflang="zh-CN">流体机械节能测算工具</a><span class="sep">&middot;</span><a href="https://jeeftang.github.io/BCU/zh/" hreflang="zh-CN">KSTS 沼气与生物能源（沙巴）</a></p>
+    </div>
     <div class="copy">
       <span>© {CONFIG['year']} {CONFIG['brand_cn']} 版权所有</span>
       <span>中国设计制造 · 服务全球</span>
