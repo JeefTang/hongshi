@@ -1,5 +1,5 @@
 {
-  "endpoint": "https://gone-syntax-just-auto.trycloudflare.com",
-  "updated": "2026-11-09T10:37+0800",
+  "endpoint": "https://ftp-phd-society-evaluated.trycloudflare.com",
+  "updated": "2026-11-15T11:15+0800",
   "note": "Layer-2 LLM endpoint. Empty = knowledge base only. Filled by scripts/chat_tunnel_sync.sh when the box relay is up."
 }
