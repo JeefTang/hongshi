@@ -123,6 +123,10 @@ details.m-fold>.fold-body{padding:0 0 14px}
 .mfoot .fnav{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 16px}
 .mfoot .fnav a{font-size:13px}
 .mfoot .fnavlink{color:#cfe0ea;font-size:13px;display:inline-block;margin:0 0 4px}
+.mfoot .mrel{margin:12px 0 0;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;line-height:2}
+.mfoot .mrel strong{display:block;margin:0 0 2px;color:#cfe0ea;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.mfoot .mrel a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.mfoot .mrel .sep{color:#5c7480;margin:0 8px}
 
 /* ---------- sticky action bar ---------- */
 .mbar{
