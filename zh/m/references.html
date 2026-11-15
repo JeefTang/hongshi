@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>业绩与现场检测报告｜大连宏实科技有限公司</title>
 <meta name="description" content="矿井排水、油田注水、锅炉给水与浆体输送的已投运业绩，附可下载的现场检测报告，含实测流量、压力与功率。">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/m/references.html">
