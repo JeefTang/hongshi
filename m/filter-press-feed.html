@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>Filter Press Feed Pumps — Constant Pressure, 83%+ Efficiency | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="V5 five-plunger filter press feed pumps: 100–400 m³/h at 0.8–1.5 MPa, 30–60% solids, 83%+ efficiency, shorter cycles and drier cake than centrifugal feed pumps.">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/m/filter-press-feed.html">
