@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>Multi-Plunger Reciprocating Pumps 12–600 m³/h, up to 3,150 m Head | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="Three, five and seven-plunger reciprocating pumps: 12–600 m³/h, heads 200–3,150 m, injection series to 70 MPa, 90%+ efficiency. Drop-in replacement for multistage centrifugal pumps.">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/m/plunger-pumps.html">
