@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>高能效电机 · IE3–IE5 异步电机与永磁同步电机 | 大连宏实科技</title>
 <meta name="description" content="YE5（IE5）、YE4（IE4）、YE3（IE3）异步电动机 0.12–375 kW，YKK 高压 6/10 kV 至 2,500 kW，TYCP/TYCP2 永磁同步电动机至 450 kW。IEC 机座、IP55、F 级。可单台供货，用于马来西亚、印尼棕榈油厂电机替换；也可与泵组成套。">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/m/motors.html">
