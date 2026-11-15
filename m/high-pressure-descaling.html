@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>High-pressure descaling &amp; cleaning pumps | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="Multi-plunger pumps for steel mill descaling headers and high-pressure cleaning: 20–200 m3/h at 10–40 MPa, to 70 MPa on request, flat pressure during the pass.">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/m/high-pressure-descaling.html">
