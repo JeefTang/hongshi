@@ -159,6 +159,10 @@ def footer():
         </ul>
       </div>
     </div>
+    <div class="related">
+      <h4>Related sites</h4>
+      <p><a href="https://jeeftang.github.io/energy-calc-platform/en/" hreflang="en">Fluid machinery energy-saving calculator</a><span class="sep">&middot;</span><a href="https://jeeftang.github.io/BCU/" hreflang="en">KSTS &mdash; biogas &amp; bioenergy, Sabah</a></p>
+    </div>
     <div class="copy">
       <span>© {CONFIG['year']} {CONFIG['brand_cn']}. All rights reserved.</span>
       <span>Engineered in Dalian · Serviced worldwide</span>
