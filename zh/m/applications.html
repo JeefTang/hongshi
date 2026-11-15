@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* persist the mobile/desktop choice made on the mobile pages */
+(function(){try{var p=new URLSearchParams(location.search),f=p.get('view');
+if(f==='mobile'||f==='desktop'){document.cookie='hs_view2='+f+';path=/;max-age=31536000;SameSite=Lax';
+var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
+history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>泵应用：矿井排水 · 锅炉给水 · 高扬程提灌 · 除磷清洗｜大连宏实科技有限公司</title>
 <meta name="description" content="高压柱塞泵与浆料泵在矿井排水、锅炉给水、高扬程排水（高山提灌）与高压水除磷清洗中的应用选型指南。">
 <link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/m/applications.html">
