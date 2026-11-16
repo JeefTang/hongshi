@@ -17,8 +17,14 @@ a{color:#b8430c;text-decoration:none}
   display:flex;align-items:center;gap:10px;padding:10px 14px;
   padding-top:calc(10px + env(safe-area-inset-top));
 }
-.mhead .brand{display:flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:16px;letter-spacing:.02em}
+.mhead .brand{display:flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:16px;letter-spacing:.02em;flex:0 0 auto;min-width:0}
 .mhead .brand svg{width:26px;height:26px;flex:0 0 auto}
+/* 手机内置浏览器（微信/QQ/UC 等）会注入 img{width:100%!important;height:auto!important} 把 logo 撑满屏，
+   这里用同等 !important + 更高特异度把尺寸钉死；高度仍以行内 !important 为准 */
+.mhead .brand img,.mhead .brand img.brand-logo{
+  height:36px!important;max-height:36px!important;min-height:0!important;
+  width:auto!important;max-width:60vw!important;flex:0 0 auto;
+  display:block;object-fit:contain;border-radius:0!important}
 .mhead .brand small{display:block;font-weight:400;font-size:10px;color:#8fa6b2;letter-spacing:.08em}
 .mhead .sp{flex:1}
 .mhead a.link{
