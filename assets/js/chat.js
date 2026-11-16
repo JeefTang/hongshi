@@ -55,7 +55,7 @@
     humanBtn: "Talk to a human"
   };
 
-  var EMAIL = "419480861@qq.com";
+  var EMAIL = "jeeftang@hschina.com";
   /* 零碳小助手微信二维码：按 chat.js 自身路径解析，兼容 /m/ 手机页 */
   var QR_SRC = (function () {
     try {
