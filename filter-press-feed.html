@@ -8,21 +8,25 @@
 if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
 try{document.cookie="hs_view=;path=/;max-age=0";}catch(e2){}
 var m=document.cookie.match(/(?:^|;\s*)hs_view2=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
-var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
-var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
-if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
+var path=location.pathname,t=null;
+if(/\/m(\/|$)/.test(path)){if(!/\.html$/.test(path)){t=path.replace(/\/?$/,"/index.html");}}
+else if(/\/$/.test(path)){t=path+"m/index.html";}
+else if(/\/index\.html$/.test(path)){t=path.replace(/index\.html$/,"m/index.html");}
+else if(/\.html$/.test(path)){t=path.replace(/\/([^\/]+)$/,"/m/$1");}
+else if(/^\/zh$/.test(path)){t="/zh/m/index.html";}
+if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}catch(e){}})();</script>
 <title>Filter Press Feed Pumps — Constant Pressure, 83%+ Efficiency | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="V5 five-plunger filter press feed pumps: 100–400 m³/h at 0.8–1.5 MPa, 30–60% solids, 83%+ efficiency, shorter cycles and drier cake than centrifugal feed pumps.">
-<link rel="canonical" href="https://jeeftang.github.io/hongshi/filter-press-feed.html">
-<link rel="alternate" hreflang="en" href="https://jeeftang.github.io/hongshi/filter-press-feed.html">
-<link rel="alternate" hreflang="zh-CN" href="https://jeeftang.github.io/hongshi/zh/filter-press-feed.html">
-<link rel="alternate" hreflang="x-default" href="https://jeeftang.github.io/hongshi/filter-press-feed.html">
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://jeeftang.github.io/hongshi/m/filter-press-feed.html">
+<link rel="canonical" href="https://www.hschina.com/filter-press-feed.html">
+<link rel="alternate" hreflang="en" href="https://www.hschina.com/filter-press-feed.html">
+<link rel="alternate" hreflang="zh-CN" href="https://www.hschina.com/zh/filter-press-feed.html">
+<link rel="alternate" hreflang="x-default" href="https://www.hschina.com/filter-press-feed.html">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.hschina.com/m/filter-press-feed.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DALIAN HONGSHI TECHNOLOGY">
 <meta property="og:title" content="Filter Press Feed Pumps — Constant Pressure, 83%+ Efficiency | DALIAN HONGSHI TECHNOLOGY">
 <meta property="og:description" content="V5 five-plunger filter press feed pumps: 100–400 m³/h at 0.8–1.5 MPa, 30–60% solids, 83%+ efficiency, shorter cycles and drier cake than centrifugal feed pumps.">
-<meta property="og:url" content="https://jeeftang.github.io/hongshi/filter-press-feed.html">
+<meta property="og:url" content="https://www.hschina.com/filter-press-feed.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0c1a26">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -33,11 +37,7 @@ if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?
 </head>
 <body><header class="site">
   <div class="wrap nav">
-    <a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-<rect width="34" height="34" rx="9" fill="#0c1a26"/>
-<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#e2570f"/>
-<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
-</svg><span>HONGSHI<small>Industrial Pumps</small></span></a>
+    <a class="brand" href="index.html"><img class="brand-logo" src="/assets/img/redrock-logo.png" alt="REDROCK" style="height:46px;width:auto;display:block" loading="eager" decoding="async"></a>
     <ul><li class="has-sub"><a href="plunger-pumps.html">Products</a><ul class="sub"><li><a href="plunger-pumps.html">Multi-plunger pumps</a></li><li><a href="slurry-pumps.html">Slurry pumps</a></li><li><a href="maglev-blowers.html">Maglev blowers &amp; vacuum</a></li><li><a href="mobile-pumps.html">Mobile pump units</a></li><li><a href="motors.html">Motors · IE3–IE5</a></li><li><a href="vfd-motors.html">VFD-duty motors</a></li><li><a href="edge-ai.html">Industrial AI edge box</a></li></ul></li><li><a href="applications.html" class="on">Applications</a></li><li><a href="calculator.html">Calculator</a></li><li><a href="references.html">References</a></li><li><a href="about.html">About</a></li></ul>
     <a class="view-switch" href="m/filter-press-feed.html?view=mobile" title="手机版">手机版</a>
     <a class="lang-switch" href="zh/filter-press-feed.html" hreflang="zh-CN" title="中文版">中文</a>
@@ -98,11 +98,7 @@ if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <a class="brand" href="index.html" style="color:#fff"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-<rect width="34" height="34" rx="9" fill="#0c1a26"/>
-<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#e2570f"/>
-<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
-</svg><span style="color:#fff">HONGSHI<small style="color:#8fa6b2">Industrial Pumps</small></span></a>
+        <a class="brand" href="index.html" style="color:#fff"><img class="brand-logo" src="/assets/img/redrock-logo-white.png" alt="REDROCK" style="height:46px;width:auto;display:block" loading="eager" decoding="async"></a>
         <p style="margin-top:16px;max-width:320px">大连宏实科技有限公司<br>High-pressure reciprocating pumps and slurry pumps for mining, power, oil &amp; gas and process industries.</p>
       </div>
       <div>
@@ -133,7 +129,7 @@ if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:419480861@qq.com">419480861@qq.com</a></li>
+          <li><a href="mailto:jeeftang@hschina.com">jeeftang@hschina.com</a></li>
           <li>Dalian, Liaoning, China</li>
         </ul>
       </div>
