@@ -95,7 +95,7 @@ a{color:#b8430c;text-decoration:none}
   background:#fff;color:#0c1a26;font-family:inherit;-webkit-appearance:none;appearance:none;
 }
 /* 勾选框要保留系统原生外观：上面的 .m-form input 会给所有 input 套 100% 宽 + appearance:none，纯勾选框会变成一块点不动的白块 */
-.m-form input[type=checkbox]{width:20px;height:20px;min-width:20px;padding:0;margin:0;border:0;border-radius:0;background:none;-webkit-appearance:checkbox;appearance:auto;accent-color:#e2570f;flex:0 0 auto;vertical-align:middle}
+.m-form input[type=checkbox]{width:20px;max-width:20px;height:20px;min-width:20px;padding:0;margin:0;border:0;border-radius:0;background:none;-webkit-appearance:checkbox;appearance:auto;accent-color:#e2570f;display:inline-block;flex:0 0 20px;vertical-align:middle}
 .m-form input[type=checkbox]:focus{box-shadow:none;border-color:transparent}
 .m-form label:has(input[type=checkbox]){display:flex;gap:8px;align-items:center;font-weight:400;line-height:1.5}
 .m-form select{background-image:linear-gradient(45deg,transparent 50%,#7b8b96 50%),linear-gradient(135deg,#7b8b96 50%,transparent 50%);background-position:calc(100% - 19px) 21px,calc(100% - 14px) 21px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:38px}
