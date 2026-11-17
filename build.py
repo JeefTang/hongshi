@@ -17,7 +17,7 @@ CONFIG = {
     "brand_full": "Dalian Hongshi Technology Co., Ltd.",
     "tagline": "High-pressure reciprocating pump systems",
     "domain": "https://jeeftang.github.io/hongshi",   # GitHub Pages (temp home until domain)
-    "email": "419480861@qq.com",
+    "email": "jeeftang@hschina.com",
     "wechat_qr": "assets/img/wechat-qr.png",
     "address": "Dalian, Liaoning, China",
     "year": date.today().year,
@@ -1385,7 +1385,7 @@ contact_body = f"""
 <section>
   <div class="wrap grid-2" style="gap:56px;align-items:start">
     <div>
-      <form class="enquiry" action="https://formsubmit.co/419480861@qq.com" method="POST">
+      <form class="enquiry" action="https://formsubmit.co/jeeftang@hschina.com" method="POST">
         <div><label class="small" for="name">Name</label><input id="name" name="name" required></div>
         <div><label class="small" for="company">Company</label><input id="company" name="company"></div>
         <div><label class="small" for="email">Email</label><input id="email" name="email" type="email" required></div>

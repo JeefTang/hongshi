@@ -511,7 +511,7 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
   <div class="mrel"><strong>{REL_TITLE}</strong>
     <a href="{REL_A_URL}">{REL_A}</a><span class="sep">·</span><a href="{REL_B_URL}">{REL_B}</a>
   </div>
-  <p style="margin:0"><a href="mailto:419480861@qq.com">419480861@qq.com</a></p>
+  <p style="margin:0"><a href="mailto:jeeftang@hschina.com">jeeftang@hschina.com</a></p>
   <p style="margin:8px 0 0;color:#6f8794">© 2026 · {ui['foot_note']}</p>
 </div>
 <div class="m-sheet" id="mSheet" hidden>

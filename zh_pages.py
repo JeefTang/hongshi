@@ -17,7 +17,7 @@ CONFIG = {
     "brand_full": "Dalian Hongshi Technology Co., Ltd.",
     "tagline": "高压往复柱塞泵系统",
     "domain": "https://jeeftang.github.io/hongshi",
-    "email": "419480861@qq.com",
+    "email": "jeeftang@hschina.com",
     "wechat_qr": "assets/img/wechat-qr.png",
     "address": "中国 · 辽宁 · 大连",
     "year": date.today().year,
@@ -1255,7 +1255,7 @@ CONTACT_BODY = f"""
 <section>
   <div class="wrap grid-2" style="gap:56px;align-items:start">
     <div>
-      <form class="enquiry" action="https://formsubmit.co/419480861@qq.com" method="POST">
+      <form class="enquiry" action="https://formsubmit.co/jeeftang@hschina.com" method="POST">
         <div><label class="small" for="name">姓名</label><input id="name" name="name" required></div>
         <div><label class="small" for="company">公司</label><input id="company" name="company"></div>
         <div><label class="small" for="email">邮箱</label><input id="email" name="email" type="email" required></div>
