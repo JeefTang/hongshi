@@ -8,24 +8,20 @@
 if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
 try{document.cookie="hs_view=;path=/;max-age=0";}catch(e2){}
 var m=document.cookie.match(/(?:^|;\s*)hs_view2=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
-var path=location.pathname,t=null;
-if(/\/m(\/|$)/.test(path)){if(!/\.html$/.test(path)){t=path.replace(/\/?$/,"/index.html");}}
-else if(/\/$/.test(path)){t=path+"m/index.html";}
-else if(/\/index\.html$/.test(path)){t=path.replace(/index\.html$/,"m/index.html");}
-else if(/\.html$/.test(path)){t=path.replace(/\/([^\/]+)$/,"/m/$1");}
-else if(/^\/zh$/.test(path)){t="/zh/m/index.html";}
-if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}catch(e){}})();</script>
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
+var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>高扬程排水与高山提灌泵｜大连宏实科技有限公司</title>
 <meta name="description" content="高扬程输水用多柱塞泵：高山提灌、高原供水与高扬程排水，50–500 m³/h、扬程 300–2500 m，可单机或串联分级。">
-<link rel="canonical" href="https://www.hschina.com/zh/high-head-drainage.html">
-<link rel="alternate" hreflang="zh-CN" href="https://www.hschina.com/zh/high-head-drainage.html">
-<link rel="alternate" hreflang="en" href="https://www.hschina.com/high-head-drainage.html">
-<link rel="alternate" hreflang="x-default" href="https://www.hschina.com/high-head-drainage.html">
+<link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/high-head-drainage.html">
+<link rel="alternate" hreflang="zh-CN" href="https://jeeftang.github.io/hongshi/zh/high-head-drainage.html">
+<link rel="alternate" hreflang="en" href="https://jeeftang.github.io/hongshi/high-head-drainage.html">
+<link rel="alternate" hreflang="x-default" href="https://jeeftang.github.io/hongshi/high-head-drainage.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DALIAN HONGSHI TECHNOLOGY">
 <meta property="og:title" content="高扬程排水与高山提灌泵｜大连宏实科技有限公司">
 <meta property="og:description" content="高扬程输水用多柱塞泵：高山提灌、高原供水与高扬程排水，50–500 m³/h、扬程 300–2500 m，可单机或串联分级。">
-<meta property="og:url" content="https://www.hschina.com/zh/high-head-drainage.html">
+<meta property="og:url" content="https://jeeftang.github.io/hongshi/zh/high-head-drainage.html">
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0c1a26">
@@ -36,7 +32,11 @@ if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]
 </head>
 <body><header class="site">
   <div class="wrap nav">
-    <a class="brand" href="index.html"><img class="brand-logo" src="/assets/img/redrock-logo.png" alt="REDROCK" style="height:46px;width:auto;display:block"></a>
+    <a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+<rect width="34" height="34" rx="9" fill="#0c1a26"/>
+<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#e2570f"/>
+<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+</svg><span>HONGSHI<small>工业泵</small></span></a>
     <ul><li class="has-sub"><a href="plunger-pumps.html">产品</a><ul class="sub"><li><a href="plunger-pumps.html">多柱塞高压泵</a></li><li><a href="slurry-pumps.html">浆料泵</a></li><li><a href="maglev-blowers.html">磁悬浮鼓风机与真空泵</a></li><li><a href="mobile-pumps.html">移动式便携水泵</a></li><li><a href="motors.html">高效电机</a></li><li><a href="vfd-motors.html">变频电机</a></li><li><a href="edge-ai.html">工业智能体盒子</a></li></ul></li><li><a href="applications.html" class="on">应用领域</a></li><li><a href="calculator.html">选型计算</a></li><li><a href="references.html">业绩案例</a></li><li><a href="about.html">关于我们</a></li></ul>
     <a class="view-switch" href="m/high-head-drainage.html?view=mobile" title="手机版">手机版</a>
     <a class="lang-switch" href="../high-head-drainage.html" hreflang="en" title="English version">EN</a>
@@ -101,7 +101,11 @@ if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <a class="brand" href="index.html" style="color:#fff"><img class="brand-logo" src="/assets/img/redrock-logo-white.png" alt="REDROCK" style="height:46px;width:auto;display:block"></a>
+        <a class="brand" href="index.html" style="color:#fff"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+<rect width="34" height="34" rx="9" fill="#0c1a26"/>
+<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#e2570f"/>
+<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+</svg><span style="color:#fff">HONGSHI<small style="color:#8fa6b2">工业泵</small></span></a>
         <p style="margin-top:16px;max-width:320px">大连宏实科技有限公司<br>面向矿山、电力、油气与流程工业的高压往复泵与浆料泵。</p>
       </div>
       <div>
@@ -132,7 +136,7 @@ if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]
       <div>
         <h4>联系</h4>
         <ul>
-          <li><a href="mailto:jeeftang@hschina.com">jeeftang@hschina.com</a></li>
+          <li><a href="mailto:419480861@qq.com">419480861@qq.com</a></li>
           <li>中国 · 辽宁 · 大连</li>
         </ul>
       </div>

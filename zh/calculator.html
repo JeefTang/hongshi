@@ -8,24 +8,20 @@
 if(f==="mobile"||f==="desktop"){document.cookie=K+"="+f+";path=/;max-age=31536000;SameSite=Lax";}
 try{document.cookie="hs_view=;path=/;max-age=0";}catch(e2){}
 var m=document.cookie.match(/(?:^|;\s*)hs_view2=(mobile|desktop)/),pref=f||(m&&m[1])||"mobile";
-var path=location.pathname,t=null;
-if(/\/m(\/|$)/.test(path)){if(!/\.html$/.test(path)){t=path.replace(/\/?$/,"/index.html");}}
-else if(/\/$/.test(path)){t=path+"m/index.html";}
-else if(/\/index\.html$/.test(path)){t=path.replace(/index\.html$/,"m/index.html");}
-else if(/\.html$/.test(path)){t=path.replace(/\/([^\/]+)$/,"/m/$1");}
-else if(/^\/zh$/.test(path)){t="/zh/m/index.html";}
-if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}catch(e){}})();</script>
+var path=location.pathname;if(!(/\/m\//.test(path)||/\/m$/.test(path))&&pref!=="desktop"){
+var t=/\/$/.test(path)?path+"m/":path.replace(/\/([^\/]+)$/,"/m/$1");
+if(t!==path){var q=location.search.replace(/([?&])view=[^&]*/g,"$1").replace(/[?&]+$/,"");location.replace(t+q+location.hash);}}}catch(e){}})();</script>
 <title>选型与节电计算器｜大连宏实科技有限公司</title>
 <meta name="description" content="免费泵计算器：水力与轴功率、年电费、相对离心泵的节电量、静态回收期，以及含混合密度的浆体工况校核。">
-<link rel="canonical" href="https://www.hschina.com/zh/calculator.html">
-<link rel="alternate" hreflang="zh-CN" href="https://www.hschina.com/zh/calculator.html">
-<link rel="alternate" hreflang="en" href="https://www.hschina.com/calculator.html">
-<link rel="alternate" hreflang="x-default" href="https://www.hschina.com/calculator.html">
+<link rel="canonical" href="https://jeeftang.github.io/hongshi/zh/calculator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://jeeftang.github.io/hongshi/zh/calculator.html">
+<link rel="alternate" hreflang="en" href="https://jeeftang.github.io/hongshi/calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://jeeftang.github.io/hongshi/calculator.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DALIAN HONGSHI TECHNOLOGY">
 <meta property="og:title" content="选型与节电计算器｜大连宏实科技有限公司">
 <meta property="og:description" content="免费泵计算器：水力与轴功率、年电费、相对离心泵的节电量、静态回收期，以及含混合密度的浆体工况校核。">
-<meta property="og:url" content="https://www.hschina.com/zh/calculator.html">
+<meta property="og:url" content="https://jeeftang.github.io/hongshi/zh/calculator.html">
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0c1a26">
@@ -41,7 +37,11 @@ if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]
 </head>
 <body><header class="site">
   <div class="wrap nav">
-    <a class="brand" href="index.html"><img class="brand-logo" src="/assets/img/redrock-logo.png" alt="REDROCK" style="height:46px;width:auto;display:block"></a>
+    <a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+<rect width="34" height="34" rx="9" fill="#0c1a26"/>
+<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#e2570f"/>
+<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+</svg><span>HONGSHI<small>工业泵</small></span></a>
     <ul><li class="has-sub"><a href="plunger-pumps.html">产品</a><ul class="sub"><li><a href="plunger-pumps.html">多柱塞高压泵</a></li><li><a href="slurry-pumps.html">浆料泵</a></li><li><a href="maglev-blowers.html">磁悬浮鼓风机与真空泵</a></li><li><a href="mobile-pumps.html">移动式便携水泵</a></li><li><a href="motors.html">高效电机</a></li><li><a href="vfd-motors.html">变频电机</a></li><li><a href="edge-ai.html">工业智能体盒子</a></li></ul></li><li><a href="applications.html">应用领域</a></li><li><a href="calculator.html" class="on">选型计算</a></li><li><a href="references.html">业绩案例</a></li><li><a href="about.html">关于我们</a></li></ul>
     <a class="view-switch" href="m/calculator.html?view=mobile" title="手机版">手机版</a>
     <a class="lang-switch" href="../calculator.html" hreflang="en" title="English version">EN</a>
@@ -68,24 +68,29 @@ if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]
       <div class="calc">
         <div class="calc-form">
           <div class="field"><label for="e_q">流量 Q（m³/h）</label><input id="e_q" type="number" value="250" min="1" step="1"><div class="hint">工况点体积流量</div></div>
-          <div class="field"><label for="e_h">总扬程 H（m）</label><input id="e_h" type="number" value="800" min="1" step="10"><div class="hint">排出压头减吸入压头，含管路损失</div></div>
+          <div class="field"><label for="e_h">总扬程 H（m）</label><input id="e_h" type="number" value="800" min="1" step="10"><div class="hint">排出压头减吸入压头，含管路损失；压力 × 102 ≈ 扬程 m（10 MPa ≈ 1,019 m）</div></div>
           <div class="field"><label for="e_rho">介质密度（kg/m³）</label><input id="e_rho" type="number" value="1000" min="500" step="10"></div>
           <div class="field"><label for="e_eff">新泵效率（%）</label><input id="e_eff" type="number" value="90" min="30" max="98" step="1"><div class="hint">90% 为 UDZ 系列的公开效率值</div></div>
-          <div class="field"><label for="e_eff_old">原泵效率（%）</label><input id="e_eff_old" type="number" value="55" min="10" max="95" step="1"><div class="hint">填实测值或铭牌值；磨损的多级泵常在 45–65%</div></div>
+          <div class="field"><label for="e_eff_old">原泵系统效率（%，含电机）</label><input id="e_eff_old" type="number" value="55" min="10" max="95" step="1"><div class="hint">系统效率 = 水力功率 ÷ 实测电机输入功率；磨损的多级泵常在 45–68%</div></div>
+          <div class="field"><label for="e_eff_motor">新泵电机+传动效率（%）</label><input id="e_eff_motor" type="number" value="95" min="80" max="99" step="0.5"><div class="hint">新泵电机与传动损耗，用于把轴功率折算成电网取电</div></div>
+          <div class="field"><label for="e_margin">选型余量</label><label style="display:flex;gap:8px;align-items:center;font-weight:400"><input type="checkbox" id="e_margin" checked style="width:auto"> 流量 +10%、压差 +1 MPa（型号档位余量，推荐）</label><div class="hint">勾选：电机 = 选型点轴功率 × 1.10；不勾：运行点轴功率 × 1.10</div></div>
           <div class="field"><label for="e_hours">年运行小时</label><input id="e_hours" type="number" value="8000" min="100" step="100"></div>
-          <div class="field"><label for="e_price">电价（美元/kWh）</label><input id="e_price" type="number" value="0.08" min="0.01" step="0.01"></div>
-          <div class="field"><label for="e_capex">新泵投资（美元）</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div class="hint">可选——仅用于静态回收期</div></div>
+          <div class="field"><label for="e_price">电价（当地币种/kWh）</label><input id="e_price" type="number" value="0.08" min="0.001" step="0.01"><div class="hint">全程用一种币种：美元填 0.08，人民币填 0.64</div></div>
+          <div class="field"><label for="e_capex">新泵投资（同一币种）</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div class="hint">可选——仅用于静态回收期</div></div>
         </div>
         <div class="calc-out">
           <h3>计算结果</h3>
           <div class="kv"><span>水力功率</span><b id="o_ph">—</b></div>
           <div class="kv"><span>新泵轴功率</span><b id="o_pnew">—</b></div>
-          <div class="kv"><span>原泵轴功率</span><b id="o_pold">—</b></div>
+          <div class="kv"><span>新泵电网取电</span><b id="o_pgrid">—</b></div>
+          <div class="kv"><span>原泵电网取电</span><b id="o_pold">—</b></div>
           <div class="kv"><span>新泵年耗电</span><b id="o_kwh">—</b></div>
           <div class="kv"><span>新泵年电费</span><b id="o_cost">—</b></div>
           <div class="kv hl"><span>年节省</span><b id="o_save">—</b></div>
           <div class="kv hl"><span>静态回收期</span><b id="o_payback">—</b></div>
           <div class="kv"><span>年减排 CO₂</span><b id="o_co2">—</b></div>
+          <div class="kv hl"><span>推荐电机</span><b id="o_motor">—</b></div>
+          <div class="hint" id="o_motor_note" style="margin:6px 0 10px"></div>
           <p class="note" id="e_hint"></p>
         </div>
       </div>
@@ -126,7 +131,7 @@ if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]
 <section class="alt">
   <div class="wrap prose">
     <h2>结果怎么读</h2>
-    <p>这是初筛数据，不是正式选型。计算按清水功率与你输入的效率进行，未计 NPSH、黏度修正与电机裕量。正式选型会再加 10–15% 电机裕量，并校核吸入条件。</p>
+    <p>这是初筛数据，不是正式选型。计算按清水功率与你输入的效率进行，未计 NPSH 与黏度修正。正式选型先按型号档位留余量（流量 +10%、压差 +1 MPa），电机再按该选型点轴功率 ×1.10 —— 与我们技术方案系统同一条链；页面同时给出运行点与选型点。</p>
     <h3>最容易让人意外的部分</h3>
     <p>磨损离心泵的轴功率常是新泵的 1.6–2 倍——不是电机选大了，而是效率已经掉离设计点。你能提供的最有用的一项数据，是实测输入功率。</p>
     <h3>回收期的口径</h3>
@@ -137,7 +142,11 @@ if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <a class="brand" href="index.html" style="color:#fff"><img class="brand-logo" src="/assets/img/redrock-logo-white.png" alt="REDROCK" style="height:46px;width:auto;display:block"></a>
+        <a class="brand" href="index.html" style="color:#fff"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+<rect width="34" height="34" rx="9" fill="#0c1a26"/>
+<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#e2570f"/>
+<path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+</svg><span style="color:#fff">HONGSHI<small style="color:#8fa6b2">工业泵</small></span></a>
         <p style="margin-top:16px;max-width:320px">大连宏实科技有限公司<br>面向矿山、电力、油气与流程工业的高压往复泵与浆料泵。</p>
       </div>
       <div>
@@ -168,7 +177,7 @@ if(pref!=="desktop"&&t&&t!==path){var q=location.search.replace(/([?&])view=[^&]
       <div>
         <h4>联系</h4>
         <ul>
-          <li><a href="mailto:jeeftang@hschina.com">jeeftang@hschina.com</a></li>
+          <li><a href="mailto:419480861@qq.com">419480861@qq.com</a></li>
           <li>中国 · 辽宁 · 大连</li>
         </ul>
       </div>

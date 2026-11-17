@@ -10,16 +10,16 @@ var q=location.search.replace(/([?&])view=[^&]*/g,'$1').replace(/[?&]+$/,'');
 history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})();</script>
 <title>Pump Sizing &amp; Energy Saving Calculator | DALIAN HONGSHI TECHNOLOGY</title>
 <meta name="description" content="Free pump calculator: hydraulic and shaft power, annual energy cost, savings versus a centrifugal pump, simple payback, and a slurry duty check with mixture density.">
-<link rel="canonical" href="https://www.hschina.com/m/calculator.html">
+<link rel="canonical" href="https://jeeftang.github.io/hongshi/m/calculator.html">
 <meta name="theme-color" content="#0c1a26">
 <meta name="format-detection" content="telephone=no">
 <link rel="stylesheet" href="../assets/css/chat.css">
-<link rel="stylesheet" href="../assets/css/m.css?v=20261116c">
+<link rel="stylesheet" href="../assets/css/m.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='9' fill='%230c1a26'/><path d='M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z' fill='%23e2570f'/></svg>">
 </head>
 <body>
 <div class="mhead">
-  <a class="brand" href="index.html"><img class="brand-logo" src="/assets/img/redrock-logo.png?v=20261116c" alt="REDROCK" width="72" height="36" style="height:36px!important;width:auto!important;max-height:36px!important;display:block"></a>
+  <a class="brand" href="index.html"><svg viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#e2570f"/><path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#fff"/><path d="M17 22.7v4.8M11 14.5h12" stroke="#0c1a26" stroke-width="1.6" stroke-linecap="round" opacity=".85"/></svg><span>HONGSHI<small>工业泵 · Industrial Pumps</small></span></a>
   <span class="sp"></span>
   <a class="link" href="../zh/m/calculator.html">中文</a>
   <a class="link" href="../calculator.html?view=desktop">电脑版</a>
@@ -33,24 +33,29 @@ history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})()
       <div>
         <div>
           <div><label for="e_q">Flow rate Q (m³/h)</label><input id="e_q" type="number" value="250" min="1" step="1"><div>Volume flow at duty point</div></div>
-          <div><label for="e_h">Total head H (m)</label><input id="e_h" type="number" value="800" min="1" step="10"><div>Discharge head minus suction head, including pipe losses</div></div>
+          <div><label for="e_h">Total head H (m)</label><input id="e_h" type="number" value="800" min="1" step="10"><div>Discharge head minus suction head, including pipe losses. Pressure × 102 ≈ head in m (10 MPa ≈ 1,019 m for water)</div></div>
           <div><label for="e_rho">Fluid density (kg/m³)</label><input id="e_rho" type="number" value="1000" min="500" step="10"></div>
           <div><label for="e_eff">New pump efficiency (%)</label><input id="e_eff" type="number" value="90" min="30" max="98" step="1"><div>90% is the published figure for the TL range</div></div>
-          <div><label for="e_eff_old">Existing pump efficiency (%)</label><input id="e_eff_old" type="number" value="55" min="10" max="95" step="1"><div>Use the measured or nameplate value; 45–65% is common for a worn multistage unit</div></div>
+          <div><label for="e_eff_old">Existing pump system efficiency (%, motor included)</label><input id="e_eff_old" type="number" value="55" min="10" max="95" step="1"><div>Wire-to-water efficiency = hydraulic power ÷ measured input power. 45–68% is common for a worn multistage unit</div></div>
+          <div><label for="e_eff_motor">New motor + drive efficiency (%)</label><input id="e_eff_motor" type="number" value="95" min="80" max="99" step="0.5"><div>Motor and transmission losses on the new unit — used to convert shaft power to grid input</div></div>
+          <div><label for="e_margin">Selection margin</label><label><input type="checkbox" id="e_margin" checked> +10% flow, +1 MPa (model-rating margin, recommended)</label><div>Ticked: motor = selection-point shaft power × 1.10. Unticked: duty-point shaft power × 1.10</div></div>
           <div><label for="e_hours">Operating hours per year</label><input id="e_hours" type="number" value="8000" min="100" step="100"></div>
-          <div><label for="e_price">Electricity price (US$/kWh)</label><input id="e_price" type="number" value="0.08" min="0.01" step="0.01"></div>
-          <div><label for="e_capex">Installed cost of new pump (US$)</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div>Optional — used only for simple payback</div></div>
+          <div><label for="e_price">Electricity price (your local currency / kWh)</label><input id="e_price" type="number" value="0.08" min="0.001" step="0.01"><div>Use one currency throughout: e.g. 0.08 in USD or 0.64 in CNY</div></div>
+          <div><label for="e_capex">Installed cost of new pump (same currency)</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div>Optional — used only for simple payback</div></div>
         </div>
         <div class="calc-out">
           <h3>Results</h3>
           <div><span>Hydraulic power</span><b id="o_ph">—</b></div>
           <div><span>New pump shaft power</span><b id="o_pnew">—</b></div>
-          <div><span>Existing pump shaft power</span><b id="o_pold">—</b></div>
+          <div><span>New pump grid input</span><b id="o_pgrid">—</b></div>
+          <div><span>Existing pump grid input</span><b id="o_pold">—</b></div>
           <div><span>New pump energy</span><b id="o_kwh">—</b></div>
           <div><span>New pump energy cost</span><b id="o_cost">—</b></div>
           <div><span>Annual saving</span><b id="o_save">—</b></div>
           <div><span>Simple payback</span><b id="o_payback">—</b></div>
           <div><span>CO₂ avoided</span><b id="o_co2">—</b></div>
+          <div><span>Recommended motor</span><b id="o_motor">—</b></div>
+          <div id="o_motor_note"></div>
           <p id="e_hint"></p>
         </div>
       </div>
@@ -85,7 +90,7 @@ history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})()
         ρ<sub>mix</sub> = 1 / (c/ρ<sub>s</sub> + (1−c)/ρ<sub>w</sub>)  ·  c = solids mass fraction  ·  P<sub>shaft</sub> = ρ<sub>mix</sub>·g·Q·H / (3.6×10⁶ · η)
       </div>
     </div>
-  </div></section><section class="m-sec tint"><h2>How to read the result</h2><p>These are screening numbers, not a selection. They assume clean-fluid power with the efficiency you enter, and they ignore NPSH, viscosity correction and motor margin. A real selection adds 10–15% motor margin and checks the suction condition.</p><h3>What usually surprises people</h3><p>The shaft power of a worn centrifugal pump is often 1.6–2× the new pump — not because the motor is oversized, but because efficiency has fallen away from the design point. Measured input power is the single most useful number you can give us.</p><h3>Payback assumptions</h3><p>Simple payback only. It ignores maintenance savings (typically 30–50% of the energy saving on abrasive duties), downtime and the residual value of the old unit — so the real payback is usually shorter than shown.</p></section>
+  </div></section><section class="m-sec tint"><h2>How to read the result</h2><p>These are screening numbers, not a selection. They assume clean-fluid power with the efficiency you enter, and they ignore NPSH, viscosity correction and motor margin. A real selection adds a model-rating margin (+10% flow, +1 MPa) and then sizes the motor at ×1.10 of that shaft power — the same chain we use in our proposal system. The calculator shows both the duty point and the selection point.</p><h3>What usually surprises people</h3><p>The shaft power of a worn centrifugal pump is often 1.6–2× the new pump — not because the motor is oversized, but because efficiency has fallen away from the design point. Measured input power is the single most useful number you can give us.</p><h3>Payback assumptions</h3><p>Simple payback only. It ignores maintenance savings (typically 30–50% of the energy saving on abrasive duties), downtime and the residual value of the old unit — so the real payback is usually shorter than shown.</p></section>
 <div class="mfoot">
   <div class="fnav">
 <a class="fnavlink" href="plunger-pumps.html"><strong>Multi-plunger pumps</strong></a><a class="fnavlink" href="slurry-pumps.html"><strong>Slurry pumps</strong></a><a class="fnavlink" href="maglev-blowers.html"><strong>Maglev blowers</strong></a><a class="fnavlink" href="mobile-pumps.html"><strong>Mobile pump units</strong></a><a class="fnavlink" href="motors.html"><strong>Motors IE3–IE5</strong></a><a class="fnavlink" href="vfd-motors.html"><strong>VFD motors</strong></a><a class="fnavlink" href="edge-ai.html"><strong>Industrial AI box</strong></a>
@@ -94,7 +99,7 @@ history.replaceState(null,'',location.pathname+q+location.hash);}}catch(e){}})()
   <div class="mrel"><strong>Related sites</strong>
     <a href="https://jeeftang.github.io/energy-calc-platform/en/">Fluid machinery energy-saving calculator</a><span class="sep">·</span><a href="https://jeeftang.github.io/BCU/">KSTS — biogas &amp; bioenergy, Sabah</a>
   </div>
-  <p style="margin:0"><a href="mailto:jeeftang@hschina.com">jeeftang@hschina.com</a></p>
+  <p style="margin:0"><a href="mailto:419480861@qq.com">419480861@qq.com</a></p>
   <p style="margin:8px 0 0;color:#6f8794">© 2026 · Mobile edition · 手机版</p>
 </div>
 <div class="m-sheet" id="mSheet" hidden>

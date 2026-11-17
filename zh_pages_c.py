@@ -153,24 +153,29 @@ CALC_BODY = f"""
       <div class="calc">
         <div class="calc-form">
           <div class="field"><label for="e_q">流量 Q（m³/h）</label><input id="e_q" type="number" value="250" min="1" step="1"><div class="hint">工况点体积流量</div></div>
-          <div class="field"><label for="e_h">总扬程 H（m）</label><input id="e_h" type="number" value="800" min="1" step="10"><div class="hint">排出压头减吸入压头，含管路损失</div></div>
+          <div class="field"><label for="e_h">总扬程 H（m）</label><input id="e_h" type="number" value="800" min="1" step="10"><div class="hint">排出压头减吸入压头，含管路损失；压力 × 102 ≈ 扬程 m（10 MPa ≈ 1,019 m）</div></div>
           <div class="field"><label for="e_rho">介质密度（kg/m³）</label><input id="e_rho" type="number" value="1000" min="500" step="10"></div>
           <div class="field"><label for="e_eff">新泵效率（%）</label><input id="e_eff" type="number" value="90" min="30" max="98" step="1"><div class="hint">90% 为 UDZ 系列的公开效率值</div></div>
-          <div class="field"><label for="e_eff_old">原泵效率（%）</label><input id="e_eff_old" type="number" value="55" min="10" max="95" step="1"><div class="hint">填实测值或铭牌值；磨损的多级泵常在 45–65%</div></div>
+          <div class="field"><label for="e_eff_old">原泵系统效率（%，含电机）</label><input id="e_eff_old" type="number" value="55" min="10" max="95" step="1"><div class="hint">系统效率 = 水力功率 ÷ 实测电机输入功率；磨损的多级泵常在 45–68%</div></div>
+          <div class="field"><label for="e_eff_motor">新泵电机+传动效率（%）</label><input id="e_eff_motor" type="number" value="95" min="80" max="99" step="0.5"><div class="hint">新泵电机与传动损耗，用于把轴功率折算成电网取电</div></div>
+          <div class="field"><label for="e_margin">选型余量</label><label style="display:flex;gap:8px;align-items:center;font-weight:400"><input type="checkbox" id="e_margin" checked style="width:auto"> 流量 +10%、压差 +1 MPa（型号档位余量，推荐）</label><div class="hint">勾选：电机 = 选型点轴功率 × 1.10；不勾：运行点轴功率 × 1.10</div></div>
           <div class="field"><label for="e_hours">年运行小时</label><input id="e_hours" type="number" value="8000" min="100" step="100"></div>
-          <div class="field"><label for="e_price">电价（美元/kWh）</label><input id="e_price" type="number" value="0.08" min="0.01" step="0.01"></div>
-          <div class="field"><label for="e_capex">新泵投资（美元）</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div class="hint">可选——仅用于静态回收期</div></div>
+          <div class="field"><label for="e_price">电价（当地币种/kWh）</label><input id="e_price" type="number" value="0.08" min="0.001" step="0.01"><div class="hint">全程用一种币种：美元填 0.08，人民币填 0.64</div></div>
+          <div class="field"><label for="e_capex">新泵投资（同一币种）</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div class="hint">可选——仅用于静态回收期</div></div>
         </div>
         <div class="calc-out">
           <h3>计算结果</h3>
           <div class="kv"><span>水力功率</span><b id="o_ph">—</b></div>
           <div class="kv"><span>新泵轴功率</span><b id="o_pnew">—</b></div>
-          <div class="kv"><span>原泵轴功率</span><b id="o_pold">—</b></div>
+          <div class="kv"><span>新泵电网取电</span><b id="o_pgrid">—</b></div>
+          <div class="kv"><span>原泵电网取电</span><b id="o_pold">—</b></div>
           <div class="kv"><span>新泵年耗电</span><b id="o_kwh">—</b></div>
           <div class="kv"><span>新泵年电费</span><b id="o_cost">—</b></div>
           <div class="kv hl"><span>年节省</span><b id="o_save">—</b></div>
           <div class="kv hl"><span>静态回收期</span><b id="o_payback">—</b></div>
           <div class="kv"><span>年减排 CO₂</span><b id="o_co2">—</b></div>
+          <div class="kv hl"><span>推荐电机</span><b id="o_motor">—</b></div>
+          <div class="hint" id="o_motor_note" style="margin:6px 0 10px"></div>
           <p class="note" id="e_hint"></p>
         </div>
       </div>

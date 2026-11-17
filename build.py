@@ -1197,24 +1197,29 @@ calc_body = f"""
       <div class="calc">
         <div class="calc-form">
           <div class="field"><label for="e_q">Flow rate Q (m³/h)</label><input id="e_q" type="number" value="250" min="1" step="1"><div class="hint">Volume flow at duty point</div></div>
-          <div class="field"><label for="e_h">Total head H (m)</label><input id="e_h" type="number" value="800" min="1" step="10"><div class="hint">Discharge head minus suction head, including pipe losses</div></div>
+          <div class="field"><label for="e_h">Total head H (m)</label><input id="e_h" type="number" value="800" min="1" step="10"><div class="hint">Discharge head minus suction head, including pipe losses. Pressure × 102 ≈ head in m (10 MPa ≈ 1,019 m for water)</div></div>
           <div class="field"><label for="e_rho">Fluid density (kg/m³)</label><input id="e_rho" type="number" value="1000" min="500" step="10"></div>
           <div class="field"><label for="e_eff">New pump efficiency (%)</label><input id="e_eff" type="number" value="90" min="30" max="98" step="1"><div class="hint">90% is the published figure for the TL range</div></div>
-          <div class="field"><label for="e_eff_old">Existing pump efficiency (%)</label><input id="e_eff_old" type="number" value="55" min="10" max="95" step="1"><div class="hint">Use the measured or nameplate value; 45–65% is common for a worn multistage unit</div></div>
+          <div class="field"><label for="e_eff_old">Existing pump system efficiency (%, motor included)</label><input id="e_eff_old" type="number" value="55" min="10" max="95" step="1"><div class="hint">Wire-to-water efficiency = hydraulic power ÷ measured input power. 45–68% is common for a worn multistage unit</div></div>
+          <div class="field"><label for="e_eff_motor">New motor + drive efficiency (%)</label><input id="e_eff_motor" type="number" value="95" min="80" max="99" step="0.5"><div class="hint">Motor and transmission losses on the new unit — used to convert shaft power to grid input</div></div>
+          <div class="field"><label for="e_margin">Selection margin</label><label style="display:flex;gap:8px;align-items:center;font-weight:400"><input type="checkbox" id="e_margin" checked style="width:auto"> +10% flow, +1 MPa (model-rating margin, recommended)</label><div class="hint">Ticked: motor = selection-point shaft power × 1.10. Unticked: duty-point shaft power × 1.10</div></div>
           <div class="field"><label for="e_hours">Operating hours per year</label><input id="e_hours" type="number" value="8000" min="100" step="100"></div>
-          <div class="field"><label for="e_price">Electricity price (US$/kWh)</label><input id="e_price" type="number" value="0.08" min="0.01" step="0.01"></div>
-          <div class="field"><label for="e_capex">Installed cost of new pump (US$)</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div class="hint">Optional — used only for simple payback</div></div>
+          <div class="field"><label for="e_price">Electricity price (your local currency / kWh)</label><input id="e_price" type="number" value="0.08" min="0.001" step="0.01"><div class="hint">Use one currency throughout: e.g. 0.08 in USD or 0.64 in CNY</div></div>
+          <div class="field"><label for="e_capex">Installed cost of new pump (same currency)</label><input id="e_capex" type="number" value="150000" min="0" step="1000"><div class="hint">Optional — used only for simple payback</div></div>
         </div>
         <div class="calc-out">
           <h3>Results</h3>
           <div class="kv"><span>Hydraulic power</span><b id="o_ph">—</b></div>
           <div class="kv"><span>New pump shaft power</span><b id="o_pnew">—</b></div>
-          <div class="kv"><span>Existing pump shaft power</span><b id="o_pold">—</b></div>
+          <div class="kv"><span>New pump grid input</span><b id="o_pgrid">—</b></div>
+          <div class="kv"><span>Existing pump grid input</span><b id="o_pold">—</b></div>
           <div class="kv"><span>New pump energy</span><b id="o_kwh">—</b></div>
           <div class="kv"><span>New pump energy cost</span><b id="o_cost">—</b></div>
           <div class="kv hl"><span>Annual saving</span><b id="o_save">—</b></div>
           <div class="kv hl"><span>Simple payback</span><b id="o_payback">—</b></div>
           <div class="kv"><span>CO₂ avoided</span><b id="o_co2">—</b></div>
+          <div class="kv hl"><span>Recommended motor</span><b id="o_motor">—</b></div>
+          <div class="hint" id="o_motor_note" style="margin:6px 0 10px"></div>
           <p class="note" id="e_hint"></p>
         </div>
       </div>
@@ -1255,7 +1260,7 @@ calc_body = f"""
 <section class="alt">
   <div class="wrap prose">
     <h2>How to read the result</h2>
-    <p>These are screening numbers, not a selection. They assume clean-fluid power with the efficiency you enter, and they ignore NPSH, viscosity correction and motor margin. A real selection adds 10–15% motor margin and checks the suction condition.</p>
+    <p>These are screening numbers, not a selection. They assume clean-fluid power with the efficiency you enter, and they ignore NPSH, viscosity correction and motor margin. A real selection adds a model-rating margin (+10% flow, +1 MPa) and then sizes the motor at ×1.10 of that shaft power — the same chain we use in our proposal system. The calculator shows both the duty point and the selection point.</p>
     <h3>What usually surprises people</h3>
     <p>The shaft power of a worn centrifugal pump is often 1.6–2× the new pump — not because the motor is oversized, but because efficiency has fallen away from the design point. Measured input power is the single most useful number you can give us.</p>
     <h3>Payback assumptions</h3>
