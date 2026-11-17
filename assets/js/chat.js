@@ -55,7 +55,7 @@
     humanBtn: "Talk to a human"
   };
 
-  var EMAIL = "jeeftang@hschina.com";
+  var EMAIL = "Jeeftang@hschina.com";
   /* 零碳小助手微信二维码：按 chat.js 自身路径解析，兼容 /m/ 手机页 */
   var QR_SRC = (function () {
     try {
@@ -335,7 +335,8 @@
   function answerFor(text) {
     var hit = match(text);
     if (hit) {
-      var a = ZH ? hit.zh : hit.en;
+      // 2026-11-15 定：官网咨询回复一律中英文对照（中文在前，英文紧随）
+      var a = hit.zh && hit.en ? (hit.zh + "\n" + hit.en) : (ZH ? hit.zh : hit.en);
       add("bot", a);
       logKB(text, a);
       return true;
@@ -397,6 +398,11 @@
   }
   var lastId = 0, mode = "ai", polling = false;
 
+  /* 2026-11-17: 访客第一个问题，先固定回这一句（中英对照），再正常作答 */
+  var ACK = "请稍等，我为您连线工程师。\n\nPlease wait a moment while I connect you with an engineer.";
+  var ackKey = "hs_ack_" + convId, ackSent = false;
+  try { ackSent = localStorage.getItem(ackKey) === "1"; } catch (e) {}
+
   function api(path, body) {
     return fetch(endpoint.replace(/\/$/, "") + path, {
       method: "POST",
@@ -443,6 +449,7 @@
     text = (text || "").trim();
     if (!text) return;
     add("me", text);
+    if (!ackSent) { ackSent = true; try { localStorage.setItem(ackKey, "1"); } catch (e) {} add("bot", ACK); }
     if (HUMAN_RE.test(text) && endpoint) { handoff(text); return; }
     if (mode === "human" && endpoint) { api("/chat", { conv: convId, message: text, lang: ZH ? "zh" : "en" }).catch(function () {}); startPoll(); return; }
     if (answerFor(text)) return;
