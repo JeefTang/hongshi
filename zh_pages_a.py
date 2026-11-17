@@ -39,6 +39,9 @@ LOGO = """<svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidde
 <path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
 </svg>"""
 
+LOGO_IMG = ('<img class="brand-logo" src="/assets/img/redrock-logo.png" alt="REDROCK" style="height:46px;width:auto;display:block">')
+LOGO_IMG_W = ('<img class="brand-logo" src="/assets/img/redrock-logo-white.png" alt="REDROCK" style="height:46px;width:auto;display:block">')
+
 
 def head(title, desc, slug, extra_head=""):
     canonical = f"{CONFIG['domain']}/zh/{slug}"
@@ -76,7 +79,7 @@ def header(active="", en_href="index.html"):
         items += f'<li><a href="{href}"{cls}>{label}</a></li>'
     return f"""<header class="site">
   <div class="wrap nav">
-    <a class="brand" href="index.html">{LOGO}<span>{CONFIG['brand_short']}<small>工业泵</small></span></a>
+    <a class="brand" href="index.html">{LOGO_IMG}</a>
     <ul>{items}</ul>
     <a class="lang-switch" href="{en_href}" hreflang="en" title="English version">EN</a>
     <a class="btn cta" href="contact.html">获取报价</a>
@@ -89,7 +92,7 @@ def footer():
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <a class="brand" href="index.html" style="color:#fff">{LOGO}<span style="color:#fff">{CONFIG['brand_short']}<small style="color:#8fa6b2">工业泵</small></span></a>
+        <a class="brand" href="index.html" style="color:#fff">{LOGO_IMG_W}</a>
         <p style="margin-top:16px;max-width:320px">{CONFIG['brand_cn']}<br>面向矿山、电力、油气与流程工业的高压往复泵与浆料泵。</p>
       </div>
       <div>

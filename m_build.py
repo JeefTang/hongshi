@@ -31,13 +31,7 @@ SKIP_CLASS_HINTS = ("chat", "hs-")
 # current page language, set by build_page(); used by the spec-table renderer
 CUR_LANG = "en"
 
-LOGO = (
-    '<svg viewBox="0 0 34 34" fill="none" aria-hidden="true">'
-    '<rect width="34" height="34" rx="9" fill="#e2570f"/>'
-    '<path d="M17 6.5c3.6 2.4 6 6.2 6 10.2 0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4 2.4-7.8 6-10.2Z" fill="#fff"/>'
-    '<path d="M17 22.7v4.8M11 14.5h12" stroke="#0c1a26" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>'
-    "</svg>"
-)
+LOGO = ('<img class="brand-logo" src="/assets/img/redrock-logo.png?v=20261116c" alt="REDROCK" width="72" height="36" style="height:36px!important;width:auto!important;max-height:36px!important;display:block">')
 
 # 手机版页面：记住用户点的「手机版 / 电脑版」
 # 桌面页会写 cookie hs_view2；手机页原先不回写 → 点了手机版，下次访问又跳回电脑版
@@ -503,7 +497,7 @@ def page_shell(lang, slug, title, desc, content, src_dir, out_dir, canonical):
 </head>
 <body>
 <div class="mhead">
-  <a class="brand" href="{ui['index']}">{LOGO}<span>HONGSHI<small>{'工业泵 · Industrial Pumps' if lang == 'en' else '工业泵'}</small></span></a>
+  <a class="brand" href="{ui['index']}">{LOGO}</a>
   <span class="sp"></span>
   <a class="link" href="{ui['lang_href']}">{ui['lang']}</a>
   <a class="link" href="{ui['desktop_href']}">{ui['desktop']}</a>

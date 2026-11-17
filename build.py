@@ -50,6 +50,13 @@ LOGO = """<svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidde
 <path d="M17 22.7v4.8M11 14.5h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
 </svg>"""
 
+# 公司 logo（REDROCK，2026-11-16 老唐提供 PDF 矢量转图）
+# 用根绝对路径 /assets/...，en / zh / m / zh/m 各层级都能取到
+LOGO_IMG = ('<img class="brand-logo" src="/assets/img/redrock-logo.png" '
+            'alt="REDROCK" style="height:46px;width:auto;display:block" loading="eager" decoding="async">')
+LOGO_IMG_W = ('<img class="brand-logo" src="/assets/img/redrock-logo-white.png" '
+              'alt="REDROCK" style="height:46px;width:auto;display:block" loading="eager" decoding="async">')
+
 
 VIEW_SNIP = r'''<script>/* default view = mobile edition (/m/ , /zh/m/); ?view=desktop opts out */
 (function(){try{var K="hs_view2",p=new URLSearchParams(location.search),f=p.get("view");
@@ -109,7 +116,7 @@ def header(active="", slug="index.html"):
             items += f'<li><a href="{href}"{cls}>{label}</a></li>'
     return f"""<header class="site">
   <div class="wrap nav">
-    <a class="brand" href="index.html">{LOGO}<span>{CONFIG['brand_short']}<small>Industrial Pumps</small></span></a>
+    <a class="brand" href="index.html">{LOGO_IMG}</a>
     <ul>{items}</ul>
     <a class="view-switch" href="m/{slug}?view=mobile" title="手机版">手机版</a>
     <a class="lang-switch" href="zh/{slug}" hreflang="zh-CN" title="中文版">中文</a>
@@ -123,7 +130,7 @@ def footer():
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <a class="brand" href="index.html" style="color:#fff">{LOGO}<span style="color:#fff">{CONFIG['brand_short']}<small style="color:#8fa6b2">Industrial Pumps</small></span></a>
+        <a class="brand" href="index.html" style="color:#fff">{LOGO_IMG_W}</a>
         <p style="margin-top:16px;max-width:320px">{CONFIG['brand_cn']}<br>High-pressure reciprocating pumps and slurry pumps for mining, power, oil &amp; gas and process industries.</p>
       </div>
       <div>
