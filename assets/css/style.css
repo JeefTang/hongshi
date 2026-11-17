@@ -61,7 +61,8 @@ header.site{
 .lang-switch:hover{color:var(--accent);border-color:var(--accent)}
 .view-switch{margin-left:16px;font-size:13px;font-weight:600;color:var(--steel);border:1px solid var(--line);padding:7px 12px;border-radius:8px;white-space:nowrap}
 .view-switch:hover{color:var(--accent);border-color:var(--accent)}
-@media(max-width:960px){.view-switch{display:none}}
+/* 2026-11-17: 窄屏不再隐藏「手机版/电脑版」切换——否则手机上误点「电脑版」后困在电脑版出不来 */
+@media(max-width:960px){.view-switch{margin-left:8px;font-size:12px;padding:6px 9px}}
 .btn{
   display:inline-block;background:var(--accent);color:#fff;padding:13px 22px;border-radius:10px;
   font-weight:700;font-size:15px;border:1px solid var(--accent);transition:.18s;cursor:pointer
@@ -199,7 +200,10 @@ form.enquiry input,form.enquiry textarea,form.enquiry select{
 }
 @media(max-width:720px){
   body{font-size:16px}
+  .nav{gap:8px}
   .nav ul{display:none}
+  .view-switch,.lang-switch{margin-left:4px;font-size:11px;padding:5px 7px}
+  .nav .cta{padding:9px 12px;font-size:13px;margin-left:4px}
   .nav{padding-right:0}
   .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
   .fgrid{grid-template-columns:1fr}
